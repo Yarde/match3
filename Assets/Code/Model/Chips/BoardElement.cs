@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-namespace Code.Model
+namespace Code.Model.Chips
 {
     public abstract class BoardElement : ScriptableObject
     {
         public Sprite sprite;
-        public Vector2 size = Vector2.one;
-        public bool isSwappable = true;
+        public bool isSwappable;
+        public bool isClickable;
 
         public abstract void ApplyEffect();
     }

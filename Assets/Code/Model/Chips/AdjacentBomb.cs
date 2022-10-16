@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Code.Model
+namespace Code.Model.Chips
 {
     [CreateAssetMenu]
     public class AdjacentBomb : BoardElement

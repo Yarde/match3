@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Model.Chips;
+using UnityEngine;
 
 namespace Code.Model
 {

@@ -1,25 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using Code.Model.Chips;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Vector2 = System.Numerics.Vector2;
 
 namespace Code.Model
 {
+    [CreateAssetMenu]
     public class BoardSettings : ScriptableObject
     {
         public Vector2Int boardSize;
-        public BoardLayout boardLayout;
+        public List<BoardCell> initialLayout;
+
+        [HideInInspector] public bool IsValid;
 
         private void OnValidate()
         {
-            Assert.IsTrue(boardLayout.cells.Length == boardSize.x);
-            Assert.IsTrue(boardLayout.cells.GetLength(0) == boardSize.y);
+            IsValid = initialLayout.Count / boardSize.x == boardSize.y;
         }
-    }
-
-    public class BoardLayout : ScriptableObject
-    {
-        public BoardCell[][] cells;
     }
 
     [Serializable]
