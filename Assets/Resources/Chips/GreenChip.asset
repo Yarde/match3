@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e14406fcd3746fab28dce9f7ff79fc2, type: 3}
   m_Name: GreenChip
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  size: {x: 1, y: 1}
+  sprite: {fileID: 2801231552284419624, guid: 4d054e73e6ee9a14fa37361ed5b1e40c, type: 3}
+  prefab: {fileID: 3566700477381828002, guid: 4484c3b07912f4348b4413eca8d882a8, type: 3}
   isSwappable: 1
+  isClickable: 0
   color: {fileID: 11400000, guid: c282fd5ea6d9245108d45ada87d8b9b2, type: 2}
   particleSystem: {fileID: 0}

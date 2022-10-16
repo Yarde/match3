@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Code.Model.Chips;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Code.Model
 {
@@ -11,6 +10,7 @@ namespace Code.Model
     {
         public Vector2Int boardSize;
         public List<BoardCell> initialLayout;
+        public BoardVisuals boardVisuals;
 
         [HideInInspector] public bool IsValid;
 
@@ -18,6 +18,18 @@ namespace Code.Model
         {
             IsValid = initialLayout.Count / boardSize.x == boardSize.y;
         }
+    }
+
+    [Serializable]
+    public class BoardVisuals
+    {
+        public Sprite background;
+        public Sprite foreground;
+
+        public Sprite cellBackground;
+
+        public float cellSize = 40f;
+        public float boardOffset = 20f;
     }
 
     [Serializable]

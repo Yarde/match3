@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add Game Manager">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Match3/Scripts/LevelSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/37/aadf4e21/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665915653354</updated>
       <workItem from="1665915660047" duration="262000" />
-      <workItem from="1665920921887" duration="3506000" />
+      <workItem from="1665920921887" duration="5130000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>
@@ -93,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665915685444</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Game Manager">
+      <created>1665924662211</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665924662211</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,25 +124,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add Compiled project files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Compiled project files" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Code/GameManager.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" initialLine="15" containingFunctionPresentation="method 'Awake'">
-            <startOffsets>
-              <option value="411" />
-            </startOffsets>
-            <endOffsets>
-              <option value="425" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add Game Manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Game Manager" />
   </component>
 </project>
