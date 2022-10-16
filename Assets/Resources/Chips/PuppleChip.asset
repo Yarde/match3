@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e14406fcd3746fab28dce9f7ff79fc2, type: 3}
-  m_Name: GreenChip
+  m_Name: PuppleChip
   m_EditorClassIdentifier: 
-  sprite: {fileID: 2801231552284419624, guid: b510aa55b57b941cb929496e126832c3, type: 3}
+  sprite: {fileID: -4825632588510966998, guid: b510aa55b57b941cb929496e126832c3, type: 3}
   prefab: {fileID: 6400923276586045737, guid: 4484c3b07912f4348b4413eca8d882a8, type: 3}
   isSwappable: 1
   isClickable: 0
-  color: {fileID: 11400000, guid: c282fd5ea6d9245108d45ada87d8b9b2, type: 2}
+  color: {fileID: 11400000, guid: 0e18f2e2616904a27a85b366a26a7fcd, type: 2}
   particleSystem: {fileID: 0}

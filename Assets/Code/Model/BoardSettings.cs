@@ -24,9 +24,9 @@ namespace Code.Model
     public class BoardVisuals
     {
         public Sprite background;
-        public Sprite foreground;
+        public Sprite boardFrame;
 
-        public Sprite cellBackground;
+        public Sprite boardBackground;
 
         public float cellSize = 40f;
         public float boardOffset = 20f;

@@ -13,3 +13,11 @@ MonoBehaviour:
   m_Name: BoardSettings
   m_EditorClassIdentifier: 
   boardSize: {x: 10, y: 10}
+  initialLayout: []
+  boardVisuals:
+    background: {fileID: 21300000, guid: 3a0c1d481187d4cdd8c97ccc8fa822c9, type: 3}
+    boardFrame: {fileID: 21300000, guid: 3a0c1d481187d4cdd8c97ccc8fa822c9, type: 3}
+    boardBackground: {fileID: 21300000, guid: 3a0c1d481187d4cdd8c97ccc8fa822c9, type: 3}
+    cellSize: 40
+    boardOffset: 20
+  IsValid: 0
