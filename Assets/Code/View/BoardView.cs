@@ -42,11 +42,13 @@ namespace Code.View
             {
                 for (var j = 0; j < settings.boardSize.y; j++)
                 {
-                    var chip = Instantiate(boardCells[i, j].chip.prefab, chipsParent);
+                    var chipData = boardCells[i, j].chip;
+                    var chip = Instantiate(chipData.prefab, chipsParent);
                     var pos = new Vector3(-sizeX * visuals.cellSize / 2 + i * visuals.cellSize,
                         -sizeY * visuals.cellSize / 2 + j * visuals.cellSize, 0);
                     chip.transform.localPosition = pos;
-                    chip.Setup(boardCells[i, j].chip.sprite);
+                    chip.Setup(chipData.sprite);
+                    chipData.OnEffect += () => Destroy(chip.gameObject);
                     _prefabs[i, j] = chip;
                 }
             }
