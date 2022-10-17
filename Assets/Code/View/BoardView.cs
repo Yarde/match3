@@ -32,6 +32,11 @@ namespace Code.View
             boardBackground.pixelsPerUnitMultiplier = 0.25f * sizeX;
             boardTransform.sizeDelta = new Vector2(width, height);
 
+            CreateChips(settings, boardCells, sizeX, sizeY, visuals);
+        }
+
+        private void CreateChips(BoardSettings settings, BoardCell[,] boardCells, int sizeX, int sizeY, BoardVisuals visuals)
+        {
             _prefabs = new ChipView[sizeX, sizeY];
             for (var i = 0; i < settings.boardSize.x; i++)
             {

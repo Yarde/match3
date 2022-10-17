@@ -13,6 +13,7 @@ namespace Code.Model
         public BoardVisuals boardVisuals;
 
         [HideInInspector] public bool IsValid;
+        public bool allowNonMatchSwipe = true;
 
         private void OnValidate()
         {
@@ -35,6 +36,7 @@ namespace Code.Model
     [Serializable]
     public class BoardCell
     {
+        [HideInInspector] public Vector2Int index;
         public BoardElement chip;
         // optional extra modifiers like generator
     }

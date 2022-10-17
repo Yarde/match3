@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add chip generation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/Chip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/Chip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665915653354</updated>
       <workItem from="1665915660047" duration="262000" />
-      <workItem from="1665920921887" duration="9679000" />
+      <workItem from="1665920921887" duration="11952000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>
@@ -114,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665928938742</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add chip generation">
+      <created>1665934265291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665934265291</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +140,7 @@
     <MESSAGE value="Add Compiled project files" />
     <MESSAGE value="Add Game Manager" />
     <MESSAGE value="Add BoardView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add BoardView" />
+    <MESSAGE value="Add chip generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add chip generation" />
   </component>
 </project>
