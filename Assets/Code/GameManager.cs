@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Code.Model;
 using Code.Model.Chips;
 using Code.Utils;
@@ -20,13 +19,15 @@ namespace Code
         private BoardCell[,] _board;
         private readonly Random _random = new();
 
-        private void Awake()
+        private async UniTaskVoid Awake()
         {
             CreateBoard();
             boardView.Setup(boardSettings, _board);
 
+            await UniTask.Delay(1000);
+
             IsMatchDetected(out var matches);
-            OnMove(matches);
+            await OnMove(matches);
         }
 
         private void CreateBoard()
@@ -38,16 +39,18 @@ namespace Code
             {
                 for (var j = 0; j < size.y; j++)
                 {
-                    // todo copy instead
-                    _board[i, j] = boardSettings.IsValid
-                        ? boardSettings.initialLayout[i + j]
-                        : _board[i, j] = new BoardCell { chip = GetRandomChip() };
-                    _board[i, j].index = new Vector2Int(i, j);
+                    _board[i, j] = new BoardCell
+                    {
+                        chip = Instantiate(boardSettings.IsValid
+                            ? boardSettings.initialLayout[i + j]
+                            : GetRandomChip()),
+                        index = new Vector2Int(i, j)
+                    };
                 }
             }
         }
 
-        private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
+        private async UniTask OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
         {
             var cellSource = _board[sourcePosition.x, sourcePosition.y];
             if (!cellSource.chip.isSwappable)
@@ -55,7 +58,7 @@ namespace Code
                 Debug.Log("Chip Not Swappable!");
                 return;
             }
-            
+
             if (boardSettings.boardSize.InBounds2D(destinationPosition))
             {
                 Debug.Log("Destination Out Of Bounds!");
@@ -69,44 +72,95 @@ namespace Code
                 return;
             }
 
-            DoSwap(cellSource, cellDestination);
+            await DoSwap(cellSource, cellDestination);
             if (IsMatchDetected(out var matches))
             {
-                OnMove(matches);
+                await OnMove(matches);
             }
             else if (!boardSettings.allowNonMatchSwipe)
             {
-                DoSwap(cellDestination, cellSource);
+                await DoSwap(cellDestination, cellSource);
             }
         }
 
-        private void DoSwap(BoardCell cellSource, BoardCell cellDestination)
+        private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)
         {
-            cellSource.chip.OnSwap?.Invoke(cellDestination.index);
-            cellSource.chip.OnSwap?.Invoke(cellSource.index);
+            await UniTask.WhenAll(
+                cellSource.chip.OnMove.Invoke(cellSource.index, cellDestination.index),
+                cellSource.chip.OnMove.Invoke(cellDestination.index, cellSource.index));
             (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
         }
 
-        private void OnMove(List<BoardCell> boardCells)
+        private async UniTask OnMove(List<BoardCell> boardCells)
         {
             while (boardCells.Count > 0)
             {
-                MatchChips(boardCells);
+                await MatchChips(boardCells);
                 IsMatchDetected(out boardCells);
             }
         }
 
-        private async void MatchChips(List<BoardCell> boardCells)
+        private async UniTask MatchChips(List<BoardCell> boardCells)
         {
+            var awaitable = new List<UniTask>();
+
             foreach (var cell in boardCells)
             {
                 cell.chip.ApplyEffect();
-                await UniTask.Delay(100);
-                cell.chip.OnEffect?.Invoke();
+                if (cell.chip.OnEffect != null)
+                {
+                    awaitable.Add(cell.chip.OnEffect.Invoke());
+                }
+            }
+
+            await UniTask.WhenAll(awaitable);
+
+            foreach (var cell in boardCells)
+            {
                 cell.chip = null;
             }
-            
-            // spawn new chips
+
+            await SpawnNewChips();
+        }
+
+        private async UniTask SpawnNewChips()
+        {
+            var awaitable = new List<UniTask>();
+
+            for (var i = 0; i < _board.GetLength(0); i++)
+            {
+                for (var j = 0; j < _board.GetLength(1); j++)
+                {
+                    var cell = _board[i, j];
+                    if (cell.chip == null)
+                    {
+                        var (newChip, move) = GetNewChip(i, j);
+                        cell.chip = newChip;
+                        awaitable.Add(move);
+                    }
+                }
+            }
+
+            await UniTask.WhenAll(awaitable);
+        }
+
+        private (BoardElement, UniTask) GetNewChip(int i, int j)
+        {
+            for (var k = j + 1; k < _board.GetLength(0); k++)
+            {
+                var chip = _board[i, k].chip;
+                if (chip != null)
+                {
+                    var move = chip.OnMove.Invoke(new Vector2Int(i, k), new Vector2Int(i, j));
+                    _board[i, k].chip = null;
+                    return (chip, move);
+                }
+            }
+
+            var newChip = Instantiate(GetRandomChip());
+            boardView.CreateNewChip(i, _board.GetLength(1), newChip);
+            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
+            return (newChip, newMove);
         }
 
         private bool IsMatchDetected(out List<BoardCell> matches)
@@ -116,14 +170,13 @@ namespace Code
             {
                 for (var j = 0; j < boardSettings.boardSize.y; j++)
                 {
-                    if (CheckMatch(_board[i,j]))
+                    if (CheckMatch(_board[i, j]))
                     {
-                        matches.Add(_board[i,j]);
+                        matches.Add(_board[i, j]);
                     }
                 }
             }
-            
-            Debug.Log(matches.Count);
+
             return matches.Count > 0;
         }
 
@@ -131,6 +184,10 @@ namespace Code
         {
             var count = 0;
             var sourceColor = (source.chip as SimpleColorChip)?.color;
+            if (sourceColor == null)
+            {
+                return false;
+            }
 
             for (var i = source.index.x - 1; i >= 0; i--)
             {
@@ -138,12 +195,12 @@ namespace Code
                 count++;
             }
 
-            for (var i = source.index.x + 1; i < _board.GetLength(0); i++)
+            for (var i = source.index.x + 1; i < _board.GetLength(1); i++)
             {
                 if (!CompareColors(i, source.index.y, sourceColor)) break;
                 count++;
             }
-              
+
             if (count > 1)
             {
                 return true;
@@ -156,19 +213,30 @@ namespace Code
                 count++;
             }
 
-            for (var j = source.index.y + 1; j < _board.GetLength(1); j++)
+            for (var j = source.index.y + 1; j < _board.GetLength(0); j++)
             {
                 if (!CompareColors(source.index.x, j, sourceColor)) break;
                 count++;
             }
-              
+
             return count > 1;
         }
 
         private bool CompareColors(int x, int y, Color sourceColor)
         {
             var toCompare = _board[x, y];
-            return (toCompare.chip as SimpleColorChip)?.color.name == sourceColor.name;
+            if (toCompare.chip != null)
+            {
+                var chip = toCompare.chip as SimpleColorChip;
+                if (chip != null && chip.color != null)
+                {
+                    return chip.color.name == sourceColor.name;
+                }
+
+                return false;
+            }
+
+            return false;
         }
 
         private BoardElement GetRandomChip()

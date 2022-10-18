@@ -9,7 +9,7 @@ namespace Code.Model
     public class BoardSettings : ScriptableObject
     {
         public Vector2Int boardSize;
-        public List<BoardCell> initialLayout;
+        public List<BoardElement> initialLayout;
         public BoardVisuals boardVisuals;
 
         [HideInInspector] public bool IsValid;
