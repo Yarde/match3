@@ -1,6 +1,7 @@
 using Code.Model;
 using Code.Model.Chips;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +20,10 @@ namespace Code.View
         private BoardCell[,] _board;
         private BoardVisuals _visuals;
 
-        public void Setup(BoardSettings settings, BoardCell[,] boardCells)
+        public async UniTask Setup(BoardSettings settings, BoardCell[,] boardCells)
         {
+            boardTransform.localPosition = new Vector3(0, Screen.height);
+            
             _visuals = settings.boardVisuals;
             _board = boardCells;
 
@@ -34,10 +37,12 @@ namespace Code.View
             var width = sizeX * _visuals.cellSize + _visuals.boardOffset;
             var height = sizeY * _visuals.cellSize + _visuals.boardOffset;
 
-            boardBackground.pixelsPerUnitMultiplier = 0.25f * sizeX;
+            boardBackground.pixelsPerUnitMultiplier = 0.05f * sizeX;
             boardTransform.sizeDelta = new Vector2(width, height);
 
             CreateChips(settings, sizeX, sizeY);
+
+            await boardTransform.DOLocalMove(Vector3.zero, 1f);
         }
 
         private void CreateChips(BoardSettings settings, int sizeX, int sizeY)
@@ -48,18 +53,19 @@ namespace Code.View
                 for (var j = 0; j < settings.boardSize.y; j++)
                 {
                     _prefabs[i, j] = CreateNewChip(i, j, _board[i, j].chip);
-                    ;
                 }
             }
         }
 
         public ChipView CreateNewChip(int i, int j, BoardElement chipData)
         {
-            var chip = Instantiate(chipData.prefab, chipsParent);
             var pos = new Vector3(-_board.GetLength(0) * _visuals.cellSize / 2 + i * _visuals.cellSize,
                 -_board.GetLength(1) * _visuals.cellSize / 2 + j * _visuals.cellSize, 0);
+
+            var chip = Instantiate(chipData.prefab, chipsParent);
             chip.transform.localPosition = pos;
-            chip.Setup(chipData.sprite, i, j);
+            ((RectTransform)chip.transform).sizeDelta = new Vector2(_visuals.cellSize, _visuals.cellSize);
+            chip.Setup(chipData, i, j);
 
             chipData.OnEffect += () => OnEffect(chip, chipData);
             chipData.OnMove += (from, to) => OnMove(chip, chipData, from, to);
@@ -79,11 +85,14 @@ namespace Code.View
                 _prefabs[from.x, from.y] = null;
             }
 
-            chip.Setup(chipData.sprite, to.x, to.y);
+            chip.Setup(chipData, to.x, to.y);
 
             var pos = new Vector3(-_board.GetLength(0) * _visuals.cellSize / 2 + to.x * _visuals.cellSize,
                 -_board.GetLength(1) * _visuals.cellSize / 2 + to.y * _visuals.cellSize, 0);
-            chip.transform.localPosition = pos;
+            var distance = Vector2.Distance(from, to);
+                Debug.Log($"{distance}, {from}, {to}");
+
+            await chip.transform.DOLocalMove(pos, 0.5f * distance).SetEase(Ease.OutBounce);
         }
 
         private async UniTask OnEffect(ChipView chip, BoardElement chipData)
@@ -91,6 +100,7 @@ namespace Code.View
             await chip.Destroy();
 
             chipData.OnEffect -= () => OnEffect(chip, chipData);
+            chipData.OnMove -= (from, to) => OnMove(chip, chipData, from, to);
         }
     }
 }

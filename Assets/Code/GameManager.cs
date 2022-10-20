@@ -22,9 +22,9 @@ namespace Code
         private async UniTaskVoid Awake()
         {
             CreateBoard();
-            boardView.Setup(boardSettings, _board);
+            await boardView.Setup(boardSettings, _board);
 
-            await UniTask.Delay(1000);
+            await UniTask.Delay(200);
 
             IsMatchDetected(out var matches);
             await OnMove(matches);

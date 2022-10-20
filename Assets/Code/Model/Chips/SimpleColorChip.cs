@@ -11,8 +11,6 @@ namespace Code.Model
         
         public override void ApplyEffect()
         {
-            //particleSystem.Play();
-            // play some particles and destroy
         }
     }
 }

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add new textures">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/BlueChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/BlueChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/PuppleChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/PuppleChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/RedChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/RedChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/WhiteChip.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/WhiteChip.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/YellowChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Chips/YellowChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Background.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Background.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Gems.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Gems.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/shadow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/shadow.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +40,16 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/MaskableGraphic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/LayoutGroupScaling.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/UIBehaviourExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/54/86658277/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/c0/1ec7ae91/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
@@ -69,10 +96,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1244">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3142">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1244" />
+      <option name="pid" value="3142" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -90,7 +117,8 @@
       <updated>1665915653354</updated>
       <workItem from="1665915660047" duration="262000" />
       <workItem from="1665920921887" duration="21889000" />
-      <workItem from="1666108665298" duration="9823000" />
+      <workItem from="1666108665298" duration="9909000" />
+      <workItem from="1666262860373" duration="6397000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>
@@ -127,7 +155,28 @@
       <option name="project" value="LOCAL" />
       <updated>1666003149995</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix match detection and spawn new chips">
+      <created>1666126556694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666126556694</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add DOTween to project">
+      <created>1666269515670</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666269515670</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add new textures">
+      <created>1666269529099</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666269529099</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +203,9 @@
     <MESSAGE value="Add BoardView" />
     <MESSAGE value="Add chip generation" />
     <MESSAGE value="Add more matching logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add more matching logic" />
+    <MESSAGE value="Fix match detection and spawn new chips" />
+    <MESSAGE value="Add DOTween to project" />
+    <MESSAGE value="Add new textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new textures" />
   </component>
 </project>
