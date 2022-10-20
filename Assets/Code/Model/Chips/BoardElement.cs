@@ -16,6 +16,13 @@ namespace Code.Model.Chips
         public Func<UniTask> OnClick;
         public Func<UniTask> OnEffect;
 
+        private void OnDestroy()
+        {
+            OnMove = null;
+            OnClick = null;
+            OnEffect = null;
+        }
+
         public abstract void ApplyEffect();
         public abstract bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells);
     }

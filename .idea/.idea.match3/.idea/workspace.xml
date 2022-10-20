@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Animation and new graphics">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Fix compilation errors">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +13,59 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Prefabs/Chip.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Prefabs/Chip.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Prefabs/Chip.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Triggers/AsyncDestroyTrigger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTask.WhenAll.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/MaskableGraphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs" root0="SKIP_HIGHLIGHTING" />
@@ -28,12 +73,17 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/LayoutGroupScaling.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/UIBehaviourExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5e/6cfb0a81/Func`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/aa/a2f4ce48/Action`3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/d7/12cffab1/Action`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ddb5fa70dfe40d2818192400111b9ec2aa00/1b/83576e18/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ddb5fa70dfe40d2818192400111b9ec2aa00/4c/6c77992c/TweenSettingsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/54/86658277/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/c0/1ec7ae91/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80cbeb84a11948479553ac11050a19b17400/35/9ecf4633/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d1fed25e5696435ba1f991b56507790c12a200/7a/86920744/IMouseCaptureEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/37/aadf4e21/Vector2Int.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/8b/01c3174f/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -163,7 +213,28 @@
       <option name="project" value="LOCAL" />
       <updated>1666270963402</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lol">
+      <created>1666295485465</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666295485465</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor part 2">
+      <created>1666295717595</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666295717595</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix compilation errors">
+      <created>1666295951977</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666295951977</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +265,9 @@
     <MESSAGE value="Add DOTween to project" />
     <MESSAGE value="Add new textures" />
     <MESSAGE value="Animation and new graphics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animation and new graphics" />
+    <MESSAGE value="lol" />
+    <MESSAGE value="refactor part 2" />
+    <MESSAGE value="Fix compilation errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix compilation errors" />
   </component>
 </project>

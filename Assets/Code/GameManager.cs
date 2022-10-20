@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Code.ChipGenerator;
 using Code.Model;
 using Code.Model.Chips;
@@ -7,7 +6,6 @@ using Code.Utils;
 using Code.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Color = Code.Model.Color;
 
 namespace Code
 {
@@ -170,6 +168,20 @@ namespace Code
 
         private (BoardElement, UniTask) GetNewChip(int i, int j)
         {
+            return TryToGetCell(i, j, out var cell) ? cell : CreateNewCell(i, j);
+        }
+
+        private (BoardElement, UniTask) CreateNewCell(int i, int j)
+        {
+            var newChip = Instantiate(chipGeneratorBase.GetChip());
+            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip, boardSettings);
+            SubscribeToUserActions(chipView);
+            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
+            return (newChip, newMove);
+        }
+
+        private bool TryToGetCell(int i, int j, out (BoardElement, UniTask) valueTuple)
+        {
             for (var k = j + 1; k < _board.GetLength(0); k++)
             {
                 var chip = _board[i, k].chip;
@@ -177,15 +189,15 @@ namespace Code
                 {
                     var move = chip.OnMove.Invoke(new Vector2Int(i, k), new Vector2Int(i, j));
                     _board[i, k].chip = null;
-                    return (chip, move);
+                    {
+                        valueTuple = (chip, move);
+                        return true;
+                    }
                 }
             }
 
-            var newChip = Instantiate(chipGeneratorBase.GetChip());
-            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip, boardSettings);
-            SubscribeToUserActions(chipView);
-            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
-            return (newChip, newMove);
+            valueTuple = default;
+            return false;
         }
 
         private bool IsMatchDetected(out List<BoardCell> matches)

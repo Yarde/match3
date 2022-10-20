@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Code.Model.Chips;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -63,27 +64,24 @@ namespace Code.View
             data.OnMove += OnMove;
         }
 
-        private async UniTask OnMove(Vector2Int from, Vector2Int to)
+        private void Refresh(int i, int j)
         {
-            await Move(from, to);
-
-            OnMoved?.Invoke(this, from, to);
-            Setup(_data, _chipSize, _boardSize, to.x, to.y);
+            text.text = $"{i},{j}";
+            name = $"Chip-{i},{j}";
+            _chipPosition = new Vector2Int(i, j);
         }
 
-        private async UniTask OnEffect()
+        private async UniTask OnMove(Vector2Int from, Vector2Int to)
         {
-            var awaitable = new List<UniTask> { image.DOFade(0f, 0.2f).ToUniTask() };
+            await Move(from, to, this.GetCancellationTokenOnDestroy());
 
-            if (onEffectParticles)
-            {
-                onEffectParticles.Play();
-                awaitable.Add(UniTask.Delay((int)(onEffectParticles.main.duration * 1000)));
-            }
-            Debug.Log(awaitable.Count);
-            await UniTask.WhenAll(awaitable);
+            OnMoved?.Invoke(this, from, to);
+            Refresh(to.x, to.y);
+        }
 
-            Destroy(gameObject);
+        private UniTask OnEffect()
+        {
+            return image.DOFade(0f, 0.2f).OnComplete(() => Destroy(gameObject)).WithCancellation(this.GetCancellationTokenOnDestroy());
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -135,13 +133,14 @@ namespace Code.View
             }
         }
 
-        private async UniTask Move(Vector2Int from, Vector2Int to)
+        private UniTask Move(Vector2Int from, Vector2Int to, CancellationToken token)
         {
             var pos = new Vector3(-_boardSize.x * _chipSize / 2 + to.x * _chipSize,
                 -_boardSize.y * _chipSize / 2 + to.y * _chipSize, 0);
             var distance = Vector2.Distance(from, to);
 
-            await transform.DOLocalMove(pos, 0.2f * distance + 0.1f * from.y).SetEase(Ease.OutBounce);
+            var duration = 0.2f * distance + 0.1f * from.y;
+            return transform.DOLocalMove(pos, duration).SetEase(Ease.OutBounce).WithCancellation(token);
         }
     }
 }

@@ -1,0 +1,897 @@
+Index: Assets/Prefabs/Chip.prefab
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\n%TAG !u! tag:unity3d.com,2011:\n--- !u!1 &1151765114352428152\nGameObject:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  serializedVersion: 6\n  m_Component:\n  - component: {fileID: 8007474867002082623}\n  - component: {fileID: 256162909705645282}\n  - component: {fileID: 5219791104671819414}\n  m_Layer: 5\n  m_Name: Text (TMP)\n  m_TagString: Untagged\n  m_Icon: {fileID: 0}\n  m_NavMeshLayer: 0\n  m_StaticEditorFlags: 0\n  m_IsActive: 0\n--- !u!224 &8007474867002082623\nRectTransform:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1151765114352428152}\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\n  m_LocalPosition: {x: 0, y: 0, z: 0}\n  m_LocalScale: {x: 1, y: 1, z: 1}\n  m_ConstrainProportionsScale: 0\n  m_Children: []\n  m_Father: {fileID: 3566700477381828013}\n  m_RootOrder: 0\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n  m_AnchorMin: {x: 0, y: 0}\n  m_AnchorMax: {x: 1, y: 1}\n  m_AnchoredPosition: {x: 0, y: 0}\n  m_SizeDelta: {x: -20, y: -20}\n  m_Pivot: {x: 0.5, y: 0.5}\n--- !u!222 &256162909705645282\nCanvasRenderer:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1151765114352428152}\n  m_CullTransparentMesh: 1\n--- !u!114 &5219791104671819414\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1151765114352428152}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  m_Material: {fileID: 0}\n  m_Color: {r: 1, g: 1, b: 1, a: 1}\n  m_RaycastTarget: 1\n  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}\n  m_Maskable: 1\n  m_OnCullStateChanged:\n    m_PersistentCalls:\n      m_Calls: []\n  m_text: New Text\n  m_isRightToLeft: 0\n  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}\n  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}\n  m_fontSharedMaterials: []\n  m_fontMaterial: {fileID: 0}\n  m_fontMaterials: []\n  m_fontColor32:\n    serializedVersion: 2\n    rgba: 4294967295\n  m_fontColor: {r: 1, g: 1, b: 1, a: 1}\n  m_enableVertexGradient: 0\n  m_colorMode: 3\n  m_fontColorGradient:\n    topLeft: {r: 1, g: 1, b: 1, a: 1}\n    topRight: {r: 1, g: 1, b: 1, a: 1}\n    bottomLeft: {r: 1, g: 1, b: 1, a: 1}\n    bottomRight: {r: 1, g: 1, b: 1, a: 1}\n  m_fontColorGradientPreset: {fileID: 0}\n  m_spriteAsset: {fileID: 0}\n  m_tintAllSprites: 0\n  m_StyleSheet: {fileID: 0}\n  m_TextStyleHashCode: -1183493901\n  m_overrideHtmlColors: 0\n  m_faceColor:\n    serializedVersion: 2\n    rgba: 4294967295\n  m_fontSize: 8.8\n  m_fontSizeBase: 36\n  m_fontWeight: 400\n  m_enableAutoSizing: 1\n  m_fontSizeMin: 5\n  m_fontSizeMax: 72\n  m_fontStyle: 0\n  m_HorizontalAlignment: 2\n  m_VerticalAlignment: 512\n  m_textAlignment: 65535\n  m_characterSpacing: 0\n  m_wordSpacing: 0\n  m_lineSpacing: 0\n  m_lineSpacingMax: 0\n  m_paragraphSpacing: 0\n  m_charWidthMaxAdj: 0\n  m_enableWordWrapping: 1\n  m_wordWrappingRatios: 0.4\n  m_overflowMode: 0\n  m_linkedTextComponent: {fileID: 0}\n  parentLinkedComponent: {fileID: 0}\n  m_enableKerning: 1\n  m_enableExtraPadding: 0\n  checkPaddingRequired: 0\n  m_isRichText: 1\n  m_parseCtrlCharacters: 1\n  m_isOrthographic: 1\n  m_isCullingEnabled: 0\n  m_horizontalMapping: 0\n  m_verticalMapping: 0\n  m_uvLineOffset: 0\n  m_geometrySortingOrder: 0\n  m_IsTextObjectScaleStatic: 0\n  m_VertexBufferAutoSizeReduction: 0\n  m_useMaxVisibleDescender: 1\n  m_pageToDisplay: 1\n  m_margin: {x: 0, y: 0, z: 0, w: 0}\n  m_isUsingLegacyAnimationComponent: 0\n  m_isVolumetricText: 0\n  m_hasFontAssetChanged: 0\n  m_baseMaterial: {fileID: 0}\n  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}\n--- !u!1 &3566700477381828002\nGameObject:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  serializedVersion: 6\n  m_Component:\n  - component: {fileID: 3566700477381828013}\n  - component: {fileID: 3566700477381828015}\n  - component: {fileID: 3566700477381828012}\n  - component: {fileID: 6400923276586045737}\n  m_Layer: 5\n  m_Name: Chip\n  m_TagString: Untagged\n  m_Icon: {fileID: 0}\n  m_NavMeshLayer: 0\n  m_StaticEditorFlags: 0\n  m_IsActive: 1\n--- !u!224 &3566700477381828013\nRectTransform:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 3566700477381828002}\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\n  m_LocalPosition: {x: 0, y: 0, z: 0}\n  m_LocalScale: {x: 1, y: 1, z: 1}\n  m_ConstrainProportionsScale: 0\n  m_Children:\n  - {fileID: 8007474867002082623}\n  m_Father: {fileID: 0}\n  m_RootOrder: 0\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n  m_AnchorMin: {x: 0.5, y: 0.5}\n  m_AnchorMax: {x: 0.5, y: 0.5}\n  m_AnchoredPosition: {x: 0, y: 0}\n  m_SizeDelta: {x: 40, y: 40}\n  m_Pivot: {x: 0, y: 0}\n--- !u!222 &3566700477381828015\nCanvasRenderer:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 3566700477381828002}\n  m_CullTransparentMesh: 1\n--- !u!114 &3566700477381828012\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 3566700477381828002}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  m_Material: {fileID: 0}\n  m_Color: {r: 1, g: 1, b: 1, a: 1}\n  m_RaycastTarget: 1\n  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}\n  m_Maskable: 1\n  m_OnCullStateChanged:\n    m_PersistentCalls:\n      m_Calls: []\n  m_Sprite: {fileID: 21300000, guid: 9f88b7a08b4c8485f9cb9b21696db5a8, type: 3}\n  m_Type: 0\n  m_PreserveAspect: 1\n  m_FillCenter: 1\n  m_FillMethod: 4\n  m_FillAmount: 1\n  m_FillClockwise: 1\n  m_FillOrigin: 0\n  m_UseSpriteMesh: 0\n  m_PixelsPerUnitMultiplier: 1\n--- !u!114 &6400923276586045737\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 3566700477381828002}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: 61ca6a07245644b6814da29dbfe59e12, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  image: {fileID: 3566700477381828012}\n  text: {fileID: 5219791104671819414}\n  onEffectParticles: {fileID: 0}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Prefabs/Chip.prefab b/Assets/Prefabs/Chip.prefab
+--- a/Assets/Prefabs/Chip.prefab	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Prefabs/Chip.prefab	(date 1666290371971)
+@@ -31,7 +31,7 @@
+   m_ConstrainProportionsScale: 0
+   m_Children: []
+   m_Father: {fileID: 3566700477381828013}
+-  m_RootOrder: 0
++  m_RootOrder: 1
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0, y: 0}
+   m_AnchorMax: {x: 1, y: 1}
+@@ -144,8 +144,6 @@
+   serializedVersion: 6
+   m_Component:
+   - component: {fileID: 3566700477381828013}
+-  - component: {fileID: 3566700477381828015}
+-  - component: {fileID: 3566700477381828012}
+   - component: {fileID: 6400923276586045737}
+   m_Layer: 5
+   m_Name: Chip
+@@ -166,6 +164,7 @@
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children:
++  - {fileID: 3314278211206571864}
+   - {fileID: 8007474867002082623}
+   m_Father: {fileID: 0}
+   m_RootOrder: 0
+@@ -173,23 +172,76 @@
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+   m_AnchoredPosition: {x: 0, y: 0}
+-  m_SizeDelta: {x: 40, y: 40}
++  m_SizeDelta: {x: 80, y: 80}
+   m_Pivot: {x: 0, y: 0}
+---- !u!222 &3566700477381828015
++--- !u!114 &6400923276586045737
++MonoBehaviour:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 3566700477381828002}
++  m_Enabled: 1
++  m_EditorHideFlags: 0
++  m_Script: {fileID: 11500000, guid: 61ca6a07245644b6814da29dbfe59e12, type: 3}
++  m_Name: 
++  m_EditorClassIdentifier: 
++  image: {fileID: 7707849120948101073}
++  text: {fileID: 5219791104671819414}
++  onEffectParticles: {fileID: 0}
++--- !u!1 &6187962276937646234
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 3314278211206571864}
++  - component: {fileID: 8938030836660452027}
++  - component: {fileID: 7707849120948101073}
++  m_Layer: 0
++  m_Name: Image
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!224 &3314278211206571864
++RectTransform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 6187962276937646234}
++  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
++  m_LocalPosition: {x: 0, y: 0, z: 0}
++  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_ConstrainProportionsScale: 0
++  m_Children: []
++  m_Father: {fileID: 3566700477381828013}
++  m_RootOrder: 0
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++  m_AnchorMin: {x: 0, y: 0}
++  m_AnchorMax: {x: 1, y: 1}
++  m_AnchoredPosition: {x: 0, y: 0}
++  m_SizeDelta: {x: 0, y: 0}
++  m_Pivot: {x: 0.5, y: 0.5}
++--- !u!222 &8938030836660452027
+ CanvasRenderer:
+   m_ObjectHideFlags: 0
+   m_CorrespondingSourceObject: {fileID: 0}
+   m_PrefabInstance: {fileID: 0}
+   m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 3566700477381828002}
++  m_GameObject: {fileID: 6187962276937646234}
+   m_CullTransparentMesh: 1
+---- !u!114 &3566700477381828012
++--- !u!114 &7707849120948101073
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
+   m_CorrespondingSourceObject: {fileID: 0}
+   m_PrefabInstance: {fileID: 0}
+   m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 3566700477381828002}
++  m_GameObject: {fileID: 6187962276937646234}
+   m_Enabled: 1
+   m_EditorHideFlags: 0
+   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+@@ -203,7 +255,7 @@
+   m_OnCullStateChanged:
+     m_PersistentCalls:
+       m_Calls: []
+-  m_Sprite: {fileID: 21300000, guid: 9f88b7a08b4c8485f9cb9b21696db5a8, type: 3}
++  m_Sprite: {fileID: 21300000, guid: e23bcdb8ebb944bb29d56f189d361a3c, type: 3}
+   m_Type: 0
+   m_PreserveAspect: 1
+   m_FillCenter: 1
+@@ -213,18 +265,3 @@
+   m_FillOrigin: 0
+   m_UseSpriteMesh: 0
+   m_PixelsPerUnitMultiplier: 1
+---- !u!114 &6400923276586045737
+-MonoBehaviour:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 3566700477381828002}
+-  m_Enabled: 1
+-  m_EditorHideFlags: 0
+-  m_Script: {fileID: 11500000, guid: 61ca6a07245644b6814da29dbfe59e12, type: 3}
+-  m_Name: 
+-  m_EditorClassIdentifier: 
+-  image: {fileID: 3566700477381828012}
+-  text: {fileID: 5219791104671819414}
+-  onEffectParticles: {fileID: 0}
+Index: Assets/Code/View/ChipView.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\nusing Code.Model.Chips;\nusing Cysharp.Threading.Tasks;\nusing DG.Tweening;\nusing TMPro;\nusing UnityEngine;\nusing UnityEngine.EventSystems;\nusing UnityEngine.UIElements;\nusing Image = UnityEngine.UI.Image;\n\nnamespace Code.View\n{\n    [RequireComponent(typeof(RectTransform))]\n    public class ChipView : MonoBehaviour, IPointerDownHandler, IPointerUpHandler\n    {\n        [SerializeField] private Image image;\n        [SerializeField] private TextMeshProUGUI text;\n        [SerializeField] private ParticleSystem onEffectParticles;\n\n        private RectTransform _rectTransform;\n\n        private BoardElement _data;\n        private float _chipSize;\n        private Vector2Int _boardSize;\n        private Vector2Int _chipPosition;\n        \n        private bool _isDragging;\n        private bool _isClicking;\n        private Vector2 _clickPosition;\n\n        public event Action<ChipView, Vector2Int, Vector2Int> OnMoved;\n        public event Action<Vector2Int, Vector2Int> OnSwapped;\n        public event Action<Vector2Int> OnClicked;\n\n        private void Awake()\n        {\n            _rectTransform = GetComponent<RectTransform>();\n        }\n\n        public void Setup(BoardElement data, float chipSize, Vector2Int boardSize, int i, int j)\n        {\n            _data = data;\n            _chipSize = chipSize;\n            _boardSize = boardSize;\n            image.sprite = data.sprite;\n            text.text = $\"{i},{j}\";\n            _chipPosition = new Vector2Int(i, j);\n\n            var pos = new Vector3(-_boardSize.x * chipSize / 2 + i * chipSize,\n                -_boardSize.y * chipSize / 2 + j * chipSize, 0);\n            transform.localPosition = pos;\n            _rectTransform.sizeDelta = new Vector2(chipSize, chipSize);\n\n            data.OnEffect += OnEffect;\n            data.OnMove += OnMove;\n        }\n\n        private async UniTask OnMove(Vector2Int from, Vector2Int to)\n        {\n            await Move(from, to);\n            \n            OnMoved?.Invoke(this, from, to);\n            Setup(_data, _chipSize, _boardSize, to.x, to.y);\n        }\n\n        private async UniTask OnEffect()\n        {\n            _data.OnEffect -= OnEffect;\n            _data.OnMove -= OnMove;\n\n            if (onEffectParticles)\n            {\n                onEffectParticles.Play();\n                await UniTask.Delay((int)(onEffectParticles.main.duration * 1000));\n            }\n\n            Destroy(gameObject);\n        }\n\n        public void OnPointerDown(PointerEventData eventData)\n        {\n            Debug.Log($\"OnPointerDown, {eventData.position}, swappable {_data.isSwappable}, clickable {_data.isClickable}, pos: {text.text}\");\n            if (_data.isSwappable)\n            {\n                _isDragging = true;\n            }\n\n            if (_data.isClickable)\n            {\n                _isClicking = true;\n            }\n\n            _clickPosition = eventData.position;\n        }\n\n        public void OnPointerUp(PointerEventData eventData)\n        {\n            if (_isClicking && Vector2.Distance(_clickPosition, eventData.position) < 10f)\n            {\n                Debug.Log(\n                    $\"OnPointerMove, from:{_clickPosition}, to:{eventData.position}, isSelected:{_isDragging}, distance:{Vector2.Distance(_clickPosition, eventData.position)}\");\n\n                OnClicked?.Invoke(_chipPosition);\n            }\n\n            _isDragging = false;\n            _isClicking = false;\n        }\n\n        public void Update()\n        {\n            if (_isDragging && Vector2.Distance(_clickPosition, Input.mousePosition) > 40f)\n            {\n                _isDragging = false;\n\n                var horizontalMove = _clickPosition.x - Input.mousePosition.x;\n                var verticalMove = _clickPosition.y - Input.mousePosition.y;\n\n                var swapDirection = new Vector2Int();\n                if (Mathf.Abs(horizontalMove) > Mathf.Abs(verticalMove))\n                {\n                    swapDirection.x = horizontalMove > 0 ? -1 : 1;\n                }\n                else\n                {\n                    swapDirection.y = verticalMove > 0 ? -1 : 1;\n                }\n                \n                Debug.Log($\"Swap: {text.text}, to: {_chipPosition + swapDirection}, distance: {Vector2.Distance(_clickPosition, Input.mousePosition)}\");\n\n                OnSwapped?.Invoke(_chipPosition, _chipPosition + swapDirection);\n            }\n        }\n\n        private async UniTask Move(Vector2Int from, Vector2Int to)\n        {\n            var pos = new Vector3(-_boardSize.x * _chipSize / 2 + to.x * _chipSize,\n                -_boardSize.y * _chipSize / 2 + to.y * _chipSize, 0);\n            var distance = Vector2.Distance(from, to);\n\n            await transform.DOLocalMove(pos, 0.2f * distance + 0.05f * from.y).SetEase(Ease.OutBounce);\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/View/ChipView.cs b/Assets/Code/View/ChipView.cs
+--- a/Assets/Code/View/ChipView.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/View/ChipView.cs	(date 1666290894653)
+@@ -1,12 +1,12 @@
+ using System;
++using System.Collections.Generic;
+ using Code.Model.Chips;
+ using Cysharp.Threading.Tasks;
+ using DG.Tweening;
+ using TMPro;
+ using UnityEngine;
+ using UnityEngine.EventSystems;
+-using UnityEngine.UIElements;
+-using Image = UnityEngine.UI.Image;
++using UnityEngine.UI;
+ 
+ namespace Code.View
+ {
+@@ -23,7 +23,7 @@
+         private float _chipSize;
+         private Vector2Int _boardSize;
+         private Vector2Int _chipPosition;
+-        
++
+         private bool _isDragging;
+         private bool _isClicking;
+         private Vector2 _clickPosition;
+@@ -58,7 +58,7 @@
+         private async UniTask OnMove(Vector2Int from, Vector2Int to)
+         {
+             await Move(from, to);
+-            
++
+             OnMoved?.Invoke(this, from, to);
+             Setup(_data, _chipSize, _boardSize, to.x, to.y);
+         }
+@@ -68,18 +68,21 @@
+             _data.OnEffect -= OnEffect;
+             _data.OnMove -= OnMove;
+ 
++            var awaitable = new List<UniTask> { image.DOFade(0f, 0.2f).ToUniTask() };
++            
+             if (onEffectParticles)
+             {
+                 onEffectParticles.Play();
+-                await UniTask.Delay((int)(onEffectParticles.main.duration * 1000));
++                awaitable.Add(UniTask.Delay((int)(onEffectParticles.main.duration * 1000)));
+             }
++
++            await UniTask.WhenAll(awaitable);
+ 
+             Destroy(gameObject);
+         }
+ 
+         public void OnPointerDown(PointerEventData eventData)
+         {
+-            Debug.Log($"OnPointerDown, {eventData.position}, swappable {_data.isSwappable}, clickable {_data.isClickable}, pos: {text.text}");
+             if (_data.isSwappable)
+             {
+                 _isDragging = true;
+@@ -97,9 +100,6 @@
+         {
+             if (_isClicking && Vector2.Distance(_clickPosition, eventData.position) < 10f)
+             {
+-                Debug.Log(
+-                    $"OnPointerMove, from:{_clickPosition}, to:{eventData.position}, isSelected:{_isDragging}, distance:{Vector2.Distance(_clickPosition, eventData.position)}");
+-
+                 OnClicked?.Invoke(_chipPosition);
+             }
+ 
+@@ -125,8 +125,6 @@
+                 {
+                     swapDirection.y = verticalMove > 0 ? -1 : 1;
+                 }
+-                
+-                Debug.Log($"Swap: {text.text}, to: {_chipPosition + swapDirection}, distance: {Vector2.Distance(_clickPosition, Input.mousePosition)}");
+ 
+                 OnSwapped?.Invoke(_chipPosition, _chipPosition + swapDirection);
+             }
+@@ -138,7 +136,7 @@
+                 -_boardSize.y * _chipSize / 2 + to.y * _chipSize, 0);
+             var distance = Vector2.Distance(from, to);
+ 
+-            await transform.DOLocalMove(pos, 0.2f * distance + 0.05f * from.y).SetEase(Ease.OutBounce);
++            await transform.DOLocalMove(pos, 0.2f * distance + 0.1f * from.y).SetEase(Ease.OutBounce);
+         }
+     }
+ }
+\ No newline at end of file
+Index: Assets/Code/Model/Chips/BoardElement.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\nusing Code.View;\nusing Cysharp.Threading.Tasks;\nusing UnityEngine;\n\nnamespace Code.Model.Chips\n{\n    public abstract class BoardElement : ScriptableObject\n    {\n        public Sprite sprite;\n        public ChipView prefab;\n        public bool isSwappable;\n        public bool isClickable;\n\n        public Func<Vector2Int, Vector2Int, UniTask> OnMove;\n        public Func<UniTask> OnClick;\n        public Func<UniTask> OnEffect;\n\n        public abstract void ApplyEffect();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/Model/Chips/BoardElement.cs b/Assets/Code/Model/Chips/BoardElement.cs
+--- a/Assets/Code/Model/Chips/BoardElement.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/Model/Chips/BoardElement.cs	(date 1666286848036)
+@@ -17,5 +17,6 @@
+         public Func<UniTask> OnEffect;
+ 
+         public abstract void ApplyEffect();
++        public abstract bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells);
+     }
+ }
+\ No newline at end of file
+Index: .idea/.idea.match3/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"0fa8809e-3088-4af3-9468-0e6a46a17cef\" name=\"Changes\" comment=\"Animation and new graphics\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Assets/Code/GameManager.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Code/GameManager.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Assets/Code/View/BoardView.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Code/View/BoardView.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Assets/Code/View/ChipView.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Code/View/ChipView.cs\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Assets/Initial.unity\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Initial.unity\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/Chip.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/Chip.prefab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTaskScheduler.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/MaskableGraphic.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/LayoutGroupScaling.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/UIBehaviourExtensions.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/aa/a2f4ce48/Action`3.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/54/86658277/List`1.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612a2c65aaf843d698f8d38b2ad7654a469200/c0/1ec7ae91/AsyncVoidMethodBuilder.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80cbeb84a11948479553ac11050a19b17400/35/9ecf4633/Input.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d1fed25e5696435ba1f991b56507790c12a200/7a/86920744/IMouseCaptureEvent.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/37/aadf4e21/Vector2Int.cs\" root0=\"SKIP_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GDGHJ4nZCfqKOHdYwouI0ClWvK\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"autoscrollFromSource\" value=\"true\" />\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C++&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"Attach to Unity Editor.Attach to Unity Editor\">\n    <configuration name=\"UnitTests (batch mode)\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\n      <option name=\"EXE_PATH\" value=\"/Applications/Unity/Hub/Editor/2021.3.11f1/Unity.app/Contents/MacOS/Unity\" />\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Attach to Unity Editor &amp; Play\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"UNITY_ATTACH_AND_PLAY\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\n      <option name=\"allowRunningInParallel\" value=\"false\" />\n      <option name=\"listenPortForConnections\" value=\"false\" />\n      <option name=\"pid\" />\n      <option name=\"projectPathOnTarget\" />\n      <option name=\"selectedOptions\">\n        <list />\n      </option>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Attach to Unity Editor\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"Unity Debug\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\" ignored-value-for-modified-check=\"6370\">\n      <option name=\"allowRunningInParallel\" value=\"false\" />\n      <option name=\"listenPortForConnections\" value=\"false\" />\n      <option name=\"pid\" value=\"6370\" />\n      <option name=\"projectPathOnTarget\" />\n      <option name=\"selectedOptions\">\n        <list />\n      </option>\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"0fa8809e-3088-4af3-9468-0e6a46a17cef\" name=\"Changes\" comment=\"\" />\n      <created>1665915653354</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1665915653354</updated>\n      <workItem from=\"1665915660047\" duration=\"262000\" />\n      <workItem from=\"1665920921887\" duration=\"21889000\" />\n      <workItem from=\"1666108665298\" duration=\"9909000\" />\n      <workItem from=\"1666262860373\" duration=\"11971000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Add Compiled project files\">\n      <created>1665915685444</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665915685444</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Add Game Manager\">\n      <created>1665924662211</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665924662211</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Add BoardView\">\n      <created>1665928938742</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665928938742</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Add chip generation\">\n      <created>1665934265291</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665934265291</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Add more matching logic\">\n      <created>1666003149995</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666003149995</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Fix match detection and spawn new chips\">\n      <created>1666126556694</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666126556694</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Add DOTween to project\">\n      <created>1666269515670</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666269515670</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Add new textures\">\n      <created>1666269529099</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666269529099</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Animation and new graphics\">\n      <created>1666270963402</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666270963402</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"UnityCheckinConfiguration\" checkUnsavedScenes=\"true\" />\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"true\" />\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"EditMode\" />\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\n    <MESSAGE value=\"Add Compiled project files\" />\n    <MESSAGE value=\"Add Game Manager\" />\n    <MESSAGE value=\"Add BoardView\" />\n    <MESSAGE value=\"Add chip generation\" />\n    <MESSAGE value=\"Add more matching logic\" />\n    <MESSAGE value=\"Fix match detection and spawn new chips\" />\n    <MESSAGE value=\"Add DOTween to project\" />\n    <MESSAGE value=\"Add new textures\" />\n    <MESSAGE value=\"Animation and new graphics\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Animation and new graphics\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.match3/.idea/workspace.xml b/.idea/.idea.match3/.idea/workspace.xml
+--- a/.idea/.idea.match3/.idea/workspace.xml	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/.idea/.idea.match3/.idea/workspace.xml	(date 1666291178697)
+@@ -1,14 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Animation and new graphics">
++    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Fixes working swiping">
+       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -16,8 +19,28 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="HighlightingSettingsPerFile">
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/BoardSettings.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/BoardElement.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/ColorBomb.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/SimpleColorChip.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/ChipView.cs" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Prefabs/Chip.prefab" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
+@@ -98,7 +121,7 @@
+       <workItem from="1665915660047" duration="262000" />
+       <workItem from="1665920921887" duration="21889000" />
+       <workItem from="1666108665298" duration="9909000" />
+-      <workItem from="1666262860373" duration="11971000" />
++      <workItem from="1666262860373" duration="20140000" />
+     </task>
+     <task id="LOCAL-00001" summary="Add Compiled project files">
+       <created>1665915685444</created>
+@@ -163,7 +186,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666270963402</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="Fixes working swiping">
++      <created>1666279634802</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1666279634802</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -194,6 +224,7 @@
+     <MESSAGE value="Add DOTween to project" />
+     <MESSAGE value="Add new textures" />
+     <MESSAGE value="Animation and new graphics" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Animation and new graphics" />
++    <MESSAGE value="Fixes working swiping" />
++    <option name="LAST_COMMIT_MESSAGE" value="Fixes working swiping" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Assets/Code/Model/Chips/ColorBomb.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using UnityEngine;\n\nnamespace Code.Model\n{\n    [CreateAssetMenu]\n    public class ColorBomb : SimpleColorChip\n    {\n        public override void ApplyEffect()\n        {\n            // destroy all chips of it's color\n            \n            base.ApplyEffect();\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/Model/Chips/ColorBomb.cs b/Assets/Code/Model/Chips/ColorBomb.cs
+--- a/Assets/Code/Model/Chips/ColorBomb.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/Model/Chips/ColorBomb.cs	(date 1666286848027)
+@@ -1,6 +1,6 @@
+ using UnityEngine;
+ 
+-namespace Code.Model
++namespace Code.Model.Chips
+ {
+     [CreateAssetMenu]
+     public class ColorBomb : SimpleColorChip
+Index: Assets/Code/View/BoardView.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using Code.Model;\nusing Code.Model.Chips;\nusing Cysharp.Threading.Tasks;\nusing DG.Tweening;\nusing UnityEngine;\nusing UnityEngine.UI;\n\nnamespace Code.View\n{\n    public class BoardView : MonoBehaviour\n    {\n        [SerializeField] private Image background;\n        [SerializeField] private Image boardFrame;\n        [SerializeField] private Image boardBackground;\n\n        [SerializeField] private RectTransform boardTransform;\n        [SerializeField] private Transform chipsParent;\n\n        public ChipView[,] Prefabs => _prefabs;\n        private ChipView[,] _prefabs;\n        private BoardCell[,] _board;\n        private BoardSettings _settings;\n        private BoardVisuals _visuals;\n\n        private void OnDestroy()\n        {\n            if (_prefabs == null)\n            {\n                return;\n            }\n\n            foreach (var chip in _prefabs)\n            {\n                if (chip)\n                {\n                    chip.OnMoved -= OnChipMoved;\n                }\n            }\n        }\n\n        public async UniTask Setup(BoardSettings settings, BoardCell[,] boardCells)\n        {\n            boardTransform.localPosition = new Vector3(0, Screen.height);\n\n            _settings = settings;\n            _visuals = settings.boardVisuals;\n            _board = boardCells;\n\n            background.sprite = _visuals.background;\n            boardFrame.sprite = _visuals.boardFrame;\n            boardBackground.sprite = _visuals.boardBackground;\n\n            var sizeX = settings.boardSize.x;\n            var sizeY = settings.boardSize.y;\n\n            var width = sizeX * _visuals.cellSize + _visuals.boardOffset;\n            var height = sizeY * _visuals.cellSize + _visuals.boardOffset;\n\n            boardBackground.pixelsPerUnitMultiplier = 0.05f * sizeX;\n            boardTransform.sizeDelta = new Vector2(width, height);\n\n            CreateChips(settings, sizeX, sizeY);\n\n            await boardTransform.DOLocalMove(Vector3.zero, 1f);\n        }\n\n        private void CreateChips(BoardSettings settings, int sizeX, int sizeY)\n        {\n            _prefabs = new ChipView[sizeX, sizeY];\n            for (var i = 0; i < settings.boardSize.x; i++)\n            {\n                for (var j = 0; j < settings.boardSize.y; j++)\n                {\n                    _prefabs[i, j] = CreateNewChip(i, j, _board[i, j].chip);\n                }\n            }\n        }\n\n        public ChipView CreateNewChip(int i, int j, BoardElement chipData)\n        {\n            var chip = Instantiate(chipData.prefab, chipsParent);\n            chip.Setup(chipData, _visuals.cellSize, _settings.boardSize, i, j);\n            chip.OnMoved += OnChipMoved;\n            return chip;\n        }\n\n        private void OnChipMoved(ChipView chip, Vector2Int from, Vector2Int to)\n        {\n            if (from.y >= _prefabs.GetLength(1))\n            {\n                _prefabs[to.x, to.y] = chip;\n            }\n            else\n            {\n                _prefabs[to.x, to.y] = _prefabs[from.x, from.y];\n                _prefabs[from.x, from.y] = null;\n            }\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/View/BoardView.cs b/Assets/Code/View/BoardView.cs
+--- a/Assets/Code/View/BoardView.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/View/BoardView.cs	(date 1666281279980)
+@@ -16,20 +16,16 @@
+         [SerializeField] private RectTransform boardTransform;
+         [SerializeField] private Transform chipsParent;
+ 
+-        public ChipView[,] Prefabs => _prefabs;
+-        private ChipView[,] _prefabs;
+-        private BoardCell[,] _board;
+-        private BoardSettings _settings;
+-        private BoardVisuals _visuals;
++        public ChipView[,] Prefabs { get; private set; }
+ 
+         private void OnDestroy()
+         {
+-            if (_prefabs == null)
++            if (Prefabs == null)
+             {
+                 return;
+             }
+ 
+-            foreach (var chip in _prefabs)
++            foreach (var chip in Prefabs)
+             {
+                 if (chip)
+                 {
+@@ -41,59 +37,54 @@
+         public async UniTask Setup(BoardSettings settings, BoardCell[,] boardCells)
+         {
+             boardTransform.localPosition = new Vector3(0, Screen.height);
+-
+-            _settings = settings;
+-            _visuals = settings.boardVisuals;
+-            _board = boardCells;
++            
++            var visuals = settings.boardVisuals;
+ 
+-            background.sprite = _visuals.background;
+-            boardFrame.sprite = _visuals.boardFrame;
+-            boardBackground.sprite = _visuals.boardBackground;
++            background.sprite = visuals.background;
++            boardFrame.sprite = visuals.boardFrame;
++            boardBackground.sprite = visuals.boardBackground;
+ 
+-            var sizeX = settings.boardSize.x;
+-            var sizeY = settings.boardSize.y;
++            var width = settings.boardSize.x * visuals.cellSize + visuals.boardOffset;
++            var height = settings.boardSize.y * visuals.cellSize + visuals.boardOffset;
+ 
+-            var width = sizeX * _visuals.cellSize + _visuals.boardOffset;
+-            var height = sizeY * _visuals.cellSize + _visuals.boardOffset;
+-
+-            boardBackground.pixelsPerUnitMultiplier = 0.05f * sizeX;
++            boardBackground.pixelsPerUnitMultiplier = 0.05f * settings.boardSize.x;
+             boardTransform.sizeDelta = new Vector2(width, height);
+ 
+-            CreateChips(settings, sizeX, sizeY);
++            CreateChips(boardCells, settings, settings.boardSize.x, settings.boardSize.y);
+ 
+             await boardTransform.DOLocalMove(Vector3.zero, 1f);
+         }
+ 
+-        private void CreateChips(BoardSettings settings, int sizeX, int sizeY)
++        private void CreateChips(BoardCell[,] board, BoardSettings settings, int sizeX, int sizeY)
+         {
+-            _prefabs = new ChipView[sizeX, sizeY];
++            Prefabs = new ChipView[sizeX, sizeY];
+             for (var i = 0; i < settings.boardSize.x; i++)
+             {
+                 for (var j = 0; j < settings.boardSize.y; j++)
+                 {
+-                    _prefabs[i, j] = CreateNewChip(i, j, _board[i, j].chip);
++                    Prefabs[i, j] = CreateNewChip(i, j, board[i, j].chip, settings);
+                 }
+             }
+         }
+ 
+-        public ChipView CreateNewChip(int i, int j, BoardElement chipData)
++        public ChipView CreateNewChip(int i, int j, BoardElement chipData, BoardSettings settings)
+         {
+             var chip = Instantiate(chipData.prefab, chipsParent);
+-            chip.Setup(chipData, _visuals.cellSize, _settings.boardSize, i, j);
++            chip.Setup(chipData, settings.boardVisuals.cellSize, settings.boardSize, i, j);
+             chip.OnMoved += OnChipMoved;
+             return chip;
+         }
+ 
+         private void OnChipMoved(ChipView chip, Vector2Int from, Vector2Int to)
+         {
+-            if (from.y >= _prefabs.GetLength(1))
++            if (from.y >= Prefabs.GetLength(1))
+             {
+-                _prefabs[to.x, to.y] = chip;
++                Prefabs[to.x, to.y] = chip;
+             }
+             else
+             {
+-                _prefabs[to.x, to.y] = _prefabs[from.x, from.y];
+-                _prefabs[from.x, from.y] = null;
++                Prefabs[to.x, to.y] = Prefabs[from.x, from.y];
++                Prefabs[from.x, from.y] = null;
+             }
+         }
+     }
+Index: Assets/Code/Model/Chips/SimpleColorChip.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using Code.Model.Chips;\nusing UnityEngine;\n\nnamespace Code.Model\n{\n    [CreateAssetMenu]\n    public class SimpleColorChip : BoardElement\n    {\n        public Color color;\n        public ParticleSystem particleSystem;\n        \n        public override void ApplyEffect()\n        {\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/Model/Chips/SimpleColorChip.cs b/Assets/Code/Model/Chips/SimpleColorChip.cs
+--- a/Assets/Code/Model/Chips/SimpleColorChip.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/Model/Chips/SimpleColorChip.cs	(date 1666286848032)
+@@ -1,7 +1,6 @@
+-using Code.Model.Chips;
+ using UnityEngine;
+ 
+-namespace Code.Model
++namespace Code.Model.Chips
+ {
+     [CreateAssetMenu]
+     public class SimpleColorChip : BoardElement
+@@ -12,5 +11,57 @@
+         public override void ApplyEffect()
+         {
+         }
++
++        public override bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells)
++        {
++            return HorizontalMatchCheck(settings, index, boardCells) || VerticalMatchCheck(settings, index, boardCells);
++        }
++
++        private bool VerticalMatchCheck(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells)
++        {
++            var count = 0;
++            for (var j = index.y - 1; j >= 0; j--)
++            {
++                if (!CompareColors(boardCells[index.x, j], color)) break;
++                count++;
++            }
++
++            for (var j = index.y + 1; j < settings.boardSize.y; j++)
++            {
++                if (!CompareColors(boardCells[index.x, j], color)) break;
++                count++;
++            }
++
++            return count > 1;
++        }
++
++        private bool HorizontalMatchCheck(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells)
++        {
++            var count = 0;
++            for (var i = index.x - 1; i >= 0; i--)
++            {
++                if (!CompareColors(boardCells[i, index.y], color)) break;
++                count++;
++            }
++
++            for (var i = index.x + 1; i < settings.boardSize.x; i++)
++            {
++                if (!CompareColors(boardCells[i, index.y], color)) break;
++                count++;
++            }
++
++            return count > 1;
++        }
++
++        private static bool CompareColors(BoardCell target, Object sourceColor)
++        {
++            var chip = target.chip as SimpleColorChip;
++            if (chip && chip.color)
++            {
++                return chip.color.name == sourceColor.name;
++            }
++
++            return false;
++        }
+     }
+ }
+\ No newline at end of file
+Index: Assets/Code/Model/Chips/AdjacentBomb.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using UnityEngine;\n\nnamespace Code.Model.Chips\n{\n    [CreateAssetMenu]\n    public class AdjacentBomb : BoardElement\n    {\n        public override void ApplyEffect()\n        {\n            // destroy adjacent objects\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/Model/Chips/AdjacentBomb.cs b/Assets/Code/Model/Chips/AdjacentBomb.cs
+--- a/Assets/Code/Model/Chips/AdjacentBomb.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/Model/Chips/AdjacentBomb.cs	(date 1666286848040)
+@@ -9,5 +9,11 @@
+         {
+             // destroy adjacent objects
+         }
++
++        public override bool CheckMatch(BoardSettings settings, Vector2Int vector2Int, BoardCell[,] boardCells)
++        {
++            // bomb doesn't match, you need to click it
++            return false;
++        }
+     }
+ }
+\ No newline at end of file
+Index: Assets/Code/GameManager.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections.Generic;\nusing System.Threading.Tasks;\nusing Code.ChipGenerator;\nusing Code.Model;\nusing Code.Model.Chips;\nusing Code.Utils;\nusing Code.View;\nusing Cysharp.Threading.Tasks;\nusing UnityEngine;\nusing Color = Code.Model.Color;\n\nnamespace Code\n{\n    public class GameManager : MonoBehaviour\n    {\n        [SerializeField] private BoardSettings boardSettings;\n        [SerializeField] private BoardView boardView;\n        [SerializeField] private ChipGeneratorBase chipGeneratorBase;\n\n        private BoardCell[,] _board;\n        private bool _busy;\n\n        private async UniTaskVoid Awake()\n        {\n            CreateBoard();\n            await boardView.Setup(boardSettings, _board);\n            foreach (var chip in boardView.Prefabs)\n            {\n                SubscribeToUserActions(chip);\n            }\n\n            await UniTask.Delay(200);\n\n            IsMatchDetected(out var matches);\n            await OnMove(matches);\n        }\n\n        private void SubscribeToUserActions(ChipView chip)\n        {\n            chip.OnSwapped += OnSwap;\n        }\n\n        private void CreateBoard()\n        {\n            var size = boardSettings.boardSize;\n            _board = new BoardCell[size.x, size.y];\n\n            for (var i = 0; i < size.x; i++)\n            {\n                for (var j = 0; j < size.y; j++)\n                {\n                    _board[i, j] = new BoardCell\n                    {\n                        chip = Instantiate(boardSettings.IsValid\n                            ? boardSettings.initialLayout[i + j]\n                            : chipGeneratorBase.GetChip()),\n                        index = new Vector2Int(i, j)\n                    };\n                }\n            }\n        }\n\n        private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)\n        {\n            if (_busy)\n            {\n                return;\n            }\n            TryToSwap(sourcePosition, destinationPosition).Forget();\n        }\n\n        private async UniTaskVoid TryToSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)\n        {\n            _busy = true;\n            var cellSource = _board[sourcePosition.x, sourcePosition.y];\n            if (!cellSource.chip.isSwappable)\n            {\n                Debug.Log(\"Chip Not Swappable!\");\n                _busy = false;\n                return;\n            }\n\n            if (boardSettings.boardSize.InBounds2D(destinationPosition))\n            {\n                Debug.Log(\"Destination Out Of Bounds!\");\n                _busy = false;\n                return;\n            }\n\n            var cellDestination = _board[destinationPosition.x, destinationPosition.y];\n            if (!cellDestination.chip.isSwappable)\n            {\n                Debug.Log(\"Destination not Swappable!\");\n                _busy = false;\n                return;\n            }\n\n            await DoSwap(cellSource, cellDestination);\n            if (IsMatchDetected(out var matches))\n            {\n                await OnMove(matches);\n            }\n            else if (!boardSettings.allowNonMatchSwipe)\n            {\n                await DoSwap(cellDestination, cellSource);\n            }\n            _busy = false;\n        }\n\n        private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)\n        {\n            await UniTask.WhenAll(\n                cellSource.chip.OnMove.Invoke(cellSource.index, cellDestination.index),\n                cellDestination.chip.OnMove.Invoke(cellDestination.index, cellSource.index));\n            (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);\n        }\n\n        private async UniTask OnMove(List<BoardCell> boardCells)\n        {\n            while (boardCells.Count > 0)\n            {\n                await MatchChips(boardCells);\n                IsMatchDetected(out boardCells);\n            }\n        }\n\n        private async UniTask MatchChips(List<BoardCell> boardCells)\n        {\n            var awaitable = new List<UniTask>();\n\n            foreach (var cell in boardCells)\n            {\n                cell.chip.ApplyEffect();\n                if (cell.chip.OnEffect != null)\n                {\n                    awaitable.Add(cell.chip.OnEffect.Invoke());\n                }\n            }\n\n            await UniTask.WhenAll(awaitable);\n\n            foreach (var cell in boardCells)\n            {\n                cell.chip = null;\n            }\n\n            await SpawnNewChips();\n        }\n\n        private async UniTask SpawnNewChips()\n        {\n            var awaitable = new List<UniTask>();\n\n            for (var i = 0; i < _board.GetLength(0); i++)\n            {\n                for (var j = 0; j < _board.GetLength(1); j++)\n                {\n                    var cell = _board[i, j];\n                    if (cell.chip == null)\n                    {\n                        var (newChip, move) = GetNewChip(i, j);\n                        cell.chip = newChip;\n                        awaitable.Add(move);\n                    }\n                }\n            }\n\n            await UniTask.WhenAll(awaitable);\n        }\n\n        private (BoardElement, UniTask) GetNewChip(int i, int j)\n        {\n            for (var k = j + 1; k < _board.GetLength(0); k++)\n            {\n                var chip = _board[i, k].chip;\n                if (chip != null)\n                {\n                    var move = chip.OnMove.Invoke(new Vector2Int(i, k), new Vector2Int(i, j));\n                    _board[i, k].chip = null;\n                    return (chip, move);\n                }\n            }\n\n            var newChip = Instantiate(chipGeneratorBase.GetChip());\n            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip);\n            SubscribeToUserActions(chipView);\n            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));\n            return (newChip, newMove);\n        }\n\n        private bool IsMatchDetected(out List<BoardCell> matches)\n        {\n            matches = new List<BoardCell>();\n            for (var i = 0; i < boardSettings.boardSize.x; i++)\n            {\n                for (var j = 0; j < boardSettings.boardSize.y; j++)\n                {\n                    if (CheckMatch(_board[i, j]))\n                    {\n                        matches.Add(_board[i, j]);\n                    }\n                }\n            }\n\n            return matches.Count > 0;\n        }\n\n        private bool CheckMatch(BoardCell source)\n        {\n            var count = 0;\n            var sourceColor = (source.chip as SimpleColorChip)?.color;\n            if (sourceColor == null)\n            {\n                return false;\n            }\n\n            for (var i = source.index.x - 1; i >= 0; i--)\n            {\n                if (!CompareColors(i, source.index.y, sourceColor)) break;\n                count++;\n            }\n\n            for (var i = source.index.x + 1; i < _board.GetLength(1); i++)\n            {\n                if (!CompareColors(i, source.index.y, sourceColor)) break;\n                count++;\n            }\n\n            if (count > 1)\n            {\n                return true;\n            }\n\n            count = 0;\n            for (var j = source.index.y - 1; j >= 0; j--)\n            {\n                if (!CompareColors(source.index.x, j, sourceColor)) break;\n                count++;\n            }\n\n            for (var j = source.index.y + 1; j < _board.GetLength(0); j++)\n            {\n                if (!CompareColors(source.index.x, j, sourceColor)) break;\n                count++;\n            }\n\n            return count > 1;\n        }\n\n        private bool CompareColors(int x, int y, Color sourceColor)\n        {\n            var toCompare = _board[x, y];\n            if (toCompare.chip != null)\n            {\n                var chip = toCompare.chip as SimpleColorChip;\n                if (chip != null && chip.color != null)\n                {\n                    return chip.color.name == sourceColor.name;\n                }\n\n                return false;\n            }\n\n            return false;\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/GameManager.cs b/Assets/Code/GameManager.cs
+--- a/Assets/Code/GameManager.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/GameManager.cs	(date 1666287456411)
+@@ -17,251 +17,12 @@
+         [SerializeField] private BoardView boardView;
+         [SerializeField] private ChipGeneratorBase chipGeneratorBase;
+ 
+-        private BoardCell[,] _board;
+-        private bool _busy;
+-
+-        private async UniTaskVoid Awake()
+-        {
+-            CreateBoard();
+-            await boardView.Setup(boardSettings, _board);
+-            foreach (var chip in boardView.Prefabs)
+-            {
+-                SubscribeToUserActions(chip);
+-            }
+-
+-            await UniTask.Delay(200);
+-
+-            IsMatchDetected(out var matches);
+-            await OnMove(matches);
+-        }
+-
+-        private void SubscribeToUserActions(ChipView chip)
+-        {
+-            chip.OnSwapped += OnSwap;
+-        }
+-
+-        private void CreateBoard()
+-        {
+-            var size = boardSettings.boardSize;
+-            _board = new BoardCell[size.x, size.y];
+-
+-            for (var i = 0; i < size.x; i++)
+-            {
+-                for (var j = 0; j < size.y; j++)
+-                {
+-                    _board[i, j] = new BoardCell
+-                    {
+-                        chip = Instantiate(boardSettings.IsValid
+-                            ? boardSettings.initialLayout[i + j]
+-                            : chipGeneratorBase.GetChip()),
+-                        index = new Vector2Int(i, j)
+-                    };
+-                }
+-            }
+-        }
+-
+-        private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
+-        {
+-            if (_busy)
+-            {
+-                return;
+-            }
+-            TryToSwap(sourcePosition, destinationPosition).Forget();
+-        }
+-
+-        private async UniTaskVoid TryToSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
+-        {
+-            _busy = true;
+-            var cellSource = _board[sourcePosition.x, sourcePosition.y];
+-            if (!cellSource.chip.isSwappable)
+-            {
+-                Debug.Log("Chip Not Swappable!");
+-                _busy = false;
+-                return;
+-            }
+-
+-            if (boardSettings.boardSize.InBounds2D(destinationPosition))
+-            {
+-                Debug.Log("Destination Out Of Bounds!");
+-                _busy = false;
+-                return;
+-            }
+-
+-            var cellDestination = _board[destinationPosition.x, destinationPosition.y];
+-            if (!cellDestination.chip.isSwappable)
+-            {
+-                Debug.Log("Destination not Swappable!");
+-                _busy = false;
+-                return;
+-            }
+-
+-            await DoSwap(cellSource, cellDestination);
+-            if (IsMatchDetected(out var matches))
+-            {
+-                await OnMove(matches);
+-            }
+-            else if (!boardSettings.allowNonMatchSwipe)
+-            {
+-                await DoSwap(cellDestination, cellSource);
+-            }
+-            _busy = false;
+-        }
+-
+-        private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)
+-        {
+-            await UniTask.WhenAll(
+-                cellSource.chip.OnMove.Invoke(cellSource.index, cellDestination.index),
+-                cellDestination.chip.OnMove.Invoke(cellDestination.index, cellSource.index));
+-            (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
+-        }
+-
+-        private async UniTask OnMove(List<BoardCell> boardCells)
+-        {
+-            while (boardCells.Count > 0)
+-            {
+-                await MatchChips(boardCells);
+-                IsMatchDetected(out boardCells);
+-            }
+-        }
+-
+-        private async UniTask MatchChips(List<BoardCell> boardCells)
+-        {
+-            var awaitable = new List<UniTask>();
+-
+-            foreach (var cell in boardCells)
+-            {
+-                cell.chip.ApplyEffect();
+-                if (cell.chip.OnEffect != null)
+-                {
+-                    awaitable.Add(cell.chip.OnEffect.Invoke());
+-                }
+-            }
+-
+-            await UniTask.WhenAll(awaitable);
+-
+-            foreach (var cell in boardCells)
+-            {
+-                cell.chip = null;
+-            }
+-
+-            await SpawnNewChips();
+-        }
+-
+-        private async UniTask SpawnNewChips()
+-        {
+-            var awaitable = new List<UniTask>();
+-
+-            for (var i = 0; i < _board.GetLength(0); i++)
+-            {
+-                for (var j = 0; j < _board.GetLength(1); j++)
+-                {
+-                    var cell = _board[i, j];
+-                    if (cell.chip == null)
+-                    {
+-                        var (newChip, move) = GetNewChip(i, j);
+-                        cell.chip = newChip;
+-                        awaitable.Add(move);
+-                    }
+-                }
+-            }
+-
+-            await UniTask.WhenAll(awaitable);
+-        }
+-
+-        private (BoardElement, UniTask) GetNewChip(int i, int j)
+-        {
+-            for (var k = j + 1; k < _board.GetLength(0); k++)
+-            {
+-                var chip = _board[i, k].chip;
+-                if (chip != null)
+-                {
+-                    var move = chip.OnMove.Invoke(new Vector2Int(i, k), new Vector2Int(i, j));
+-                    _board[i, k].chip = null;
+-                    return (chip, move);
+-                }
+-            }
+-
+-            var newChip = Instantiate(chipGeneratorBase.GetChip());
+-            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip);
+-            SubscribeToUserActions(chipView);
+-            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
+-            return (newChip, newMove);
+-        }
+-
+-        private bool IsMatchDetected(out List<BoardCell> matches)
+-        {
+-            matches = new List<BoardCell>();
+-            for (var i = 0; i < boardSettings.boardSize.x; i++)
+-            {
+-                for (var j = 0; j < boardSettings.boardSize.y; j++)
+-                {
+-                    if (CheckMatch(_board[i, j]))
+-                    {
+-                        matches.Add(_board[i, j]);
+-                    }
+-                }
+-            }
+-
+-            return matches.Count > 0;
+-        }
+-
+-        private bool CheckMatch(BoardCell source)
+-        {
+-            var count = 0;
+-            var sourceColor = (source.chip as SimpleColorChip)?.color;
+-            if (sourceColor == null)
+-            {
+-                return false;
+-            }
+-
+-            for (var i = source.index.x - 1; i >= 0; i--)
+-            {
+-                if (!CompareColors(i, source.index.y, sourceColor)) break;
+-                count++;
+-            }
++        private MatchManager _matchManager;
+ 
+-            for (var i = source.index.x + 1; i < _board.GetLength(1); i++)
+-            {
+-                if (!CompareColors(i, source.index.y, sourceColor)) break;
+-                count++;
+-            }
+-
+-            if (count > 1)
+-            {
+-                return true;
+-            }
+-
+-            count = 0;
+-            for (var j = source.index.y - 1; j >= 0; j--)
+-            {
+-                if (!CompareColors(source.index.x, j, sourceColor)) break;
+-                count++;
+-            }
+-
+-            for (var j = source.index.y + 1; j < _board.GetLength(0); j++)
+-            {
+-                if (!CompareColors(source.index.x, j, sourceColor)) break;
+-                count++;
+-            }
+-
+-            return count > 1;
+-        }
+-
+-        private bool CompareColors(int x, int y, Color sourceColor)
++        private void Awake()
+         {
+-            var toCompare = _board[x, y];
+-            if (toCompare.chip != null)
+-            {
+-                var chip = toCompare.chip as SimpleColorChip;
+-                if (chip != null && chip.color != null)
+-                {
+-                    return chip.color.name == sourceColor.name;
+-                }
+-
+-                return false;
+-            }
+-
+-            return false;
++            _matchManager = new MatchManager(boardSettings, boardView, chipGeneratorBase);
++            _matchManager.Initialize().Forget();
+         }
+     }
+ }
+\ No newline at end of file
+Index: Assets/Code/Model/BoardSettings.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\nusing System.Collections.Generic;\nusing Code.Model.Chips;\nusing UnityEngine;\n\nnamespace Code.Model\n{\n    [CreateAssetMenu]\n    public class BoardSettings : ScriptableObject\n    {\n        public Vector2Int boardSize;\n        public List<BoardElement> initialLayout;\n        public BoardVisuals boardVisuals;\n\n        [HideInInspector] public bool IsValid;\n        public bool allowNonMatchSwipe = true;\n\n        private void OnValidate()\n        {\n            IsValid = initialLayout.Count / boardSize.x == boardSize.y;\n        }\n    }\n\n    [Serializable]\n    public class BoardVisuals\n    {\n        public Sprite background;\n        public Sprite boardFrame;\n\n        public Sprite boardBackground;\n\n        public float cellSize = 40f;\n        public float boardOffset = 20f;\n    }\n\n    [Serializable]\n    public class BoardCell\n    {\n        [HideInInspector] public Vector2Int index;\n        public BoardElement chip;\n        // optional extra modifiers like generator\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Code/Model/BoardSettings.cs b/Assets/Code/Model/BoardSettings.cs
+--- a/Assets/Code/Model/BoardSettings.cs	(revision ffc035db9319db8c6dbfcef376e250e8cdbea2b2)
++++ b/Assets/Code/Model/BoardSettings.cs	(date 1666288936545)
+@@ -12,12 +12,12 @@
+         public List<BoardElement> initialLayout;
+         public BoardVisuals boardVisuals;
+ 
+-        [HideInInspector] public bool IsValid;
++        [HideInInspector] public bool isValid;
+         public bool allowNonMatchSwipe = true;
+ 
+         private void OnValidate()
+         {
+-            IsValid = initialLayout.Count / boardSize.x == boardSize.y;
++            isValid = initialLayout.Count / boardSize.x == boardSize.y;
+         }
+     }
+ 
+@@ -36,8 +36,15 @@
+     [Serializable]
+     public class BoardCell
+     {
+-        [HideInInspector] public Vector2Int index;
++        public Vector2Int Index { get; set; }
+         public BoardElement chip;
+-        // optional extra modifiers like generator
++        public BoardElement obstacle;
++        public bool IsBlocked => obstacle;
++        // optional extra modifiers like generator, ice...
++
++        public bool CheckMatch(BoardSettings settings, BoardCell[,] boardCells)
++        {
++            return !IsBlocked && chip && chip.CheckMatch(settings, Index, boardCells);
++        }
+     }
+ }
+\ No newline at end of file
