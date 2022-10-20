@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Code.ChipGenerator;
 using Code.Model;
 using Code.Model.Chips;
 using Code.Utils;
@@ -6,7 +8,6 @@ using Code.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Color = Code.Model.Color;
-using Random = System.Random;
 
 namespace Code
 {
@@ -14,20 +15,29 @@ namespace Code
     {
         [SerializeField] private BoardSettings boardSettings;
         [SerializeField] private BoardView boardView;
-        [SerializeField] private List<SimpleColorChip> chips;
+        [SerializeField] private ChipGeneratorBase chipGeneratorBase;
 
         private BoardCell[,] _board;
-        private readonly Random _random = new();
+        private bool _busy;
 
         private async UniTaskVoid Awake()
         {
             CreateBoard();
             await boardView.Setup(boardSettings, _board);
+            foreach (var chip in boardView.Prefabs)
+            {
+                SubscribeToUserActions(chip);
+            }
 
             await UniTask.Delay(200);
 
             IsMatchDetected(out var matches);
             await OnMove(matches);
+        }
+
+        private void SubscribeToUserActions(ChipView chip)
+        {
+            chip.OnSwapped += OnSwap;
         }
 
         private void CreateBoard()
@@ -43,25 +53,37 @@ namespace Code
                     {
                         chip = Instantiate(boardSettings.IsValid
                             ? boardSettings.initialLayout[i + j]
-                            : GetRandomChip()),
+                            : chipGeneratorBase.GetChip()),
                         index = new Vector2Int(i, j)
                     };
                 }
             }
         }
 
-        private async UniTask OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
+        private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
         {
+            if (_busy)
+            {
+                return;
+            }
+            TryToSwap(sourcePosition, destinationPosition).Forget();
+        }
+
+        private async UniTaskVoid TryToSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
+        {
+            _busy = true;
             var cellSource = _board[sourcePosition.x, sourcePosition.y];
             if (!cellSource.chip.isSwappable)
             {
                 Debug.Log("Chip Not Swappable!");
+                _busy = false;
                 return;
             }
 
             if (boardSettings.boardSize.InBounds2D(destinationPosition))
             {
                 Debug.Log("Destination Out Of Bounds!");
+                _busy = false;
                 return;
             }
 
@@ -69,6 +91,7 @@ namespace Code
             if (!cellDestination.chip.isSwappable)
             {
                 Debug.Log("Destination not Swappable!");
+                _busy = false;
                 return;
             }
 
@@ -81,13 +104,14 @@ namespace Code
             {
                 await DoSwap(cellDestination, cellSource);
             }
+            _busy = false;
         }
 
         private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)
         {
             await UniTask.WhenAll(
                 cellSource.chip.OnMove.Invoke(cellSource.index, cellDestination.index),
-                cellSource.chip.OnMove.Invoke(cellDestination.index, cellSource.index));
+                cellDestination.chip.OnMove.Invoke(cellDestination.index, cellSource.index));
             (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
         }
 
@@ -157,8 +181,9 @@ namespace Code
                 }
             }
 
-            var newChip = Instantiate(GetRandomChip());
-            boardView.CreateNewChip(i, _board.GetLength(1), newChip);
+            var newChip = Instantiate(chipGeneratorBase.GetChip());
+            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip);
+            SubscribeToUserActions(chipView);
             var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
             return (newChip, newMove);
         }
@@ -237,11 +262,6 @@ namespace Code
             }
 
             return false;
-        }
-
-        private BoardElement GetRandomChip()
-        {
-            return chips.Random(_random);
         }
     }
 }
