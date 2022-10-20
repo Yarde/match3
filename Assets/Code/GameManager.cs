@@ -51,10 +51,10 @@ namespace Code
                 {
                     _board[i, j] = new BoardCell
                     {
-                        chip = Instantiate(boardSettings.IsValid
+                        chip = Instantiate(boardSettings.isValid
                             ? boardSettings.initialLayout[i + j]
                             : chipGeneratorBase.GetChip()),
-                        index = new Vector2Int(i, j)
+                        Index = new Vector2Int(i, j)
                     };
                 }
             }
@@ -110,8 +110,8 @@ namespace Code
         private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)
         {
             await UniTask.WhenAll(
-                cellSource.chip.OnMove.Invoke(cellSource.index, cellDestination.index),
-                cellDestination.chip.OnMove.Invoke(cellDestination.index, cellSource.index));
+                cellSource.chip.OnMove.Invoke(cellSource.Index, cellDestination.Index),
+                cellDestination.chip.OnMove.Invoke(cellDestination.Index, cellSource.Index));
             (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
         }
 
@@ -182,7 +182,7 @@ namespace Code
             }
 
             var newChip = Instantiate(chipGeneratorBase.GetChip());
-            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip);
+            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip, boardSettings);
             SubscribeToUserActions(chipView);
             var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
             return (newChip, newMove);
@@ -195,7 +195,7 @@ namespace Code
             {
                 for (var j = 0; j < boardSettings.boardSize.y; j++)
                 {
-                    if (CheckMatch(_board[i, j]))
+                    if (_board[i, j].CheckMatch(boardSettings, _board))
                     {
                         matches.Add(_board[i, j]);
                     }
@@ -203,65 +203,6 @@ namespace Code
             }
 
             return matches.Count > 0;
-        }
-
-        private bool CheckMatch(BoardCell source)
-        {
-            var count = 0;
-            var sourceColor = (source.chip as SimpleColorChip)?.color;
-            if (sourceColor == null)
-            {
-                return false;
-            }
-
-            for (var i = source.index.x - 1; i >= 0; i--)
-            {
-                if (!CompareColors(i, source.index.y, sourceColor)) break;
-                count++;
-            }
-
-            for (var i = source.index.x + 1; i < _board.GetLength(1); i++)
-            {
-                if (!CompareColors(i, source.index.y, sourceColor)) break;
-                count++;
-            }
-
-            if (count > 1)
-            {
-                return true;
-            }
-
-            count = 0;
-            for (var j = source.index.y - 1; j >= 0; j--)
-            {
-                if (!CompareColors(source.index.x, j, sourceColor)) break;
-                count++;
-            }
-
-            for (var j = source.index.y + 1; j < _board.GetLength(0); j++)
-            {
-                if (!CompareColors(source.index.x, j, sourceColor)) break;
-                count++;
-            }
-
-            return count > 1;
-        }
-
-        private bool CompareColors(int x, int y, Color sourceColor)
-        {
-            var toCompare = _board[x, y];
-            if (toCompare.chip != null)
-            {
-                var chip = toCompare.chip as SimpleColorChip;
-                if (chip != null && chip.color != null)
-                {
-                    return chip.color.name == sourceColor.name;
-                }
-
-                return false;
-            }
-
-            return false;
         }
     }
 }
