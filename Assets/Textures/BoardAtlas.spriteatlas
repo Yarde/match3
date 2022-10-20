@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BoardAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 9f88b7a08b4c8485f9cb9b21696db5a8, type: 3}
+    - {fileID: 2800000, guid: 0c75fce39d55d4767a006fc13837b7df, type: 3}
+    - {fileID: 2800000, guid: e23bcdb8ebb944bb29d56f189d361a3c, type: 3}
+    - {fileID: 2800000, guid: 2d2e58eefe4fd4bda87c0b02d42ed9cc, type: 3}
+    - {fileID: 2800000, guid: fa489ad9a1c3941e8a90bc9b0521acb2, type: 3}
+    - {fileID: 2800000, guid: 8fb0d2eda4d474023803abe5a14122da, type: 3}
+    - {fileID: 2800000, guid: 008ef9ef5867a47d18a4293be6091ee8, type: 3}
+    - {fileID: 2800000, guid: fd15f7acf309a4b039bbc7305b93ddd2, type: 3}
+    - {fileID: 2800000, guid: afefe9bdfc2f242a39b5e823e4aad260, type: 3}
+    - {fileID: 2800000, guid: ab40287b92e524ccfb8db7c217ad7c7c, type: 3}
+    - {fileID: 2800000, guid: abc50bddd892e47839f3758f54c7844e, type: 3}
+    - {fileID: 2800000, guid: 396f46f7c86884b7bbd08656c85f4b58, type: 3}
+    - {fileID: 2800000, guid: 6b161ead7c3424cb68e1ebcdc8374a5e, type: 3}
+    - {fileID: 2800000, guid: c9818b83458864227ac13992b0e1851b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9f88b7a08b4c8485f9cb9b21696db5a8, type: 3}
+  - {fileID: 21300000, guid: c9818b83458864227ac13992b0e1851b, type: 3}
+  - {fileID: 21300000, guid: 0c75fce39d55d4767a006fc13837b7df, type: 3}
+  - {fileID: 21300000, guid: 396f46f7c86884b7bbd08656c85f4b58, type: 3}
+  - {fileID: 21300000, guid: e23bcdb8ebb944bb29d56f189d361a3c, type: 3}
+  - {fileID: 21300000, guid: fa489ad9a1c3941e8a90bc9b0521acb2, type: 3}
+  - {fileID: 21300000, guid: ab40287b92e524ccfb8db7c217ad7c7c, type: 3}
+  - {fileID: 21300000, guid: fd15f7acf309a4b039bbc7305b93ddd2, type: 3}
+  - {fileID: 21300000, guid: 6b161ead7c3424cb68e1ebcdc8374a5e, type: 3}
+  - {fileID: 21300000, guid: afefe9bdfc2f242a39b5e823e4aad260, type: 3}
+  - {fileID: 21300000, guid: abc50bddd892e47839f3758f54c7844e, type: 3}
+  - {fileID: 21300000, guid: 8fb0d2eda4d474023803abe5a14122da, type: 3}
+  - {fileID: 21300000, guid: 2d2e58eefe4fd4bda87c0b02d42ed9cc, type: 3}
+  - {fileID: 21300000, guid: 008ef9ef5867a47d18a4293be6091ee8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 01
+  - TNT
+  - 02
+  - bomb_velow
+  - 03
+  - 05
+  - bomb_orange
+  - bomb
+  - shadow
+  - bomb_blue
+  - bomb_red
+  - 80x80.psd
+  - 04
+  - BG
+  m_RenderDataMap: {}
+  m_Tag: BoardAtlas
+  m_IsVariant: 0
