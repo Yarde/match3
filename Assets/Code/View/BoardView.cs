@@ -16,84 +16,59 @@ namespace Code.View
         [SerializeField] private RectTransform boardTransform;
         [SerializeField] private Transform chipsParent;
 
-        public ChipView[,] Prefabs => _prefabs;
-        private ChipView[,] _prefabs;
-        private BoardCell[,] _board;
-        private BoardSettings _settings;
-        private BoardVisuals _visuals;
-
-        private void OnDestroy()
-        {
-            if (_prefabs == null)
-            {
-                return;
-            }
-
-            foreach (var chip in _prefabs)
-            {
-                if (chip)
-                {
-                    chip.OnMoved -= OnChipMoved;
-                }
-            }
-        }
+        public ChipView[,] Prefabs { get; private set; }
 
         public async UniTask Setup(BoardSettings settings, BoardCell[,] boardCells)
         {
             boardTransform.localPosition = new Vector3(0, Screen.height);
 
-            _settings = settings;
-            _visuals = settings.boardVisuals;
-            _board = boardCells;
+            var visuals = settings.boardVisuals;
 
-            background.sprite = _visuals.background;
-            boardFrame.sprite = _visuals.boardFrame;
-            boardBackground.sprite = _visuals.boardBackground;
+            background.sprite = visuals.background;
+            boardFrame.sprite = visuals.boardFrame;
+            boardBackground.sprite = visuals.boardBackground;
 
-            var sizeX = settings.boardSize.x;
-            var sizeY = settings.boardSize.y;
+            var width = settings.boardSize.x * visuals.cellSize + visuals.boardOffset;
+            var height = settings.boardSize.y * visuals.cellSize + visuals.boardOffset;
 
-            var width = sizeX * _visuals.cellSize + _visuals.boardOffset;
-            var height = sizeY * _visuals.cellSize + _visuals.boardOffset;
-
-            boardBackground.pixelsPerUnitMultiplier = 0.05f * sizeX;
+            boardBackground.pixelsPerUnitMultiplier = 0.05f * settings.boardSize.x;
             boardTransform.sizeDelta = new Vector2(width, height);
 
-            CreateChips(settings, sizeX, sizeY);
+            CreateChips(boardCells, settings, settings.boardSize.x, settings.boardSize.y);
 
             await boardTransform.DOLocalMove(Vector3.zero, 1f);
         }
 
-        private void CreateChips(BoardSettings settings, int sizeX, int sizeY)
+        private void CreateChips(BoardCell[,] board, BoardSettings settings, int sizeX, int sizeY)
         {
-            _prefabs = new ChipView[sizeX, sizeY];
+            Prefabs = new ChipView[sizeX, sizeY];
             for (var i = 0; i < settings.boardSize.x; i++)
             {
                 for (var j = 0; j < settings.boardSize.y; j++)
                 {
-                    _prefabs[i, j] = CreateNewChip(i, j, _board[i, j].chip);
+                    Prefabs[i, j] = CreateNewChip(i, j, board[i, j].chip, settings);
                 }
             }
         }
 
-        public ChipView CreateNewChip(int i, int j, BoardElement chipData)
+        public ChipView CreateNewChip(int i, int j, BoardElement chipData, BoardSettings settings)
         {
             var chip = Instantiate(chipData.prefab, chipsParent);
-            chip.Setup(chipData, _visuals.cellSize, _settings.boardSize, i, j);
+            chip.Setup(chipData, settings.boardVisuals.cellSize, settings.boardSize, i, j);
             chip.OnMoved += OnChipMoved;
             return chip;
         }
 
         private void OnChipMoved(ChipView chip, Vector2Int from, Vector2Int to)
         {
-            if (from.y >= _prefabs.GetLength(1))
+            if (from.y >= Prefabs.GetLength(1))
             {
-                _prefabs[to.x, to.y] = chip;
+                Prefabs[to.x, to.y] = chip;
             }
             else
             {
-                _prefabs[to.x, to.y] = _prefabs[from.x, from.y];
-                _prefabs[from.x, from.y] = null;
+                Prefabs[to.x, to.y] = Prefabs[from.x, from.y];
+                Prefabs[from.x, from.y] = null;
             }
         }
     }

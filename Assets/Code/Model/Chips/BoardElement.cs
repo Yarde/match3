@@ -17,5 +17,6 @@ namespace Code.Model.Chips
         public Func<UniTask> OnEffect;
 
         public abstract void ApplyEffect();
+        public abstract bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells);
     }
 }

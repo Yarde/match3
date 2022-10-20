@@ -9,5 +9,11 @@ namespace Code.Model.Chips
         {
             // destroy adjacent objects
         }
+
+        public override bool CheckMatch(BoardSettings settings, Vector2Int vector2Int, BoardCell[,] boardCells)
+        {
+            // bomb doesn't match, you need to click it
+            return false;
+        }
     }
 }

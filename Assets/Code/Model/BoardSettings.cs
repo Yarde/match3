@@ -12,12 +12,12 @@ namespace Code.Model
         public List<BoardElement> initialLayout;
         public BoardVisuals boardVisuals;
 
-        [HideInInspector] public bool IsValid;
+        [HideInInspector] public bool isValid;
         public bool allowNonMatchSwipe = true;
 
         private void OnValidate()
         {
-            IsValid = initialLayout.Count / boardSize.x == boardSize.y;
+            isValid = initialLayout.Count / boardSize.x == boardSize.y;
         }
     }
 
@@ -36,8 +36,16 @@ namespace Code.Model
     [Serializable]
     public class BoardCell
     {
-        [HideInInspector] public Vector2Int index;
+        public Vector2Int Index { get; set; }
         public BoardElement chip;
-        // optional extra modifiers like generator
+        public BoardElement obstacle;
+
+        public bool IsBlocked => obstacle;
+        // optional extra modifiers like generator, ice...
+
+        public bool CheckMatch(BoardSettings settings, BoardCell[,] boardCells)
+        {
+            return !IsBlocked && chip != null && chip.CheckMatch(settings, Index, boardCells);
+        }
     }
 }

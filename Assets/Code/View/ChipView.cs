@@ -1,12 +1,12 @@
 using System;
+using System.Collections.Generic;
 using Code.Model.Chips;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 namespace Code.View
 {
@@ -23,7 +23,7 @@ namespace Code.View
         private float _chipSize;
         private Vector2Int _boardSize;
         private Vector2Int _chipPosition;
-        
+
         private bool _isDragging;
         private bool _isClicking;
         private Vector2 _clickPosition;
@@ -37,6 +37,13 @@ namespace Code.View
             _rectTransform = GetComponent<RectTransform>();
         }
 
+        private void OnDestroy()
+        {
+            OnMoved = null;
+            OnSwapped = null;
+            OnClicked = null;
+        }
+
         public void Setup(BoardElement data, float chipSize, Vector2Int boardSize, int i, int j)
         {
             _data = data;
@@ -44,6 +51,7 @@ namespace Code.View
             _boardSize = boardSize;
             image.sprite = data.sprite;
             text.text = $"{i},{j}";
+            name = $"Chip-{i},{j}";
             _chipPosition = new Vector2Int(i, j);
 
             var pos = new Vector3(-_boardSize.x * chipSize / 2 + i * chipSize,
@@ -58,28 +66,28 @@ namespace Code.View
         private async UniTask OnMove(Vector2Int from, Vector2Int to)
         {
             await Move(from, to);
-            
+
             OnMoved?.Invoke(this, from, to);
             Setup(_data, _chipSize, _boardSize, to.x, to.y);
         }
 
         private async UniTask OnEffect()
         {
-            _data.OnEffect -= OnEffect;
-            _data.OnMove -= OnMove;
+            var awaitable = new List<UniTask> { image.DOFade(0f, 0.2f).ToUniTask() };
 
             if (onEffectParticles)
             {
                 onEffectParticles.Play();
-                await UniTask.Delay((int)(onEffectParticles.main.duration * 1000));
+                awaitable.Add(UniTask.Delay((int)(onEffectParticles.main.duration * 1000)));
             }
+            Debug.Log(awaitable.Count);
+            await UniTask.WhenAll(awaitable);
 
             Destroy(gameObject);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log($"OnPointerDown, {eventData.position}, swappable {_data.isSwappable}, clickable {_data.isClickable}, pos: {text.text}");
             if (_data.isSwappable)
             {
                 _isDragging = true;
@@ -97,9 +105,6 @@ namespace Code.View
         {
             if (_isClicking && Vector2.Distance(_clickPosition, eventData.position) < 10f)
             {
-                Debug.Log(
-                    $"OnPointerMove, from:{_clickPosition}, to:{eventData.position}, isSelected:{_isDragging}, distance:{Vector2.Distance(_clickPosition, eventData.position)}");
-
                 OnClicked?.Invoke(_chipPosition);
             }
 
@@ -125,8 +130,6 @@ namespace Code.View
                 {
                     swapDirection.y = verticalMove > 0 ? -1 : 1;
                 }
-                
-                Debug.Log($"Swap: {text.text}, to: {_chipPosition + swapDirection}, distance: {Vector2.Distance(_clickPosition, Input.mousePosition)}");
 
                 OnSwapped?.Invoke(_chipPosition, _chipPosition + swapDirection);
             }
@@ -138,7 +141,7 @@ namespace Code.View
                 -_boardSize.y * _chipSize / 2 + to.y * _chipSize, 0);
             var distance = Vector2.Distance(from, to);
 
-            await transform.DOLocalMove(pos, 0.2f * distance + 0.05f * from.y).SetEase(Ease.OutBounce);
+            await transform.DOLocalMove(pos, 0.2f * distance + 0.1f * from.y).SetEase(Ease.OutBounce);
         }
     }
 }
