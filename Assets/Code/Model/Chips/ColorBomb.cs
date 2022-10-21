@@ -6,11 +6,11 @@ namespace Code.Model.Chips
     [CreateAssetMenu]
     public class ColorBomb : SimpleColorChip
     {
-        public override Func<BoardCell, bool> GetEffectPredicate()
+        public override Func<BoardCell, BoardCell, bool> GetEffectPredicate()
         {
-            bool Predicate(BoardCell cell)
+            bool Predicate(BoardCell source, BoardCell target)
             {
-                return cell.chip is SimpleColorChip chip && chip.color.name == color.name;
+                return target.chip is SimpleColorChip chip && chip.color.name == color.name;
             }
 
             return Predicate;

@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Utils;
 using UnityEngine;
 
 namespace Code.Model.Chips
@@ -6,10 +7,15 @@ namespace Code.Model.Chips
     [CreateAssetMenu]
     public class AdjacentBomb : BoardElement
     {
-        public override Func<BoardCell, bool> GetEffectPredicate()
+        public override Func<BoardCell, BoardCell, bool> GetEffectPredicate()
         {
-            // destroy adjacent objects
-            return null;
+            bool Predicate(BoardCell source, BoardCell target)
+            {
+                var hasChip = target.chip != null;
+                return hasChip && target.Index.IsAdjacent(source.Index);
+            }
+
+            return Predicate;
         }
 
         public override bool CheckMatch(BoardSettings settings, Vector2Int vector2Int, BoardCell[,] boardCells)

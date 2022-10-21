@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add Color Bomb and predicate match check">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/VectorExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/VectorExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/BlueChip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/BlueChip.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/GreenChip.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/PuppleChip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/PuppleChip.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/RedChip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/RedChip.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/YellowChip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/YellowChip.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Triggers/AsyncDestroyTrigger.cs" root0="SKIP_HIGHLIGHTING" />
@@ -94,10 +86,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1103">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1103" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -117,7 +109,7 @@
       <workItem from="1665920921887" duration="21889000" />
       <workItem from="1666108665298" duration="9909000" />
       <workItem from="1666262860373" duration="11971000" />
-      <workItem from="1666343148005" duration="2531000" />
+      <workItem from="1666343148005" duration="5602000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>
@@ -210,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666300202027</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add Color Bomb and predicate match check">
+      <created>1666345889553</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1666345889553</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,25 +244,7 @@
     <MESSAGE value="refactor part 2" />
     <MESSAGE value="Fix compilation errors" />
     <MESSAGE value="Fix listener registration error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix listener registration error" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Code/GameManager.cs</url>
-          <line>166</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" initialLine="166" containingFunctionPresentation="method 'GetAffectedCells'">
-            <startOffsets>
-              <option value="5117" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5146" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add Color Bomb and predicate match check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Color Bomb and predicate match check" />
   </component>
 </project>

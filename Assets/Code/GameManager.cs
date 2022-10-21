@@ -78,9 +78,10 @@ namespace Code
                 return;
             }
 
+            _busy = true;
             var clickedCell = _board[source.x, source.y];
             var matches = new HashSet<BoardCell> { clickedCell };
-            TryToGetEffect(clickedCell, matches);
+            OnMatchPossible(matches).ContinueWith(() => _busy = false);
         }
 
         private void TryToGetEffect(BoardCell boardCell, ISet<BoardCell> matches)
@@ -88,17 +89,17 @@ namespace Code
             var effectPredicate = boardCell.chip.GetEffectPredicate();
             if (effectPredicate != null)
             {
-                GetEffectTargets(effectPredicate, matches);
+                GetEffectTargets(boardCell, effectPredicate, matches);
             }
         }
 
-        private void GetEffectTargets(Func<BoardCell, bool> effectPredicate, ISet<BoardCell> matches)
+        private void GetEffectTargets(BoardCell source, Func<BoardCell, BoardCell, bool> effectPredicate, ISet<BoardCell> matches)
         {
             for (var i = 0; i < _board.GetLength(0); i++)
             {
                 for (var j = 0; j < _board.GetLength(1); j++)
                 {
-                    if (effectPredicate(_board[i, j]))
+                    if (effectPredicate(source, _board[i, j]))
                     {
                         matches.Add(_board[i, j]);
                     }
@@ -165,13 +166,23 @@ namespace Code
 
         private void GetAffectedCells(HashSet<BoardCell> matches)
         {
-            var newMatches = new HashSet<BoardCell>();
-            foreach (var cell in matches)
+            while (true)
             {
-                TryToGetEffect(cell, newMatches);
-            }
+                var newMatches = new HashSet<BoardCell>();
+                foreach (var cell in matches)
+                {
+                    TryToGetEffect(cell, newMatches);
+                }
 
-            matches.UnionWith(newMatches);
+                var oldMatches = matches.Count;
+                matches.UnionWith(newMatches);
+                if (oldMatches < matches.Count)
+                {
+                    continue;
+                }
+
+                break;
+            }
         }
 
         private async UniTask MatchChips(HashSet<BoardCell> matches)

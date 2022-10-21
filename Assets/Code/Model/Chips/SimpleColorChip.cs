@@ -10,7 +10,7 @@ namespace Code.Model.Chips
         public Color color;
         public ParticleSystem particleSystem;
 
-        public override Func<BoardCell, bool> GetEffectPredicate()
+        public override Func<BoardCell, BoardCell, bool> GetEffectPredicate()
         {
             return null;
         }

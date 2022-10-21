@@ -13,17 +13,15 @@ namespace Code.Model.Chips
         public bool isClickable;
 
         public Func<Vector2Int, Vector2Int, UniTask> OnMove;
-        public Func<UniTask> OnClick;
         public Func<UniTask> OnEffect;
 
         private void OnDestroy()
         {
             OnMove = null;
-            OnClick = null;
             OnEffect = null;
         }
 
-        public abstract Func<BoardCell, bool> GetEffectPredicate();
+        public abstract Func<BoardCell, BoardCell, bool> GetEffectPredicate();
         public abstract bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells);
     }
 }
