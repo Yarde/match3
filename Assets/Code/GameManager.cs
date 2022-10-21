@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Code.ChipGenerator;
 using Code.Model;
 using Code.Model.Chips;
@@ -30,12 +32,13 @@ namespace Code
             await UniTask.Delay(200);
 
             IsMatchDetected(out var matches);
-            await OnMove(matches);
+            await OnMatchPossible(matches);
         }
 
         private void SubscribeToUserActions(ChipView chip)
         {
             chip.OnSwapped += OnSwap;
+            chip.OnClicked += OnClick;
         }
 
         private void CreateBoard()
@@ -64,7 +67,43 @@ namespace Code
             {
                 return;
             }
+
             TryToSwap(sourcePosition, destinationPosition).Forget();
+        }
+
+        private void OnClick(Vector2Int source)
+        {
+            if (_busy)
+            {
+                return;
+            }
+
+            var clickedCell = _board[source.x, source.y];
+            var matches = new HashSet<BoardCell> { clickedCell };
+            TryToGetEffect(clickedCell, matches);
+        }
+
+        private void TryToGetEffect(BoardCell boardCell, ISet<BoardCell> matches)
+        {
+            var effectPredicate = boardCell.chip.GetEffectPredicate();
+            if (effectPredicate != null)
+            {
+                GetEffectTargets(effectPredicate, matches);
+            }
+        }
+
+        private void GetEffectTargets(Func<BoardCell, bool> effectPredicate, ISet<BoardCell> matches)
+        {
+            for (var i = 0; i < _board.GetLength(0); i++)
+            {
+                for (var j = 0; j < _board.GetLength(1); j++)
+                {
+                    if (effectPredicate(_board[i, j]))
+                    {
+                        matches.Add(_board[i, j]);
+                    }
+                }
+            }
         }
 
         private async UniTaskVoid TryToSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
@@ -96,12 +135,13 @@ namespace Code
             await DoSwap(cellSource, cellDestination);
             if (IsMatchDetected(out var matches))
             {
-                await OnMove(matches);
+                await OnMatchPossible(matches);
             }
             else if (!boardSettings.allowNonMatchSwipe)
             {
                 await DoSwap(cellDestination, cellSource);
             }
+
             _busy = false;
         }
 
@@ -113,22 +153,33 @@ namespace Code
             (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
         }
 
-        private async UniTask OnMove(List<BoardCell> boardCells)
+        private async UniTask OnMatchPossible(HashSet<BoardCell> matches)
         {
-            while (boardCells.Count > 0)
+            while (matches.Count > 0)
             {
-                await MatchChips(boardCells);
-                IsMatchDetected(out boardCells);
+                GetAffectedCells(matches);
+                await MatchChips(matches);
+                IsMatchDetected(out matches);
             }
         }
 
-        private async UniTask MatchChips(List<BoardCell> boardCells)
+        private void GetAffectedCells(HashSet<BoardCell> matches)
+        {
+            var newMatches = new HashSet<BoardCell>();
+            foreach (var cell in matches)
+            {
+                TryToGetEffect(cell, newMatches);
+            }
+
+            matches.UnionWith(newMatches);
+        }
+
+        private async UniTask MatchChips(HashSet<BoardCell> matches)
         {
             var awaitable = new List<UniTask>();
 
-            foreach (var cell in boardCells)
+            foreach (var cell in matches)
             {
-                cell.chip.ApplyEffect();
                 if (cell.chip.OnEffect != null)
                 {
                     awaitable.Add(cell.chip.OnEffect.Invoke());
@@ -137,7 +188,7 @@ namespace Code
 
             await UniTask.WhenAll(awaitable);
 
-            foreach (var cell in boardCells)
+            foreach (var cell in matches)
             {
                 cell.chip = null;
             }
@@ -200,9 +251,9 @@ namespace Code
             return false;
         }
 
-        private bool IsMatchDetected(out List<BoardCell> matches)
+        private bool IsMatchDetected(out HashSet<BoardCell> matches)
         {
-            matches = new List<BoardCell>();
+            matches = new HashSet<BoardCell>();
             for (var i = 0; i < boardSettings.boardSize.x; i++)
             {
                 for (var j = 0; j < boardSettings.boardSize.y; j++)

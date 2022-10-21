@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Code.Model.Chips
 {
@@ -8,8 +10,9 @@ namespace Code.Model.Chips
         public Color color;
         public ParticleSystem particleSystem;
 
-        public override void ApplyEffect()
+        public override Func<BoardCell, bool> GetEffectPredicate()
         {
+            return null;
         }
 
         public override bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells)

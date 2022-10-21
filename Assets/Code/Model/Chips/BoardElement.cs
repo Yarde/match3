@@ -23,7 +23,7 @@ namespace Code.Model.Chips
             OnEffect = null;
         }
 
-        public abstract void ApplyEffect();
+        public abstract Func<BoardCell, bool> GetEffectPredicate();
         public abstract bool CheckMatch(BoardSettings settings, Vector2Int index, BoardCell[,] boardCells);
     }
 }

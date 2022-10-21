@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Code.Model.Chips
 {
     [CreateAssetMenu]
     public class ColorBomb : SimpleColorChip
     {
-        public override void ApplyEffect()
+        public override Func<BoardCell, bool> GetEffectPredicate()
         {
-            // destroy all chips of it's color
-            
-            base.ApplyEffect();
+            bool Predicate(BoardCell cell)
+            {
+                return cell.chip is SimpleColorChip chip && chip.color.name == color.name;
+            }
+
+            return Predicate;
         }
     }
 }
