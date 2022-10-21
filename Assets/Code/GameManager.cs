@@ -29,7 +29,11 @@ namespace Code
             }
 
             await UniTask.Delay(200);
+            await ClearInitialMatches();
+        }
 
+        private async UniTask ClearInitialMatches()
+        {
             IsMatchDetected(out var matches);
             await OnMatchPossible(matches);
         }

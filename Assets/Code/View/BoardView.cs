@@ -30,8 +30,7 @@ namespace Code.View
 
             var width = settings.boardSize.x * visuals.cellSize + visuals.boardOffset;
             var height = settings.boardSize.y * visuals.cellSize + visuals.boardOffset;
-
-            boardBackground.pixelsPerUnitMultiplier = 0.05f * settings.boardSize.x;
+            
             boardTransform.sizeDelta = new Vector2(width, height);
 
             CreateChips(boardCells, settings, settings.boardSize.x, settings.boardSize.y);

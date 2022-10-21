@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add Adjacent bomb">
+    <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add new graphics">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Initial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BoardSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/boardBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/boardBackground.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/shadow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/shadow.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/Model/Chips/AdjacentBomb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Code/View/BoardView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/dawidkaluza/Documents/match3/Assets/Initial.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/EnumeratorAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Internal/PlayerLoopRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@2.3.1/Runtime/Triggers/AsyncDestroyTrigger.cs" root0="SKIP_HIGHLIGHTING" />
@@ -106,7 +115,7 @@
       <workItem from="1665920921887" duration="21889000" />
       <workItem from="1666108665298" duration="9909000" />
       <workItem from="1666262860373" duration="11971000" />
-      <workItem from="1666343148005" duration="7360000" />
+      <workItem from="1666343148005" duration="8849000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>
@@ -213,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666349050355</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add new graphics">
+      <created>1666353002120</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666353002120</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +266,7 @@
     <MESSAGE value="Fix listener registration error" />
     <MESSAGE value="Add Color Bomb and predicate match check" />
     <MESSAGE value="Add Adjacent bomb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Adjacent bomb" />
+    <MESSAGE value="Add new graphics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new graphics" />
   </component>
 </project>
