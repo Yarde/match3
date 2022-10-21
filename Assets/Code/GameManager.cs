@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Code.ChipGenerator;
 using Code.Model;
 using Code.Model.Chips;
@@ -93,7 +92,8 @@ namespace Code
             }
         }
 
-        private void GetEffectTargets(BoardCell source, Func<BoardCell, BoardCell, bool> effectPredicate, ISet<BoardCell> matches)
+        private void GetEffectTargets(BoardCell source, Func<BoardCell, BoardCell, bool> effectPredicate,
+            ISet<BoardCell> matches)
         {
             for (var i = 0; i < _board.GetLength(0); i++)
             {

@@ -720,13 +720,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chips:
-  - {fileID: 11400000, guid: 21f130a7b228e4c7cb42967695bcc2f4, type: 2}
-  - {fileID: 11400000, guid: e784eb10f96204041880a4defbdbaf06, type: 2}
-  - {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
-  - {fileID: 11400000, guid: 64a08740192dd4d01a4d469154be8343, type: 2}
-  - {fileID: 11400000, guid: 45a793cf3105447f3a7d641dc0714072, type: 2}
-  - {fileID: 11400000, guid: 688853511c07d443ba0bcfadd49588a6, type: 2}
-  - {fileID: 11400000, guid: f2120ce25a6444736b18f72047278abb, type: 2}
+  - chip: {fileID: 11400000, guid: f2120ce25a6444736b18f72047278abb, type: 2}
+    probablility: 1
+  - chip: {fileID: 11400000, guid: 688853511c07d443ba0bcfadd49588a6, type: 2}
+    probablility: 1
+  - chip: {fileID: 11400000, guid: 21f130a7b228e4c7cb42967695bcc2f4, type: 2}
+    probablility: 10
+  - chip: {fileID: 11400000, guid: e784eb10f96204041880a4defbdbaf06, type: 2}
+    probablility: 10
+  - chip: {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
+    probablility: 10
+  - chip: {fileID: 11400000, guid: 64a08740192dd4d01a4d469154be8343, type: 2}
+    probablility: 10
+  - chip: {fileID: 11400000, guid: 45a793cf3105447f3a7d641dc0714072, type: 2}
+    probablility: 10
 --- !u!1 &1710782298
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,10 +767,10 @@ RectTransform:
   m_Father: {fileID: 1152393717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 1918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710782300
 MonoBehaviour:
