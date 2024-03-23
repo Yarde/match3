@@ -71,17 +71,19 @@ namespace Code.View
             _chipPosition = new Vector2Int(i, j);
         }
 
-        private async UniTask OnMove(Vector2Int from, Vector2Int to)
+        private async UniTask OnMove(Move move)
         {
-            await Move(from, to, this.GetCancellationTokenOnDestroy());
+            await Move(move, this.GetCancellationTokenOnDestroy());
 
-            OnMoved?.Invoke(this, from, to);
-            Refresh(to.x, to.y);
+            OnMoved?.Invoke(this, move.source, move.target);
+            Refresh(move.target.x, move.target.y);
         }
 
         private UniTask OnEffect()
         {
-            return image.DOFade(0f, 0.2f).OnComplete(() => Destroy(gameObject)).WithCancellation(this.GetCancellationTokenOnDestroy());
+            return image.DOFade(0f, 0.2f)
+                .OnComplete(() => Destroy(gameObject))
+                .WithCancellation(this.GetCancellationTokenOnDestroy());
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -133,13 +135,13 @@ namespace Code.View
             }
         }
 
-        private UniTask Move(Vector2Int from, Vector2Int to, CancellationToken token)
+        private UniTask Move(Move move, CancellationToken token)
         {
-            var pos = new Vector3(-_boardSize.x * _chipSize / 2 + to.x * _chipSize,
-                -_boardSize.y * _chipSize / 2 + to.y * _chipSize, 0);
-            var distance = Vector2.Distance(from, to);
+            var pos = new Vector3(-_boardSize.x * _chipSize / 2 + move.target.x * _chipSize,
+                -_boardSize.y * _chipSize / 2 + move.target.y * _chipSize, 0);
+            var distance = Vector2.Distance(move.source, move.target);
 
-            var duration = 0.2f * distance + 0.1f * from.y;
+            var duration = 0.2f * distance + move.delay;
             return transform.DOLocalMove(pos, duration).SetEase(Ease.OutBounce).WithCancellation(token);
         }
     }

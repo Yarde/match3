@@ -159,9 +159,12 @@ namespace Code
 
         private async UniTask DoSwap(BoardCell cellSource, BoardCell cellDestination)
         {
-            await UniTask.WhenAll(
-                cellSource.chip.OnMove.Invoke(cellSource.Index, cellDestination.Index),
-                cellDestination.chip.OnMove.Invoke(cellDestination.Index, cellSource.Index));
+            var moveSource = new Move(cellSource.Index, cellDestination.Index, 0f);
+            var moveSourceTask = cellSource.chip.OnMove.Invoke(moveSource);
+            var moveDestination = new Move(cellDestination.Index, cellSource.Index, 0f);
+            var moveDestinationTask = cellDestination.chip.OnMove.Invoke(moveDestination);
+            
+            await UniTask.WhenAll(moveSourceTask, moveDestinationTask);
             (cellSource.chip, cellDestination.chip) = (cellDestination.chip, cellSource.chip);
         }
 
@@ -224,14 +227,16 @@ namespace Code
 
             for (var i = 0; i < _board.GetLength(0); i++)
             {
+                var queueOffset = 0;
                 for (var j = 0; j < _board.GetLength(1); j++)
                 {
                     var cell = _board[i, j];
                     if (cell.chip == null)
                     {
-                        var (newChip, move) = GetNewChip(i, j);
+                        var (newChip, move) = GetNewChip(i, j, queueOffset * 0.1f);
                         cell.chip = newChip;
                         awaitable.Add(move);
+                        queueOffset++;
                     }
                 }
             }
@@ -239,31 +244,35 @@ namespace Code
             await UniTask.WhenAll(awaitable);
         }
 
-        private (BoardElement, UniTask) GetNewChip(int i, int j)
+        private (BoardElement, UniTask) GetNewChip(int i, int j, float delay)
         {
-            return TryToGetCell(i, j, out var cell) ? cell : CreateNewCell(i, j);
+            return TryToGetCell(i, j, delay, out var cell) 
+                ? cell 
+                : CreateNewCell(i, j, delay);
         }
 
-        private (BoardElement, UniTask) CreateNewCell(int i, int j)
+        private (BoardElement, UniTask) CreateNewCell(int i, int j, float delay)
         {
             var newChip = Instantiate(chipGeneratorBase.GetChip());
             var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip, boardSettings);
             SubscribeToUserActions(chipView);
-            var newMove = newChip.OnMove.Invoke(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j));
+            var move = new Move(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j), delay);
+            var newMove = newChip.OnMove.Invoke(move);
             return (newChip, newMove);
         }
 
-        private bool TryToGetCell(int i, int j, out (BoardElement, UniTask) valueTuple)
+        private bool TryToGetCell(int i, int j, float delay, out (BoardElement, UniTask) valueTuple)
         {
-            for (var k = j + 1; k < _board.GetLength(0); k++)
+            for (var k = j + 1; k < _board.GetLength(1); k++)
             {
                 var chip = _board[i, k].chip;
                 if (chip != null)
                 {
-                    var move = chip.OnMove.Invoke(new Vector2Int(i, k), new Vector2Int(i, j));
+                    var move = new Move(new Vector2Int(i, k), new Vector2Int(i, j), delay);
+                    var moveTask = chip.OnMove.Invoke(move);
                     _board[i, k].chip = null;
                     {
-                        valueTuple = (chip, move);
+                        valueTuple = (chip, moveTask);
                         return true;
                     }
                 }
