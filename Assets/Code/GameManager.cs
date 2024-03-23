@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Code.ChipGenerator;
 using Code.Model;
 using Code.Model.Chips;
@@ -19,7 +20,13 @@ namespace Code
         private BoardCell[,] _board;
         private bool _busy;
 
-        private async UniTaskVoid Awake()
+        private void Awake()
+        {
+            Application.targetFrameRate = 30;
+            SetupBoard().Forget();
+        }
+
+        private async UniTaskVoid SetupBoard()
         {
             CreateBoard();
             await boardView.Setup(boardSettings, _board);
@@ -28,12 +35,12 @@ namespace Code
                 SubscribeToUserActions(chip);
             }
 
-            await UniTask.Delay(200);
-            await ClearInitialMatches();
+            await ClearInitialMatches(this.GetCancellationTokenOnDestroy());
         }
 
-        private async UniTask ClearInitialMatches()
+        private async UniTask ClearInitialMatches(CancellationToken ct)
         {
+            await UniTask.Delay(200, cancellationToken: ct);
             IsMatchDetected(out var matches);
             await OnMatchPossible(matches);
         }
