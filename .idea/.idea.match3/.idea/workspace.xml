@@ -5,10 +5,142 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fa8809e-3088-4af3-9468-0e6a46a17cef" name="Changes" comment="Add new graphics">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Code.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Common.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Common.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Randomizer.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Randomizer.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Robust.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Robust/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Robust/Robust.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Robust/Robust.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Robust/Robust.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Simple.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Simple/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Simple/Simple.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Simple/Simple.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Simple/Simple.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common.csproj.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Robust.csproj.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simple.csproj.DotSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.match3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/ChipGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/ChipGenerator/ChipGeneratorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/ChipGeneratorBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/ChipGenerator/ChipGeneratorBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/ChipGenerator/RandomChipGeneratorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/ChipGenerator/RandomChipGeneratorBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/ChipGenerator/RandomChipGeneratorBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Robust/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Simple/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/BoardSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/BoardSettings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/BoardSettings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/AdjacentBomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/AdjacentBomb.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/AdjacentBomb.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/BoardElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/BoardElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/BoardElement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/ColorBomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/ColorBomb.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/ColorBomb.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/SimpleColorChip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Chips/SimpleColorChip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Chips/SimpleColorChip.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Color.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Color.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Model/Color.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Model/Color.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Utils/CollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/CollectionExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Utils/CollectionExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/VectorExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Utils/VectorExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/VectorExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/Utils/VectorExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/View/BoardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View/BoardView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/View/BoardView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/View/ChipView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/View/ChipView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Code/View/ChipView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Robust/Robust.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Initial.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Simple/Simple.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModulePhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModulePhysics2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModulePhysics2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleSprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleSprite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUnityVersion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Prefabs/Chip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chip.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Prefabs/Chip.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/AdjacentBomb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/AdjacentBomb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/AdjacentBomb.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/AdjacentBomb.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/ColorBombs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/ColorBombs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/ColorBombs/YellowColorBomb.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/ColorBombs/YellowColorBomb.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/ColorBombs/YellowColorBomb.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/ColorBombs/YellowColorBomb.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/BlueChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/BlueChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/BlueChip.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/BlueChip.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/GreenChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/GreenChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/GreenChip.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/GreenChip.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/PuppleChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/PuppleChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/PuppleChip.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/PuppleChip.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/RedChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/RedChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/RedChip.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/RedChip.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/YellowChip.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/YellowChip.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Chips/SimpleColorChips/YellowChip.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Chips/SimpleColorChips/YellowChip.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Blue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Blue.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Blue.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Green.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Green.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Green.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Purple.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Purple.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Purple.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Red.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Red.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Red.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Red.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/White.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/White.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/White.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/White.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Yellow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Yellow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Colors/Yellow.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Colors/Yellow.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/DOTweenSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level_001.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Level_001.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level_001.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Level_001.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level_002.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Level_002.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level_002.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Resources/Level_002.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/03.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/04.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/05.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/80x80.psd.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/80x80.psd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/80x80.psd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/80x80.psd.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/BG.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/BG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/BG.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/BG.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/BoardAtlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/BoardAtlas.spriteatlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/BoardAtlas.spriteatlas.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/BoardAtlas.spriteatlas.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/TNT.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/TNT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/TNT.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/TNT.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_blue.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_orange.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_orange.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_orange.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_red.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_velow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_velow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/bomb_velow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/bomb_velow.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/shadow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/shadow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/shadow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/Textures/shadow.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2023.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2023.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +253,7 @@
       <workItem from="1666108665298" duration="9909000" />
       <workItem from="1666262860373" duration="11971000" />
       <workItem from="1666343148005" duration="8849000" />
-      <workItem from="1711182527048" duration="4779000" />
+      <workItem from="1711182527048" duration="9261000" />
     </task>
     <task id="LOCAL-00001" summary="Add Compiled project files">
       <created>1665915685444</created>

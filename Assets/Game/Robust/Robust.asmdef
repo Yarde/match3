@@ -1,0 +1,19 @@
+{
+    "name": "Robust",
+    "rootNamespace": "Robust",
+    "references": [
+        "Common",
+        "UniTask",
+        "UniTask.DOTween",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

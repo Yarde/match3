@@ -1,0 +1,21 @@
+{
+    "name": "Common",
+    "rootNamespace": "Common",
+    "references": [
+        "UniTask",
+        "UniTask.DOTween",
+        "Unity.TextMeshPro",
+        "NewTestAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
