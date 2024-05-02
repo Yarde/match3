@@ -624,11 +624,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 6ba574e8-2afe-4fbd-80ff-78779e02f198
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: match3
+  organizationId: yarde-games
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

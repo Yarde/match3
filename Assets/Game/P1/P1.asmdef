@@ -1,6 +1,6 @@
 {
-    "name": "Simple",
-    "rootNamespace": "Simple",
+    "name": "P1",
+    "rootNamespace": "P1",
     "references": [
         "Common",
         "UniTask",

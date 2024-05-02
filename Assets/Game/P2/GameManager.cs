@@ -9,7 +9,7 @@ using Common.Code.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Robust
+namespace P2
 {
     public class GameManager : MonoBehaviour
     {
