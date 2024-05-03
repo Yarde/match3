@@ -1,19 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using Common.Code.Model;
 using Common.Code.Model.Chips;
 using Common.Code.Utils;
 using Common.Code.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Common.Common.Code
 {
-    public class Match3 : MonoBehaviour
+    public class Match3
     {
-        [SerializeField] private BoardView boardViewPrefab;
-
         private BoardCell[,] _board;
         private bool _busy;
         private BoardSettings _boardSettings;
@@ -29,12 +27,12 @@ namespace Common.Common.Code
                 SubscribeToUserActions(chip);
             }
 
-            await ClearInitialMatches(this.GetCancellationTokenOnDestroy());
+            await ClearInitialMatches();
         }
 
-        private async UniTask ClearInitialMatches(CancellationToken ct)
+        private async UniTask ClearInitialMatches()
         {
-            await UniTask.Delay(200, cancellationToken: ct);
+            await UniTask.Delay(200);
             IsMatchDetected(out var matches);
             await OnMatchPossible(matches);
         }
@@ -56,13 +54,13 @@ namespace Common.Common.Code
                 {
                     _board[i, j] = new BoardCell
                     {
-                        chip = Instantiate(_boardSettings.generatorData.GetChip()),
+                        chip = Object.Instantiate(_boardSettings.generatorData.GetChip()),
                         Index = new Vector2Int(i, j)
                     };
                 }
             }
             
-            return Instantiate(boardViewPrefab);
+            return Object.Instantiate(_boardSettings.boardViewPrefab);
         }
 
         private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
@@ -247,7 +245,7 @@ namespace Common.Common.Code
 
         private (BoardElement, UniTask) CreateNewCell(int i, int j, float delay)
         {
-            var newChip = Instantiate(_boardSettings.generatorData.GetChip());
+            var newChip = Object.Instantiate(_boardSettings.generatorData.GetChip());
             var chipView = _boardView.CreateNewChip(i, _board.GetLength(1), newChip, _boardSettings);
             SubscribeToUserActions(chipView);
             var move = new Move(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j), delay);

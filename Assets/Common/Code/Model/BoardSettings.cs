@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.Code.ChipGenerator;
 using Common.Code.Model.Chips;
+using Common.Code.View;
 using UnityEngine;
 
 namespace Common.Code.Model
@@ -11,6 +12,7 @@ namespace Common.Code.Model
         public Vector2Int boardSize;
         public BoardVisuals boardVisuals;
         public ChipGeneratorBase generatorData;
+        public BoardView boardViewPrefab;
 
         public bool allowNonMatchSwipe = true;
     }
