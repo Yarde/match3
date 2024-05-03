@@ -42,14 +42,20 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
+    "com.unity.modules.xr": "1.0.0",
+    "jp.hadashikick.vcontainer": "1.15.4"
   },
   "scopedRegistries": [
     {
-      "name": "package.openupm.com",
+      "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.cysharp.unitask"
+        "com.cysharp.unitask",
+        "com.demigiant",
+        "com.coffee",
+        "com.dbrizov",
+        "jp.hadashikick",
+        "com.brunomikoski"
       ]
     }
   ]

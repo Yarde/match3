@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Common.Code.ChipGenerator;
 using Common.Code.Model;
 using Common.Code.Model.Chips;
 using Common.Code.Utils;
@@ -9,28 +8,23 @@ using Common.Code.View;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace P2
+namespace Common.Common.Code
 {
-    public class GameManager : MonoBehaviour
+    public class Match3 : MonoBehaviour
     {
-        [SerializeField] private BoardSettings boardSettings;
-        [SerializeField] private BoardView boardView;
-        [SerializeField] private ChipGeneratorBase chipGeneratorBase;
+        [SerializeField] private BoardView boardViewPrefab;
 
         private BoardCell[,] _board;
         private bool _busy;
+        private BoardSettings _boardSettings;
+        private BoardView _boardView;
 
-        private void Awake()
+        public async UniTaskVoid SetupBoard(BoardSettings boardSettings)
         {
-            Application.targetFrameRate = 30;
-            SetupBoard().Forget();
-        }
-
-        private async UniTaskVoid SetupBoard()
-        {
-            CreateBoard();
-            await boardView.Setup(boardSettings, _board);
-            foreach (var chip in boardView.Prefabs)
+            _boardSettings = boardSettings;
+            _boardView = CreateBoard();
+            await _boardView.Setup(boardSettings, _board);
+            foreach (var chip in _boardView.Prefabs)
             {
                 SubscribeToUserActions(chip);
             }
@@ -51,9 +45,9 @@ namespace P2
             chip.OnClicked += OnClick;
         }
 
-        private void CreateBoard()
+        private BoardView CreateBoard()
         {
-            var size = boardSettings.boardSize;
+            var size = _boardSettings.boardSize;
             _board = new BoardCell[size.x, size.y];
 
             for (var i = 0; i < size.x; i++)
@@ -62,13 +56,13 @@ namespace P2
                 {
                     _board[i, j] = new BoardCell
                     {
-                        chip = Instantiate(boardSettings.isValid
-                            ? boardSettings.initialLayout[i + j]
-                            : chipGeneratorBase.GetChip()),
+                        chip = Instantiate(_boardSettings.generatorData.GetChip()),
                         Index = new Vector2Int(i, j)
                     };
                 }
             }
+            
+            return Instantiate(boardViewPrefab);
         }
 
         private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
@@ -129,7 +123,7 @@ namespace P2
                 return;
             }
 
-            if (boardSettings.boardSize.InBounds2D(destinationPosition))
+            if (_boardSettings.boardSize.InBounds2D(destinationPosition))
             {
                 Debug.Log("Destination Out Of Bounds!");
                 _busy = false;
@@ -149,7 +143,7 @@ namespace P2
             {
                 await OnMatchPossible(matches);
             }
-            else if (!boardSettings.allowNonMatchSwipe)
+            else if (!_boardSettings.allowNonMatchSwipe)
             {
                 await DoSwap(cellDestination, cellSource);
             }
@@ -253,8 +247,8 @@ namespace P2
 
         private (BoardElement, UniTask) CreateNewCell(int i, int j, float delay)
         {
-            var newChip = Instantiate(chipGeneratorBase.GetChip());
-            var chipView = boardView.CreateNewChip(i, _board.GetLength(1), newChip, boardSettings);
+            var newChip = Instantiate(_boardSettings.generatorData.GetChip());
+            var chipView = _boardView.CreateNewChip(i, _board.GetLength(1), newChip, _boardSettings);
             SubscribeToUserActions(chipView);
             var move = new Move(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j), delay);
             var newMove = newChip.OnMove.Invoke(move);
@@ -285,11 +279,11 @@ namespace P2
         private bool IsMatchDetected(out HashSet<BoardCell> matches)
         {
             matches = new HashSet<BoardCell>();
-            for (var i = 0; i < boardSettings.boardSize.x; i++)
+            for (var i = 0; i < _boardSettings.boardSize.x; i++)
             {
-                for (var j = 0; j < boardSettings.boardSize.y; j++)
+                for (var j = 0; j < _boardSettings.boardSize.y; j++)
                 {
-                    if (_board[i, j].CheckMatch(boardSettings, _board))
+                    if (_board[i, j].CheckMatch(_boardSettings, _board))
                     {
                         matches.Add(_board[i, j]);
                     }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using Common.Code.ChipGenerator;
 using Common.Code.Model.Chips;
 using UnityEngine;
 
@@ -9,16 +9,10 @@ namespace Common.Code.Model
     public class BoardSettings : ScriptableObject
     {
         public Vector2Int boardSize;
-        public List<BoardElement> initialLayout;
         public BoardVisuals boardVisuals;
+        public ChipGeneratorBase generatorData;
 
-        [HideInInspector] public bool isValid;
         public bool allowNonMatchSwipe = true;
-
-        private void OnValidate()
-        {
-            isValid = initialLayout.Count / boardSize.x == boardSize.y;
-        }
     }
 
     [Serializable]

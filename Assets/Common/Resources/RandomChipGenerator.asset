@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7e91b284b14491a7c3a67b8073765a, type: 3}
+  m_Name: RandomChipGenerator
+  m_EditorClassIdentifier: 
+  chips:
+  - chip: {fileID: 11400000, guid: e784eb10f96204041880a4defbdbaf06, type: 2}
+    probablility: 1
+  - chip: {fileID: 11400000, guid: 64a08740192dd4d01a4d469154be8343, type: 2}
+    probablility: 1
+  - chip: {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
+    probablility: 1
+  - chip: {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
+    probablility: 1

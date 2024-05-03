@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fe291ac277442785ce369a3ced06da, type: 3}
   m_Name: Level_001
   m_EditorClassIdentifier: 
-  boardSize: {x: 5, y: 15}
-  initialLayout: []
+  boardSize: {x: 5, y: 5}
   boardVisuals:
     background: {fileID: 21300000, guid: 008ef9ef5867a47d18a4293be6091ee8, type: 3}
     boardFrame: {fileID: 21300000, guid: 6b161ead7c3424cb68e1ebcdc8374a5e, type: 3}
     boardBackground: {fileID: 21300000, guid: 8fb0d2eda4d474023803abe5a14122da, type: 3}
     cellSize: 80
     boardOffset: 20
-  isValid: 0
+  generatorData: {fileID: 11400000, guid: df5f0aac460f24b2eaca6f3335071102, type: 2}
   allowNonMatchSwipe: 1
