@@ -17,7 +17,7 @@ namespace Common.Common.Code
         private BoardSettings _boardSettings;
         private BoardView _boardView;
 
-        public async UniTaskVoid SetupBoard(BoardSettings boardSettings)
+        public async UniTask SetupBoard(BoardSettings boardSettings)
         {
             _boardSettings = boardSettings;
             _boardView = CreateBoard();
