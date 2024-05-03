@@ -12,6 +12,9 @@ namespace Common.Common.Code
 {
     public class Match3
     {
+        public event Action OnMove;
+        public event Action<int> OnMatch;
+        
         private BoardCell[,] _board;
         private bool _busy;
         private BoardSettings _boardSettings;
@@ -80,10 +83,16 @@ namespace Common.Common.Code
                 return;
             }
 
-            _busy = true;
             var clickedCell = _board[source.x, source.y];
+            if (!clickedCell.chip.isClickable)
+            {
+                return;
+            }
+            
+            _busy = true;
             var matches = new HashSet<BoardCell> { clickedCell };
             OnMatchPossible(matches).ContinueWith(() => _busy = false);
+            OnMove?.Invoke();
         }
 
         private void TryToGetEffect(BoardCell boardCell, ISet<BoardCell> matches)
@@ -140,10 +149,17 @@ namespace Common.Common.Code
             if (IsMatchDetected(out var matches))
             {
                 await OnMatchPossible(matches);
+                OnMove?.Invoke();
             }
-            else if (!_boardSettings.allowNonMatchSwipe)
-            {
-                await DoSwap(cellDestination, cellSource);
+            else{
+                if (!_boardSettings.allowNonMatchSwipe)
+                {
+                    await DoSwap(cellDestination, cellSource);
+                }
+                else
+                {
+                    OnMove?.Invoke();
+                }
             }
 
             _busy = false;
@@ -203,6 +219,7 @@ namespace Common.Common.Code
                 }
             }
 
+            OnMatch?.Invoke(matches.Count);
             await UniTask.WhenAll(awaitable);
 
             foreach (var cell in matches)

@@ -14,7 +14,19 @@ namespace P2
         
         private void Start()
         {
+            _match3.OnMatch += OnMatch;
+            _match3.OnMove += OnMove;
             _match3.SetupBoard(_boardSettings).Forget();
+        }
+
+        private void OnMove()
+        {
+           Debug.Log("Move made");
+        }
+
+        private void OnMatch(int count)
+        {
+            Debug.Log("Matches count: " + count);
         }
     }
 }
