@@ -18,7 +18,6 @@ namespace P2
 
         private void Start()
         {
-            _objectivesSystem.SetObjective(_boardSettings);
             _match3.StartGame(_boardSettings).Forget();
         }
     }

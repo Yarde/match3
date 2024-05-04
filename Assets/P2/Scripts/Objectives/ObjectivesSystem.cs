@@ -1,5 +1,4 @@
 using System;
-using Common.Code.Model;
 using Common.Common.Code;
 using Cysharp.Threading.Tasks;
 
@@ -16,15 +15,23 @@ namespace P2.Objectives
         {
             _match3 = match3;
             _factory = factory;
-        }
-        
-        public void SetObjective(BoardSettings boardSettings)
-        {
-            _winCondition = _factory.CreateChipMatchedObjective(boardSettings.matchesNeeded);
-            _loseCondition = _factory.CreateMoveLimitObjective(boardSettings.movesLimit);
             
+            _match3.OnGameStarted += OnGameStarted;
+            _match3.OnGameEnded += OnGameEnded;
+        }
+
+        private void OnGameStarted()
+        {
+            _winCondition = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
+            _loseCondition = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
+
             _winCondition.OnComplete += OnWin;
             _loseCondition.OnComplete += OnLose;
+        }
+
+        private void OnGameEnded(bool obj)
+        {
+            Unsubscribe();
         }
 
         private void OnWin()
@@ -36,8 +43,8 @@ namespace P2.Objectives
         {
             _match3.EndGame(false).Forget();
         }
-
-        public void Dispose()
+        
+        private void Unsubscribe()
         {
             if (_winCondition != null)
             {
@@ -49,6 +56,13 @@ namespace P2.Objectives
                 _loseCondition.OnComplete -= OnLose;
                 _loseCondition.Dispose();
             }
+        }
+
+        public void Dispose()
+        {
+            Unsubscribe();
+            _match3.OnGameStarted -= OnGameStarted;
+            _match3.OnGameEnded -= OnGameEnded;
         }
     }
 }
