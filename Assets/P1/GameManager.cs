@@ -18,6 +18,8 @@ namespace P1
         {
             _match3 = new Match3();
             
+            _match3.OnGameStarted += OnGameStarted;
+            _match3.OnGameEnded += OnGameEnded;
             _match3.OnMatch += OnMatch;
             _match3.OnMove += OnMove;
             
@@ -25,9 +27,22 @@ namespace P1
             _matchesLeft = _boardSettings.matchesNeeded;
             _match3.StartGame(_boardSettings).Forget();
         }
-        
+
+        private void OnGameStarted()
+        {
+            _score = 0;
+        }
+
+        private void OnGameEnded(bool success)
+        {
+            _score += success ? 100 : 0;
+            Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + _score);
+        }
+
         private void OnDestroy()
         {
+            _match3.OnGameStarted -= OnGameStarted;
+            _match3.OnGameEnded -= OnGameEnded;
             _match3.OnMatch -= OnMatch;
             _match3.OnMove -= OnMove;
         }
@@ -38,8 +53,7 @@ namespace P1
             _movesLeft--;
             if (_movesLeft <= 0)
             {
-                Debug.Log("Lose");
-                _match3.EndGame().Forget();
+                _match3.EndGame(false).Forget();
             }
         }
 
@@ -51,8 +65,7 @@ namespace P1
             Debug.Log("Score: " + _score);
             if (_matchesLeft <= 0)
             {
-                Debug.Log("Win");
-                _match3.EndGame().Forget();
+                _match3.EndGame(true).Forget();
             }
         }
     }

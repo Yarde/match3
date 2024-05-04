@@ -13,7 +13,7 @@ namespace Common.Common.Code
     public class Match3
     {
         public event Action OnGameStarted;
-        public event Action OnGameEnded;
+        public event Action<bool> OnGameEnded;
         public event Action OnMove;
         public event Action<int> OnMatch;
         
@@ -36,12 +36,13 @@ namespace Common.Common.Code
             await ClearInitialMatches();
         }
         
-        public async UniTask EndGame()
+        public async UniTask EndGame(bool success)
         {
+            Debug.Log(success ? "Win" : "Lose");
             await UniTask.WaitWhile(() => _busy);
             _busy = true;
             Object.Destroy(_boardView.gameObject);
-            OnGameEnded?.Invoke();
+            OnGameEnded?.Invoke(success);
         }
 
         private async UniTask ClearInitialMatches()

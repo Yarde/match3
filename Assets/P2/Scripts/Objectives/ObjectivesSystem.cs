@@ -1,7 +1,7 @@
 using System;
 using Common.Code.Model;
 using Common.Common.Code;
-using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 namespace P2.Objectives
 {
@@ -29,14 +29,12 @@ namespace P2.Objectives
 
         private void OnWin()
         {
-            Debug.Log("Win");
-            _match3.EndGame();
+            _match3.EndGame(true).Forget();
         }
 
         private void OnLose()
         {
-            Debug.Log("Lose");
-            _match3.EndGame();
+            _match3.EndGame(false).Forget();
         }
 
         public void Dispose()
