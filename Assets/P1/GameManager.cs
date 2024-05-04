@@ -12,6 +12,7 @@ namespace P1
         private Match3 _match3;
         private int _movesLeft;
         private int _matchesLeft;
+        private int _score;
 
         private void Start()
         {
@@ -38,18 +39,20 @@ namespace P1
             if (_movesLeft <= 0)
             {
                 Debug.Log("Lose");
-                _match3.EndGame();
+                _match3.EndGame().Forget();
             }
         }
 
         private void OnMatch(int matchCount)
         {
             _matchesLeft -= matchCount;
+            _score += matchCount * 100;
             Debug.Log("Matched " + matchCount + " chips, " + _matchesLeft + " left");
+            Debug.Log("Score: " + _score);
             if (_matchesLeft <= 0)
             {
                 Debug.Log("Win");
-                _match3.EndGame();
+                _match3.EndGame().Forget();
             }
         }
     }
