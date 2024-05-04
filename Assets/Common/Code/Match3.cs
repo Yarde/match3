@@ -12,6 +12,8 @@ namespace Common.Common.Code
 {
     public class Match3
     {
+        public event Action OnGameStarted;
+        public event Action OnGameEnded;
         public event Action OnMove;
         public event Action<int> OnMatch;
         
@@ -20,7 +22,7 @@ namespace Common.Common.Code
         private BoardSettings _boardSettings;
         private BoardView _boardView;
 
-        public async UniTask SetupBoard(BoardSettings boardSettings)
+        public async UniTask StartGame(BoardSettings boardSettings)
         {
             _boardSettings = boardSettings;
             _boardView = CreateBoard();
@@ -30,7 +32,13 @@ namespace Common.Common.Code
                 SubscribeToUserActions(chip);
             }
 
+            OnGameStarted?.Invoke();
             await ClearInitialMatches();
+        }
+        
+        public void EndGame()
+        {
+            OnGameEnded?.Invoke();
         }
 
         private async UniTask ClearInitialMatches()

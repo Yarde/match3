@@ -1,20 +1,20 @@
 {
-    "name": "P2",
-    "rootNamespace": "P2",
-    "references": [
-        "Common",
-        "UniTask",
-        "UniTask.DOTween",
-        "Unity.TextMeshPro",
-        "VContainer"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [],
-    "autoReferenced": false,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "P2",
+  "rootNamespace": "P2",
+  "references": [
+    "Common",
+    "UniTask",
+    "UniTask.DOTween",
+    "Unity.TextMeshPro",
+    "VContainer"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }
