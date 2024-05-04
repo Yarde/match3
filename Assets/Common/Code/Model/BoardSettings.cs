@@ -13,6 +13,9 @@ namespace Common.Code.Model
         public BoardVisuals boardVisuals;
         public ChipGeneratorBase generatorData;
         public BoardView boardViewPrefab;
+        
+        public int movesLimit;
+        public int matchesNeeded;
 
         public bool allowNonMatchSwipe = true;
     }

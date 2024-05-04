@@ -1,4 +1,5 @@
 using System;
+using Common.Code.Model;
 using Common.Common.Code;
 using UnityEngine;
 
@@ -17,10 +18,10 @@ namespace P2.Objectives
             _factory = factory;
         }
         
-        public void SetObjective(int matchesNeeded, int moveLimit)
+        public void SetObjective(BoardSettings boardSettings)
         {
-            _winCondition = _factory.CreateChipMatchedObjective(matchesNeeded);
-            _loseCondition = _factory.CreateMoveLimitObjective(moveLimit);
+            _winCondition = _factory.CreateChipMatchedObjective(boardSettings.matchesNeeded);
+            _loseCondition = _factory.CreateMoveLimitObjective(boardSettings.movesLimit);
             
             _winCondition.OnComplete += OnWin;
             _loseCondition.OnComplete += OnLose;

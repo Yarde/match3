@@ -36,16 +36,21 @@ namespace Common.Common.Code
             await ClearInitialMatches();
         }
         
-        public void EndGame()
+        public async UniTask EndGame()
         {
+            await UniTask.WaitWhile(() => _busy);
+            _busy = true;
+            Object.Destroy(_boardView.gameObject);
             OnGameEnded?.Invoke();
         }
 
         private async UniTask ClearInitialMatches()
         {
+            _busy = true;
             await UniTask.Delay(200);
             IsMatchDetected(out var matches);
             await OnMatchPossible(matches);
+            _busy = false;
         }
 
         private void SubscribeToUserActions(ChipView chip)
