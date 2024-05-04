@@ -19,12 +19,12 @@ namespace Common.Common.Code
         
         private BoardCell[,] _board;
         private bool _busy;
-        private BoardSettings _boardSettings;
+        public BoardSettings BoardSettings { get; private set; }
         private BoardView _boardView;
 
         public async UniTask StartGame(BoardSettings boardSettings)
         {
-            _boardSettings = boardSettings;
+            BoardSettings = boardSettings;
             _boardView = CreateBoard();
             await _boardView.Setup(boardSettings, _board);
             foreach (var chip in _boardView.Prefabs)
@@ -62,7 +62,7 @@ namespace Common.Common.Code
 
         private BoardView CreateBoard()
         {
-            var size = _boardSettings.boardSize;
+            var size = BoardSettings.boardSize;
             _board = new BoardCell[size.x, size.y];
 
             for (var i = 0; i < size.x; i++)
@@ -71,13 +71,13 @@ namespace Common.Common.Code
                 {
                     _board[i, j] = new BoardCell
                     {
-                        chip = Object.Instantiate(_boardSettings.generatorData.GetChip()),
+                        chip = Object.Instantiate(BoardSettings.generatorData.GetChip()),
                         Index = new Vector2Int(i, j)
                     };
                 }
             }
             
-            return Object.Instantiate(_boardSettings.boardViewPrefab);
+            return Object.Instantiate(BoardSettings.boardViewPrefab);
         }
 
         private void OnSwap(Vector2Int sourcePosition, Vector2Int destinationPosition)
@@ -144,7 +144,7 @@ namespace Common.Common.Code
                 return;
             }
 
-            if (_boardSettings.boardSize.InBounds2D(destinationPosition))
+            if (BoardSettings.boardSize.InBounds2D(destinationPosition))
             {
                 Debug.Log("Destination Out Of Bounds!");
                 _busy = false;
@@ -166,7 +166,7 @@ namespace Common.Common.Code
                 OnMove?.Invoke();
             }
             else{
-                if (!_boardSettings.allowNonMatchSwipe)
+                if (!BoardSettings.allowNonMatchSwipe)
                 {
                     await DoSwap(cellDestination, cellSource);
                 }
@@ -276,8 +276,8 @@ namespace Common.Common.Code
 
         private (BoardElement, UniTask) CreateNewCell(int i, int j, float delay)
         {
-            var newChip = Object.Instantiate(_boardSettings.generatorData.GetChip());
-            var chipView = _boardView.CreateNewChip(i, _board.GetLength(1), newChip, _boardSettings);
+            var newChip = Object.Instantiate(BoardSettings.generatorData.GetChip());
+            var chipView = _boardView.CreateNewChip(i, _board.GetLength(1), newChip, BoardSettings);
             SubscribeToUserActions(chipView);
             var move = new Move(new Vector2Int(i, _board.GetLength(1)), new Vector2Int(i, j), delay);
             var newMove = newChip.OnMove.Invoke(move);
@@ -308,11 +308,11 @@ namespace Common.Common.Code
         private bool IsMatchDetected(out HashSet<BoardCell> matches)
         {
             matches = new HashSet<BoardCell>();
-            for (var i = 0; i < _boardSettings.boardSize.x; i++)
+            for (var i = 0; i < BoardSettings.boardSize.x; i++)
             {
-                for (var j = 0; j < _boardSettings.boardSize.y; j++)
+                for (var j = 0; j < BoardSettings.boardSize.y; j++)
                 {
-                    if (_board[i, j].CheckMatch(_boardSettings, _board))
+                    if (_board[i, j].CheckMatch(BoardSettings, _board))
                     {
                         matches.Add(_board[i, j]);
                     }

@@ -7,6 +7,8 @@ namespace P2.Scoring
     public class ScoringSystem : IDisposable
     {
         private readonly Match3 _match3;
+        
+        private int _movesLeft;
 
         public int Score { get; private set; }
 
@@ -17,6 +19,12 @@ namespace P2.Scoring
             _match3.OnGameStarted += OnGameStarted;
             _match3.OnGameEnded += OnGameEnded;
             _match3.OnMatch += OnMatch;
+            _match3.OnMove += OnMove;
+        }
+
+        private void OnMove()
+        {
+            _movesLeft--;
         }
 
         private void OnMatch(int matchCount)
@@ -28,13 +36,14 @@ namespace P2.Scoring
         private void OnGameStarted()
         {
             Score = 0;
+            _movesLeft = _match3.BoardSettings.movesLimit;
         }
 
         private void OnGameEnded(bool success)
         {
             if (success)
             {
-                Score += 100;
+                Score += _movesLeft * 100;
             }
             Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + Score);
             Unsubscribe();
@@ -49,6 +58,8 @@ namespace P2.Scoring
         {
             _match3.OnGameStarted -= OnGameStarted;
             _match3.OnGameEnded -= OnGameEnded;
+            _match3.OnMatch -= OnMatch;
+            _match3.OnMove -= OnMove;
         }
     }
 }

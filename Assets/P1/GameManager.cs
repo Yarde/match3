@@ -13,6 +13,7 @@ namespace P1
         private int _movesLeft;
         private int _matchesLeft;
         private int _score;
+        private bool _isGameEnded;
 
         private void Start()
         {
@@ -30,12 +31,13 @@ namespace P1
 
         private void OnGameStarted()
         {
+            _isGameEnded = false;
             _score = 0;
         }
 
         private void OnGameEnded(bool success)
         {
-            _score += success ? 100 : 0;
+            _score += success ? _movesLeft * 100 : 0;
             Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + _score);
         }
 
@@ -51,8 +53,9 @@ namespace P1
         {
             Debug.Log("Move made");
             _movesLeft--;
-            if (_movesLeft <= 0)
+            if (!_isGameEnded && _movesLeft <= 0)
             {
+                _isGameEnded = true;
                 _match3.EndGame(false).Forget();
             }
         }
@@ -60,11 +63,12 @@ namespace P1
         private void OnMatch(int matchCount)
         {
             _matchesLeft -= matchCount;
-            _score += matchCount * 100;
+            _score += matchCount * 10;
             Debug.Log("Matched " + matchCount + " chips, " + _matchesLeft + " left");
             Debug.Log("Score: " + _score);
-            if (_matchesLeft <= 0)
+            if (!_isGameEnded && _matchesLeft <= 0)
             {
+                _isGameEnded = true;
                 _match3.EndGame(true).Forget();
             }
         }
