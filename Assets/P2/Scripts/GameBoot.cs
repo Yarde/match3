@@ -1,7 +1,7 @@
-using Common.Code.Model;
-using Common.Common.Code;
 using Cysharp.Threading.Tasks;
 using P2.Gameplay;
+using P2.Levels;
+using P2.Progression;
 using UnityEngine;
 using VContainer;
 
@@ -9,13 +9,15 @@ namespace P2
 {
     public class GameBoot : MonoBehaviour
     {
-        [SerializeField] private BoardSettings _boardSettings;
-
         [Inject] private GameplaySystem _gameplaySystem;
+        [Inject] private ProgressionSystem _progressionSystem;
+        [Inject] private LevelSystem _levelSystem;
 
         private void Start()
         {
-            _gameplaySystem.StartGame(_boardSettings).Forget();
+            
+            var currentLevel = _levelSystem.CurrentLevel;
+            _gameplaySystem.StartGame(currentLevel).Forget();
         }
     }
 }
