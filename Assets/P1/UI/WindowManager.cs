@@ -11,12 +11,17 @@ namespace P1.UI
 
         private void Awake()
         {
+            RegisterWindows();
+        }
+
+        private void RegisterWindows()
+        {
             foreach (var window in _windows)
             {
                 _typeToWindow.Add(window.GetType(), window);
             }
         }
-        
+
         public T OpenWindow<T>() where T : Window
         {
             foreach (var window in _windows)

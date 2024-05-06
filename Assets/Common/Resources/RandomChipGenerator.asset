@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: RandomChipGenerator
   m_EditorClassIdentifier: 
   chips:
-  - chip: {fileID: 11400000, guid: e784eb10f96204041880a4defbdbaf06, type: 2}
+  - chip: {fileID: 11400000, guid: 45a793cf3105447f3a7d641dc0714072, type: 2}
     probablility: 1
   - chip: {fileID: 11400000, guid: 64a08740192dd4d01a4d469154be8343, type: 2}
     probablility: 1
-  - chip: {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
-    probablility: 1
-  - chip: {fileID: 11400000, guid: 9a6ff9045ace6419199f46d7b711eb38, type: 2}
+  - chip: {fileID: 11400000, guid: 21f130a7b228e4c7cb42967695bcc2f4, type: 2}
     probablility: 1

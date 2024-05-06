@@ -12,8 +12,6 @@ namespace P2.Gameplay
     {
         private readonly Match3 _match3;
         private readonly WindowSystem _windowSystem;
-        private readonly ScoringSystem _scoringSystem;
-        private readonly ObjectivesSystem _objectivesSystem;
         private GameHUDViewModel _hud;
 
         public GameplaySystem(Match3 match3, WindowSystem windowSystem, 
@@ -21,8 +19,6 @@ namespace P2.Gameplay
         {
            _match3 = match3;
            _windowSystem = windowSystem;
-           _scoringSystem = scoringSystem;
-           _objectivesSystem = objectivesSystem;
            
            _match3.OnGameEnded += OnGameEnded;
         }
