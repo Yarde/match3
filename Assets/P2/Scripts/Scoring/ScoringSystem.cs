@@ -1,5 +1,6 @@
 using System;
 using Common.Common.Code;
+using P2.Observable;
 using UnityEngine;
 
 namespace P2.Scoring
@@ -10,7 +11,8 @@ namespace P2.Scoring
         
         private int _movesLeft;
 
-        public int Score { get; private set; }
+        public IObservableProperty<int> Score => _score;
+        private readonly ObservableProperty<int> _score = new();
 
         public ScoringSystem(Match3 match3)
         {
@@ -29,13 +31,13 @@ namespace P2.Scoring
 
         private void OnMatch(int matchCount)
         {
-            Score += matchCount * 10;
+            _score.Value += matchCount * 10;
             Debug.Log("Score: " + Score);
         }
 
         private void OnGameStarted()
         {
-            Score = 0;
+            _score.Value = 0;
             _movesLeft = _match3.BoardSettings.movesLimit;
         }
 
@@ -43,7 +45,7 @@ namespace P2.Scoring
         {
             if (success)
             {
-                Score += _movesLeft * 100;
+                _score.Value += _movesLeft * 100;
             }
             Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + Score);
             Unsubscribe();

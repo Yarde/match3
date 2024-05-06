@@ -1,6 +1,7 @@
 ﻿using Common.Common.Code;
 using P2.Objectives;
 using P2.Scoring;
+using P2.UI;
 using VContainer;
 using VContainer.Unity;
 
@@ -14,6 +15,7 @@ namespace P2.DependencyInjection
             builder.Register<ScoringSystem>(Lifetime.Singleton);
             builder.Register<ObjectivesSystem>(Lifetime.Singleton);
             builder.Register<ObjectivesFactory>(Lifetime.Singleton);
+            builder.Register<WindowSystem>(Lifetime.Singleton);
         }
     }
 }
