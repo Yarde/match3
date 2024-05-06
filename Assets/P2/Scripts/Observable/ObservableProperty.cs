@@ -8,6 +8,7 @@ namespace P2.Observable
 
         public ObservableProperty(T initialValue = default)
         {
+            OnValueChanged = new DisposableSubscription<T>(this);
             _currentValue = initialValue;
         }
 
