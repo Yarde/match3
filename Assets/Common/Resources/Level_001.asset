@@ -21,4 +21,6 @@ MonoBehaviour:
     boardOffset: 20
   generatorData: {fileID: 11400000, guid: df5f0aac460f24b2eaca6f3335071102, type: 2}
   boardViewPrefab: {fileID: 3642162827020607705, guid: a95b88b873fda40948347b29ea53bdaf, type: 3}
+  movesLimit: 10
+  matchesNeeded: 60
   allowNonMatchSwipe: 1

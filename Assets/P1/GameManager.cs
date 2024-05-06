@@ -1,6 +1,7 @@
 using Common.Code.Model;
 using Common.Common.Code;
 using Cysharp.Threading.Tasks;
+using P1.UI;
 using UnityEngine;
 
 namespace P1
@@ -8,8 +9,10 @@ namespace P1
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private BoardSettings _boardSettings;
-        
+        [SerializeField] private WindowManager _windowManager;
+
         private Match3 _match3;
+        private GameHUD _hud;
         private int _movesLeft;
         private int _matchesLeft;
         private int _score;
@@ -26,6 +29,8 @@ namespace P1
             
             _movesLeft = _boardSettings.movesLimit;
             _matchesLeft = _boardSettings.matchesNeeded;
+
+            _hud = _windowManager.OpenWindow<GameHUD>();
             _match3.StartGame(_boardSettings).Forget();
         }
 
@@ -33,11 +38,13 @@ namespace P1
         {
             _isGameEnded = false;
             _score = 0;
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
         }
 
         private void OnGameEnded(bool success)
         {
             _score += success ? _movesLeft * 100 : 0;
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
             Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + _score);
         }
 
@@ -53,6 +60,7 @@ namespace P1
         {
             Debug.Log("Move made");
             _movesLeft--;
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
             if (!_isGameEnded && _movesLeft <= 0)
             {
                 _isGameEnded = true;
@@ -64,6 +72,7 @@ namespace P1
         {
             _matchesLeft -= matchCount;
             _score += matchCount * 10;
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
             Debug.Log("Matched " + matchCount + " chips, " + _matchesLeft + " left");
             Debug.Log("Score: " + _score);
             if (!_isGameEnded && _matchesLeft <= 0)
