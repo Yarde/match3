@@ -12,11 +12,12 @@ namespace P2.UI
             _container = container;
         }
 
-        public void OpenWindow<T>() where T : ViewModel
+        public T OpenWindow<T>() where T : ViewModel
         {
             var viewModel = Activator.CreateInstance<T>();
             _container.Inject(viewModel);
             viewModel.Show();
+            return viewModel;
         }
     }
 }

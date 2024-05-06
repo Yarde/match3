@@ -33,7 +33,7 @@ namespace Common.Common.Code
             }
 
             OnGameStarted?.Invoke();
-            await ClearInitialMatches();
+            ClearInitialMatches().Forget();
         }
         
         public async UniTask EndGame(bool success)

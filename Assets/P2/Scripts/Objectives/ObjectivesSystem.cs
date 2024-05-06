@@ -6,8 +6,8 @@ namespace P2.Objectives
 {
     public class ObjectivesSystem : IDisposable
     {
-        private Objective _winCondition;
-        private Objective _loseCondition;
+        public Objective WinCondition { get; private set; }
+        public Objective LoseCondition { get; private set; }
         private readonly Match3 _match3;
         private readonly ObjectivesFactory _factory;
 
@@ -22,11 +22,11 @@ namespace P2.Objectives
 
         private void OnGameStarted()
         {
-            _winCondition = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
-            _loseCondition = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
+            WinCondition = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
+            LoseCondition = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
 
-            _winCondition.OnComplete += OnWin;
-            _loseCondition.OnComplete += OnLose;
+            WinCondition.OnComplete += OnWin;
+            LoseCondition.OnComplete += OnLose;
         }
 
         private void OnGameEnded(bool obj)
@@ -46,15 +46,15 @@ namespace P2.Objectives
         
         private void Unsubscribe()
         {
-            if (_winCondition != null)
+            if (WinCondition != null)
             {
-                _winCondition.OnComplete -= OnWin;
-                _winCondition.Dispose();
+                WinCondition.OnComplete -= OnWin;
+                WinCondition.Dispose();
             }
-            if (_loseCondition != null)
+            if (LoseCondition != null)
             {
-                _loseCondition.OnComplete -= OnLose;
-                _loseCondition.Dispose();
+                LoseCondition.OnComplete -= OnLose;
+                LoseCondition.Dispose();
             }
         }
 

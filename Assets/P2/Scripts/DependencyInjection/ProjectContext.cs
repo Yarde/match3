@@ -1,4 +1,5 @@
 ﻿using Common.Common.Code;
+using P2.Gameplay;
 using P2.Objectives;
 using P2.Scoring;
 using P2.UI;
@@ -16,6 +17,7 @@ namespace P2.DependencyInjection
             builder.Register<ObjectivesSystem>(Lifetime.Singleton);
             builder.Register<ObjectivesFactory>(Lifetime.Singleton);
             builder.Register<WindowSystem>(Lifetime.Singleton);
+            builder.Register<GameplaySystem>(Lifetime.Singleton);
         }
     }
 }

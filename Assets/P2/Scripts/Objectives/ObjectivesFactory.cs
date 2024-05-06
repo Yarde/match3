@@ -11,12 +11,12 @@ namespace P2.Objectives
             _match3 = match3;
         }
         
-        public Objective CreateChipMatchedObjective(int matchesNeeded)
+        public ChipMatchedObjective CreateChipMatchedObjective(int matchesNeeded)
         {
             return new ChipMatchedObjective(matchesNeeded, _match3);
         }
 
-        public Objective CreateMoveLimitObjective(int moveLimit)
+        public MoveLimitObjective CreateMoveLimitObjective(int moveLimit)
         {
             return new MoveLimitObjective(moveLimit, _match3);
 
