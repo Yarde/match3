@@ -34,6 +34,20 @@ namespace P1
             var json = JsonUtility.ToJson(stats);
             PlayerPrefs.SetString("Stats_P1", json);
         }
+
+        public void OnGameFinished(bool win)
+        {
+            if (win)
+            {
+                Stats.Wins++;
+            }
+            else
+            {
+                Stats.Losses++;
+            }
+            var games = Stats.Wins + Stats.Losses;
+            Stats.WinLossRatio = Stats.Wins / (float) games;
+        }
     }
 
     public class Stats

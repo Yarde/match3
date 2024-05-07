@@ -12,8 +12,11 @@ namespace P1.UI
     {
         [SerializeField] private TextMeshProUGUI _currentLevelName;
         [SerializeField] private Button _playButton;
+        [SerializeField] private Button _statsButton;
         [SerializeField] private Transform _levelSelectionParent;
         [SerializeField] private LevelSelectionElement _levelSelectionPrefab;
+        
+        [SerializeField] private WindowManager _windowManager;
 
         private List<BoardSettings> _boardSettings;
         private readonly List<LevelSelectionElement> _levelElements = new();
@@ -30,6 +33,11 @@ namespace P1.UI
             _playButton.onClick.AddListener(() =>
             {
                 startGame(boardSettings[PlayerPrefs.GetInt("CurrentLevel_P1", 0)]);
+            });
+            
+            _statsButton.onClick.AddListener(() =>
+            {
+                _windowManager.OpenWindow<StatsWindow>();
             });
 
             for (var i = 0; i < boardSettings.Count; i++)

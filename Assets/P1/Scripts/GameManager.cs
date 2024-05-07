@@ -12,11 +12,11 @@ namespace P1
         [SerializeField] private List<BoardSettings> _boardSettings;
         [SerializeField] private WindowManager _windowManager;
         [SerializeField] private StatsManager _statsManager;
-        
-        public Match3 Match3 { get; private set; }
-        public int MovesLeft { get; private set; }
-        public int MatchesLeft { get; private set; }
-        public int Score { get; private set; }
+
+        private Match3 _match3;
+        private int _movesLeft;
+        private int _matchesLeft;
+        private int _score;
         
         private GameHUD _hud;
         private StartScreen _startScreen;
@@ -24,12 +24,12 @@ namespace P1
 
         private void Start()
         {
-            Match3 = new Match3();
+            _match3 = new Match3();
             
-            Match3.OnGameStarted += OnGameStarted;
-            Match3.OnGameEnded += OnGameEnded;
-            Match3.OnMatch += OnMatch;
-            Match3.OnMove += OnMove;
+            _match3.OnGameStarted += OnGameStarted;
+            _match3.OnGameEnded += OnGameEnded;
+            _match3.OnMatch += OnMatch;
+            _match3.OnMove += OnMove;
 
             _startScreen = _windowManager.OpenWindow<StartScreen>();
             _startScreen.Setup(_boardSettings, StartGame);
@@ -37,26 +37,26 @@ namespace P1
         
         private async UniTask StartGame(BoardSettings settings)
         {
-            MovesLeft = settings.movesLimit;
-            MatchesLeft = settings.matchesNeeded;
+            _movesLeft = settings.movesLimit;
+            _matchesLeft = settings.matchesNeeded;
             
             _hud = _windowManager.OpenWindow<GameHUD>();
-            await Match3.StartGame(settings);
+            await _match3.StartGame(settings);
         }
 
         private void OnGameStarted()
         {
             _isGameEnded = false;
-            Score = 0;
-            _hud.Setup(Score, MovesLeft, MatchesLeft);
+            _score = 0;
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
         }
 
         private void OnGameEnded(bool success)
         {
-            var gain = success ? MovesLeft * 100 : 0;
-            Score += gain;
+            var gain = success ? _movesLeft * 100 : 0;
+            _score += gain;
             _statsManager.Stats.Score += gain;
-            _hud.Setup(Score, MovesLeft, MatchesLeft);
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
 
             var currentLevel = PlayerPrefs.GetInt("CurrentLevel_P1", 0);
             var playerLevel = PlayerPrefs.GetInt("PlayerLevel_P1", 0);
@@ -71,44 +71,47 @@ namespace P1
 
         private void OnDestroy()
         {
-            Match3.OnGameStarted -= OnGameStarted;
-            Match3.OnGameEnded -= OnGameEnded;
-            Match3.OnMatch -= OnMatch;
-            Match3.OnMove -= OnMove;
+            if (!_isGameEnded)
+            {
+                _statsManager.OnGameFinished(false);
+            }
+            
+            _match3.OnGameStarted -= OnGameStarted;
+            _match3.OnGameEnded -= OnGameEnded;
+            _match3.OnMatch -= OnMatch;
+            _match3.OnMove -= OnMove;
         }
 
         private void OnMove()
         {
-            MovesLeft--;
+            _movesLeft--;
             _statsManager.Stats.Moves++;
             
-            _hud.Setup(Score, MovesLeft, MatchesLeft);
-            if (!_isGameEnded && MovesLeft <= 0)
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
+            if (!_isGameEnded && _movesLeft <= 0)
             {
                 _isGameEnded = true;
-                Match3.EndGame(false).Forget();
-                
-                _statsManager.Stats.Losses++;
-                _statsManager.Stats.WinLossRatio = _statsManager.Stats.Wins / (float) _statsManager.Stats.Losses;
+                _match3.EndGame(false).Forget();
+
+                _statsManager.OnGameFinished(false);
             }
         }
 
         private void OnMatch(int matchCount)
         {
-            MatchesLeft -= matchCount;
+            _matchesLeft -= matchCount;
             _statsManager.Stats.Matches += matchCount;
             
-            Score += matchCount * 10;
+            _score += matchCount * 10;
             _statsManager.Stats.Score += matchCount * 10;
 
-            _hud.Setup(Score, MovesLeft, MatchesLeft);
-            if (!_isGameEnded && MatchesLeft <= 0)
+            _hud.Setup(_score, _movesLeft, _matchesLeft);
+            if (!_isGameEnded && _matchesLeft <= 0)
             {
                 _isGameEnded = true;
-                Match3.EndGame(true).Forget();
+                _match3.EndGame(true).Forget();
                 
-                _statsManager.Stats.Wins++;
-                _statsManager.Stats.WinLossRatio = _statsManager.Stats.Wins / (float) _statsManager.Stats.Losses;
+                _statsManager.OnGameFinished(true);
             }
         }
     }
