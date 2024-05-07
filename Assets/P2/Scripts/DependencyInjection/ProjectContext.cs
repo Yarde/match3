@@ -2,7 +2,6 @@
 using P2.Gameplay;
 using P2.Levels;
 using P2.Objectives;
-using P2.Progression;
 using P2.Scoring;
 using P2.UI;
 using VContainer;
@@ -20,8 +19,7 @@ namespace P2.DependencyInjection
             builder.Register<ObjectivesFactory>(Lifetime.Singleton);
             builder.Register<WindowSystem>(Lifetime.Singleton);
             builder.Register<GameplaySystem>(Lifetime.Singleton);
-            builder.Register<LevelSystem>(Lifetime.Singleton);
-            builder.Register<ProgressionSystem>(Lifetime.Singleton);
+            builder.Register<LevelProgressionSystem>(Lifetime.Singleton);
         }
     }
 }

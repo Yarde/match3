@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using P2.Gameplay;
 using P2.Levels;
-using P2.Progression;
 using UnityEngine;
 using VContainer;
 
@@ -10,13 +9,11 @@ namespace P2
     public class GameBoot : MonoBehaviour
     {
         [Inject] private GameplaySystem _gameplaySystem;
-        [Inject] private ProgressionSystem _progressionSystem;
-        [Inject] private LevelSystem _levelSystem;
+        [Inject] private LevelProgressionSystem _levelProgressionSystem;
 
         private void Start()
         {
-            
-            var currentLevel = _levelSystem.CurrentLevel;
+            var currentLevel = _levelProgressionSystem.CurrentLevel;
             _gameplaySystem.StartGame(currentLevel).Forget();
         }
     }
