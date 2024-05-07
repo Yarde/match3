@@ -17,6 +17,7 @@ namespace P2.UI
             view.CurrentLevelName.Bind(_levelProgressionSystem.CurrentLevel, "Level: {0}").AddTo(disposables);
             view.PlayButton.onClick.AddListener(StartGame);
             view.StatsButton.onClick.AddListener(() => _windowSystem.Push<StatsViewModel>());
+            view.AchievementsButton.onClick.AddListener(() => _windowSystem.Push<AchievementsViewModel>());
 
             foreach (var level in _levelProgressionSystem.AllLevels)
             {

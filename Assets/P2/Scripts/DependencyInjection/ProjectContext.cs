@@ -1,4 +1,5 @@
 ﻿using Common.Common.Code;
+using P2.Achievements;
 using P2.Gameplay;
 using P2.Levels;
 using P2.Objectives;
@@ -22,6 +23,7 @@ namespace P2.DependencyInjection
             builder.Register<GameplaySystem>(Lifetime.Singleton);
             builder.Register<LevelProgressionSystem>(Lifetime.Singleton);
             builder.Register<StatsSystem>(Lifetime.Singleton);
+            builder.Register<AchievementsSystem>(Lifetime.Singleton);
         }
     }
 }
