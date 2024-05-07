@@ -13,6 +13,7 @@ namespace P1.UI
         [SerializeField] private TextMeshProUGUI _currentLevelName;
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _statsButton;
+        [SerializeField] private Button _achievementsButton;
         [SerializeField] private Transform _levelSelectionParent;
         [SerializeField] private LevelSelectionElement _levelSelectionPrefab;
         
@@ -38,6 +39,11 @@ namespace P1.UI
             _statsButton.onClick.AddListener(() =>
             {
                 _windowManager.OpenWindow<StatsWindow>();
+            });
+            
+            _achievementsButton.onClick.AddListener(() =>
+            {
+                _windowManager.OpenWindow<AchievementsWindow>();
             });
 
             for (var i = 0; i < boardSettings.Count; i++)
