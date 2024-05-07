@@ -5,7 +5,7 @@ namespace P2.Objectives
 {
     public abstract class Objective : IDisposable
     {
-        public abstract event Action OnComplete;
+        public abstract DisposableSubscription<int> OnComplete { get; }
         public abstract IObservableProperty<int> Value { get; }
         public abstract void Dispose();
     }

@@ -1,20 +1,26 @@
 using System;
 using Common.Common.Code;
 using Cysharp.Threading.Tasks;
+using P2.Observable;
+using P2.UI;
 
 namespace P2.Objectives
 {
     public class ObjectivesSystem : IDisposable
     {
-        public Objective WinCondition { get; private set; }
-        public Objective LoseCondition { get; private set; }
+        public ObservableProperty<Objective> WinCondition { get; private set; }
+        public ObservableProperty<Objective> LoseCondition { get; private set; }
         private readonly Match3 _match3;
         private readonly ObjectivesFactory _factory;
+        private CompositeDisposable _disposables;
 
         public ObjectivesSystem(Match3 match3, ObjectivesFactory factory)
         {
             _match3 = match3;
             _factory = factory;
+            
+            WinCondition = new ObservableProperty<Objective>();
+            LoseCondition = new ObservableProperty<Objective>();
             
             _match3.OnGameStarted += OnGameStarted;
             _match3.OnGameEnded += OnGameEnded;
@@ -22,45 +28,35 @@ namespace P2.Objectives
 
         private void OnGameStarted()
         {
-            WinCondition = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
-            LoseCondition = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
+            _disposables = new CompositeDisposable();
+            
+            WinCondition.Value = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
+            LoseCondition.Value = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
 
-            WinCondition.OnComplete += OnWin;
-            LoseCondition.OnComplete += OnLose;
+            WinCondition.Value.AddTo(_disposables);
+            LoseCondition.Value.AddTo(_disposables);
+            WinCondition.Value.OnComplete.Subscribe(OnWin).AddTo(_disposables);
+            LoseCondition.Value.OnComplete.Subscribe(OnLose).AddTo(_disposables);
         }
 
         private void OnGameEnded(bool obj)
         {
-            Unsubscribe();
+            _disposables?.Dispose();
         }
 
-        private void OnWin()
+        private void OnWin(int _)
         {
             _match3.EndGame(true).Forget();
         }
 
-        private void OnLose()
+        private void OnLose(int _)
         {
             _match3.EndGame(false).Forget();
-        }
-        
-        private void Unsubscribe()
-        {
-            if (WinCondition != null)
-            {
-                WinCondition.OnComplete -= OnWin;
-                WinCondition.Dispose();
-            }
-            if (LoseCondition != null)
-            {
-                LoseCondition.OnComplete -= OnLose;
-                LoseCondition.Dispose();
-            }
         }
 
         public void Dispose()
         {
-            Unsubscribe();
+            _disposables?.Dispose();
             _match3.OnGameStarted -= OnGameStarted;
             _match3.OnGameEnded -= OnGameEnded;
         }

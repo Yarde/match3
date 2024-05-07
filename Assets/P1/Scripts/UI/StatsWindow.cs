@@ -26,14 +26,14 @@ namespace P1.UI
             
             _closeButton.onClick.AddListener(Close);
             
-            _matchCount.text = $"Match: {stats.Matches}";
-            _movesCount.text = $"Moves: {stats.Moves}";
-            _timeCount.text = $"Time: {stats.TimePlayed}";
-            _totalScore.text = $"Total Score: {stats.Score}";
+            _matchCount.text = $"Match: {stats.matches}";
+            _movesCount.text = $"Moves: {stats.moves}";
+            _timeCount.text = $"Time: {stats.timePlayed}";
+            _totalScore.text = $"Total Score: {stats.score}";
             
-            _winCount.text = $"Win: {stats.Wins}";
-            _loseCount.text = $"Lose: {stats.Losses}";
-            _winRate.text = $"Win Rate: {stats.WinLossRatio * 100}%";
+            _winCount.text = $"Win: {stats.wins}";
+            _loseCount.text = $"Lose: {stats.losses}";
+            _winRate.text = $"Win Rate: {stats.winLossRatio * 100}%";
         }
 
         private void Close()

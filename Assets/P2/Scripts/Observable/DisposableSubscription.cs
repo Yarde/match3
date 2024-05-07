@@ -22,7 +22,6 @@ namespace P2.Observable
         public IDisposable Subscribe(Action<T> action)
         {
             SubscribeAction += action;
-            action.Invoke(_property.Value);
             return _disposables.Add(new Unsubscriber<T>(SubscribeAction, action));
         }
 

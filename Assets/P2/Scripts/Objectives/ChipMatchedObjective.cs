@@ -12,7 +12,7 @@ namespace P2.Objectives
         private readonly ObservableProperty<int> _matchesLeft; 
         private bool _isCompleted;
         
-        public override event Action OnComplete;
+        public override DisposableSubscription<int> OnComplete { get; }
 
         private readonly Match3 _match3;
         
@@ -20,6 +20,7 @@ namespace P2.Objectives
         {
             _match3 = match3;
             _matchesLeft = new ObservableProperty<int>(matchesNeeded);
+            OnComplete = new DisposableSubscription<int>(_matchesLeft);
             _match3.OnMatch += OnMatch;
         }
 
@@ -29,7 +30,7 @@ namespace P2.Objectives
             if (!_isCompleted && _matchesLeft.Value <= 0)
             {
                 _isCompleted = true;
-                OnComplete?.Invoke();
+                OnComplete?.Invoke(_matchesLeft.Value);
             }
         }
 

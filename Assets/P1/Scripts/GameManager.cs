@@ -55,7 +55,7 @@ namespace P1
         {
             var gain = success ? _movesLeft * 100 : 0;
             _score += gain;
-            _statsManager.Stats.Score += gain;
+            _statsManager.Stats.score += gain;
             _hud.Setup(_score, _movesLeft, _matchesLeft);
 
             var currentLevel = PlayerPrefs.GetInt("CurrentLevel_P1", 0);
@@ -85,7 +85,7 @@ namespace P1
         private void OnMove()
         {
             _movesLeft--;
-            _statsManager.Stats.Moves++;
+            _statsManager.Stats.moves++;
             
             _hud.Setup(_score, _movesLeft, _matchesLeft);
             if (!_isGameEnded && _movesLeft <= 0)
@@ -100,10 +100,10 @@ namespace P1
         private void OnMatch(int matchCount)
         {
             _matchesLeft -= matchCount;
-            _statsManager.Stats.Matches += matchCount;
+            _statsManager.Stats.matches += matchCount;
             
             _score += matchCount * 10;
-            _statsManager.Stats.Score += matchCount * 10;
+            _statsManager.Stats.score += matchCount * 10;
 
             _hud.Setup(_score, _movesLeft, _matchesLeft);
             if (!_isGameEnded && _matchesLeft <= 0)

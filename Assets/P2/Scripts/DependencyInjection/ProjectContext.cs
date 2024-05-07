@@ -3,6 +3,7 @@ using P2.Gameplay;
 using P2.Levels;
 using P2.Objectives;
 using P2.Scoring;
+using P2.Stats;
 using P2.UI;
 using VContainer;
 using VContainer.Unity;
@@ -20,6 +21,7 @@ namespace P2.DependencyInjection
             builder.Register<WindowSystem>(Lifetime.Singleton);
             builder.Register<GameplaySystem>(Lifetime.Singleton);
             builder.Register<LevelProgressionSystem>(Lifetime.Singleton);
+            builder.Register<StatsSystem>(Lifetime.Singleton);
         }
     }
 }

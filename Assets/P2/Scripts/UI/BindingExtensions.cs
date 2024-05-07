@@ -12,6 +12,11 @@ namespace P2.UI
             return observableProperty.InvokeAndSubscribe(value => text.text = string.Format(format, value));
         }
         
+        public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<float> observableProperty, string format = "{0}")
+        {
+            return observableProperty.InvokeAndSubscribe(value => text.text = string.Format(format, value));
+        }
+        
         public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<Level> observableProperty, string format = "{0}")
         {
             return observableProperty

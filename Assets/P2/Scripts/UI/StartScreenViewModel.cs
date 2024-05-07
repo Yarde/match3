@@ -9,12 +9,14 @@ namespace P2.UI
     {
         [Inject] private LevelProgressionSystem _levelProgressionSystem;
         [Inject] private GameplaySystem _gameplaySystem;
+        [Inject] private WindowSystem _windowSystem;
         [Inject] private IObjectResolver _container;
 
         protected override void SetupInternal()
         {
             view.CurrentLevelName.Bind(_levelProgressionSystem.CurrentLevel, "Level: {0}").AddTo(disposables);
             view.PlayButton.onClick.AddListener(StartGame);
+            view.StatsButton.onClick.AddListener(() => _windowSystem.Push<StatsViewModel>());
 
             foreach (var level in _levelProgressionSystem.AllLevels)
             {

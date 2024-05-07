@@ -14,7 +14,7 @@ namespace P1
 
         private void Update()
         {
-            Stats.TimePlayed += Time.deltaTime;
+            Stats.timePlayed += Time.deltaTime;
         }
 
         private void OnDestroy()
@@ -39,27 +39,14 @@ namespace P1
         {
             if (win)
             {
-                Stats.Wins++;
+                Stats.wins++;
             }
             else
             {
-                Stats.Losses++;
+                Stats.losses++;
             }
-            var games = Stats.Wins + Stats.Losses;
-            Stats.WinLossRatio = Stats.Wins / (float) games;
+            var games = Stats.wins + Stats.losses;
+            Stats.winLossRatio = Stats.wins / (float) games;
         }
-    }
-
-    public class Stats
-    {
-        public int Matches;
-        public int Moves;
-        
-        public int Wins;
-        public int Losses;
-        public float WinLossRatio;
-        
-        public int Score;
-        public float TimePlayed;
     }
 }
