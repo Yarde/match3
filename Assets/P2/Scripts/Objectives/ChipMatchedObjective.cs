@@ -26,7 +26,6 @@ namespace P2.Objectives
         private void OnMatch(int matchCount)
         {
             _matchesLeft.Value -= matchCount;
-            Debug.Log("Matched " + matchCount + " chips, " + _matchesLeft + " left");
             if (!_isCompleted && _matchesLeft.Value <= 0)
             {
                 _isCompleted = true;

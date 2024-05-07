@@ -13,10 +13,11 @@ namespace P2.Levels
         public IObservableProperty<int> PlayerLevel => _playerLevel;
         public IReadOnlyList<Level> AllLevels => _allLevels;
         public IReadOnlyList<Level> UnlockedLevels => _unlockedLevels;
-        public Level CurrentLevel => _unlockedLevels[Mathf.Min(_playerLevel.Value, _unlockedLevels.Count - 1)];
+        public IObservableProperty<Level> CurrentLevel => _currentLevel;
         
         private List<Level> _unlockedLevels;
         private readonly ObservableProperty<int> _playerLevel;
+        private readonly ObservableProperty<Level> _currentLevel;
         
         private readonly Match3 _match3;
         private readonly List<Level> _allLevels;
@@ -26,12 +27,12 @@ namespace P2.Levels
         {
             _match3 = match3;
             
-            var currentLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
-            _playerLevel = new ObservableProperty<int>(currentLevel);
+            var playerLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
+            _playerLevel = new ObservableProperty<int>(playerLevel);
 
             var levelList = Resources.Load<LevelList>("LevelList");
             var levels = levelList._levels;
-            
+
             _allLevels = new List<Level>();
             for (var i = 0; i < levels.Count; i++)
             {
@@ -39,15 +40,24 @@ namespace P2.Levels
             }
 
             _unlockedLevels = _allLevels.GetRange(0, _playerLevel.Value + 1);
-            
+
+            var currentLevel = _unlockedLevels[Mathf.Min(_playerLevel.Value, _unlockedLevels.Count - 1)];
+            _currentLevel = new ObservableProperty<Level>(currentLevel);
+
             _match3.OnGameEnded += OnGameEnded;
             _playerLevel.InvokeAndSubscribe(OnLevelUnlocked).AddTo(_disposables);
+        }
+        
+        public void SelectLevel(Level level)
+        {
+            _currentLevel.Value = level;
         }
 
         private void OnLevelUnlocked(int newMaxLevel)
         {
             var count = Mathf.Min(newMaxLevel + 1, _allLevels.Count);
             _unlockedLevels = _allLevels.GetRange(0,  count);
+            _currentLevel.Value = _unlockedLevels[Mathf.Min(newMaxLevel, _unlockedLevels.Count - 1)];
         }
 
         private void OnGameEnded(bool win)
@@ -58,8 +68,9 @@ namespace P2.Levels
             }
 
             var playedLevel = _match3.BoardSettings;
-            var level = _allLevels.First(level => level.BoardSettings == playedLevel);
-            if (level.IsUnlocked)
+            var nextLevelIndex = _allLevels.First(level => level.BoardSettings == playedLevel).LevelNumber + 1;
+            var nextLevel = _allLevels.FirstOrDefault(level => level.LevelNumber == nextLevelIndex);
+            if (nextLevel is { IsUnlocked: true })
             {
                 return;
             }

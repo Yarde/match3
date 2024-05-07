@@ -5,7 +5,10 @@ namespace P2.UI
 {
     public abstract class ViewModel
     {
+        public abstract void Setup();
         public abstract void Show();
+        public abstract void Hide();
+        public abstract void Close();
     }
 
     public abstract class ViewModel<T> : ViewModel where T : View
@@ -13,19 +16,29 @@ namespace P2.UI
         protected T view;
         protected readonly CompositeDisposable disposables = new();
 
-        public sealed override void Show()
+        public sealed override void Setup()
         {
             var prefab = Resources.Load<T>(typeof(T).Name);
             view = Object.Instantiate(prefab);
-            ShowInternal();
+            SetupInternal();
         }
 
-        public void Close()
+        public override void Show()
+        {
+            view.gameObject.SetActive(true);
+        }
+        
+        public override void Hide()
+        {
+            view.gameObject.SetActive(false);
+        }
+
+        public override void Close()
         {
             disposables.Dispose();
             view.Dispose();
         }
 
-        protected abstract void ShowInternal();
+        protected abstract void SetupInternal();
     }
 }

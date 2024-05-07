@@ -32,7 +32,6 @@ namespace P2.Scoring
         private void OnMatch(int matchCount)
         {
             _score.Value += matchCount * 10;
-            Debug.Log("Score: " + Score);
         }
 
         private void OnGameStarted()
@@ -47,16 +46,9 @@ namespace P2.Scoring
             {
                 _score.Value += _movesLeft * 100;
             }
-            Debug.Log("Game ended with " + (success ? "success" : "failure") + ", score: " + Score);
-            Unsubscribe();
         }
 
         public void Dispose()
-        {
-            Unsubscribe();
-        }
-
-        private void Unsubscribe()
         {
             _match3.OnGameStarted -= OnGameStarted;
             _match3.OnGameEnded -= OnGameEnded;

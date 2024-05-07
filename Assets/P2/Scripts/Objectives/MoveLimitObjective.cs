@@ -25,7 +25,6 @@ namespace P2.Objectives
         private void OnMove()
         {
             _movesLeft.Value--;
-            Debug.Log("Move, " + _movesLeft + " left");
             if (!_isCompleted && _movesLeft.Value <= 0)
             {
                 _isCompleted = true;

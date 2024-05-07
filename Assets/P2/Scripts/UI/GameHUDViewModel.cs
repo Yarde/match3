@@ -9,7 +9,7 @@ namespace P2.UI
         [Inject] private ScoringSystem _scoringSystem;
         [Inject] private ObjectivesSystem _objectivesSystem;
 
-        protected override void ShowInternal()
+        protected override void SetupInternal()
         {
             view.ScoreText.Bind(_scoringSystem.Score, "Score: {0}").AddTo(disposables);
             view.MovesLeftText.Bind(_objectivesSystem.LoseCondition.Value, "Moves left: {0}").AddTo(disposables);

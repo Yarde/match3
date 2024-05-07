@@ -1,5 +1,4 @@
 using System;
-using Common.Code.Model;
 using Common.Common.Code;
 using Cysharp.Threading.Tasks;
 using P2.Levels;
@@ -27,12 +26,12 @@ namespace P2.Gameplay
         public async UniTask StartGame(Level level)
         {
             await _match3.StartGame(level.BoardSettings);
-            _hud = _windowSystem.OpenWindow<GameHUDViewModel>();
+            _windowSystem.Push<GameHUDViewModel>();
         }
 
         private void OnGameEnded(bool successful)
         {
-            _hud.Close();
+            _windowSystem.Pop();
         }
 
         public void Dispose()
