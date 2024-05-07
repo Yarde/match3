@@ -15,7 +15,7 @@ namespace P2.UI
         public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<Level> observableProperty, string format = "{0}")
         {
             return observableProperty
-                .InvokeAndSubscribe(level => text.text = string.Format(format, level.LevelNumber));
+                .InvokeAndSubscribe(level => text.text = string.Format(format, level.BoardSettings.name));
         }
         
         public static void AddTo(this IDisposable disposable, CompositeDisposable disposables)

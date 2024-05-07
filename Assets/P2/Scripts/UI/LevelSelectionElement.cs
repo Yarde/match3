@@ -22,7 +22,7 @@ namespace P2.UI
         public void Setup(Level level)
         {
             _level = level;
-            _levelName.text = $"Level: {level.LevelNumber}";
+            _levelName.text = $"Level: {level.BoardSettings.name}";
             _button.onClick.AddListener(() => _levelProgressionSystem.SelectLevel(level));
             
             _levelProgressionSystem.CurrentLevel.InvokeAndSubscribe(currentLevel =>

@@ -27,7 +27,7 @@ namespace P2.Levels
         {
             _match3 = match3;
             
-            var playerLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
+            var playerLevel = PlayerPrefs.GetInt("PlayerLevel_P2", 0);
             _playerLevel = new ObservableProperty<int>(playerLevel);
 
             var levelList = Resources.Load<LevelList>("LevelList");
@@ -76,7 +76,7 @@ namespace P2.Levels
             }
             
             _playerLevel.Value++;
-            PlayerPrefs.SetInt("CurrentLevel", _playerLevel.Value);
+            PlayerPrefs.SetInt("PlayerLevel_P2", _playerLevel.Value);
         }
 
         public void Dispose()
