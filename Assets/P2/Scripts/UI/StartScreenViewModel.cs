@@ -18,6 +18,7 @@ namespace P2.UI
             view.PlayButton.onClick.AddListener(StartGame);
             view.StatsButton.onClick.AddListener(() => _windowSystem.Push<StatsViewModel>());
             view.AchievementsButton.onClick.AddListener(() => _windowSystem.Push<AchievementsViewModel>());
+            view.RankingsButton.onClick.AddListener(() => _windowSystem.Push<RankingsViewModel>());
 
             foreach (var level in _levelProgressionSystem.AllLevels)
             {

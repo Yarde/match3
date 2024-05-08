@@ -2,7 +2,9 @@
 using P2.Achievements;
 using P2.Gameplay;
 using P2.Levels;
+using P2.Network;
 using P2.Objectives;
+using P2.Rankings;
 using P2.Scoring;
 using P2.Stats;
 using P2.UI;
@@ -24,6 +26,8 @@ namespace P2.DependencyInjection
             builder.Register<LevelProgressionSystem>(Lifetime.Singleton);
             builder.Register<StatsSystem>(Lifetime.Singleton);
             builder.Register<AchievementsSystem>(Lifetime.Singleton);
+            builder.Register<NetworkSystem>(Lifetime.Singleton);
+            builder.Register<RankingsSystem>(Lifetime.Singleton);
         }
     }
 }

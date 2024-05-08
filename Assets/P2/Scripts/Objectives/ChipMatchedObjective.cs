@@ -1,8 +1,5 @@
-using System;
 using Common.Common.Code;
 using P2.Observable;
-using UnityEngine;
-using VContainer;
 
 namespace P2.Objectives
 {

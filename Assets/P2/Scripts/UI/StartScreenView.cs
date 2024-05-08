@@ -10,6 +10,7 @@ namespace P2.UI
         [field:SerializeField] public Button PlayButton { get; private set; }
         [field:SerializeField] public Button StatsButton { get; private set; }
         [field:SerializeField] public Button AchievementsButton { get; private set; }
+        [field:SerializeField] public Button RankingsButton { get; private set; }
         [field:SerializeField] public Transform LevelSelectionParent { get; private set; }
         [field:SerializeField] public LevelSelectionElement LevelSelectionPrefab { get; private set; }
         

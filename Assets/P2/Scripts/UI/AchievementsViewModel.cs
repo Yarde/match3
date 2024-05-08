@@ -1,5 +1,4 @@
 using P2.Achievements;
-using P2.Stats;
 using VContainer;
 using VContainer.Unity;
 
