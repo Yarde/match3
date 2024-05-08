@@ -25,8 +25,7 @@ namespace P2.Rankings
             
             _match3.OnGameEnded += OnGameEnded;
         }
-
-
+        
         private void OnGameEnded(bool successful)
         {
             if (successful)
