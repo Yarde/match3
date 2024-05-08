@@ -14,6 +14,7 @@ namespace P1.UI
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _statsButton;
         [SerializeField] private Button _achievementsButton;
+        [SerializeField] private Button _rankingButton;
         [SerializeField] private Transform _levelSelectionParent;
         [SerializeField] private LevelSelectionElement _levelSelectionPrefab;
         
@@ -44,6 +45,11 @@ namespace P1.UI
             _achievementsButton.onClick.AddListener(() =>
             {
                 _windowManager.OpenWindow<AchievementsWindow>();
+            });
+            
+            _rankingButton.onClick.AddListener(() =>
+            {
+                _windowManager.OpenWindow<RankingWindow>();
             });
 
             for (var i = 0; i < boardSettings.Count; i++)

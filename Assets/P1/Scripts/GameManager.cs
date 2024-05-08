@@ -12,6 +12,7 @@ namespace P1
         [SerializeField] private List<BoardSettings> _boardSettings;
         [SerializeField] private WindowManager _windowManager;
         [SerializeField] private StatsManager _statsManager;
+        [SerializeField] private RankingManager _rankingManager;
 
         private Match3 _match3;
         private int _movesLeft;
@@ -66,6 +67,7 @@ namespace P1
                 _startScreen.OnLevelUnlocked(currentLevel + 1);
             }
             
+            _rankingManager.AddRankingEntry("Player", _statsManager.Stats.score).Forget();
             _windowManager.OpenWindow<StartScreen>();
         }
 
