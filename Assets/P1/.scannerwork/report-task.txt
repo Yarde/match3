@@ -1,0 +1,6 @@
+projectKey=Thesis
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=Thesis
+ceTaskId=c58c4a53-40a1-45ea-83cf-f91b19a5db37
+ceTaskUrl=http://localhost:9000/api/ce/task?id=c58c4a53-40a1-45ea-83cf-f91b19a5db37

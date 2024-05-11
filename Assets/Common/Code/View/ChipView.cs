@@ -80,9 +80,8 @@ namespace Common.Code.View
 
         private UniTask OnEffect()
         {
-            return image.DOFade(0f, 0.2f)
-                .OnComplete(() => Destroy(gameObject))
-                .WithCancellation(this.GetCancellationTokenOnDestroy());
+            return new UniTask();
+            //return image.DOFade(0f, 0.2f).OnComplete(() => Destroy(gameObject)).WithCancellation(this.GetCancellationTokenOnDestroy());
         }
 
         public void OnPointerDown(PointerEventData eventData)
