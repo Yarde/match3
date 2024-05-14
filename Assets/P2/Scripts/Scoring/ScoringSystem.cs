@@ -7,7 +7,7 @@ namespace P2.Scoring
     public class ScoringSystem : IDisposable
     {
         private readonly Match3 _match3;
-        
+
         private int _movesLeft;
 
         public IObservableProperty<int> Score => _score;
@@ -16,7 +16,7 @@ namespace P2.Scoring
         public ScoringSystem(Match3 match3)
         {
             _match3 = match3;
-            
+
             _match3.OnGameStarted += OnGameStarted;
             _match3.OnGameEnded += OnGameEnded;
             _match3.OnMatch += OnMatch;
@@ -41,10 +41,7 @@ namespace P2.Scoring
 
         private void OnGameEnded(bool success)
         {
-            if (success)
-            {
-                _score.Value += _movesLeft * 100;
-            }
+            if (success) _score.Value += _movesLeft * 100;
         }
 
         public void Dispose()

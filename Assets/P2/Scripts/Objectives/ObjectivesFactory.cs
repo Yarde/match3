@@ -10,7 +10,7 @@ namespace P2.Objectives
         {
             _match3 = match3;
         }
-        
+
         public ChipMatchedObjective CreateChipMatchedObjective(int matchesNeeded)
         {
             return new ChipMatchedObjective(matchesNeeded, _match3);
@@ -19,7 +19,6 @@ namespace P2.Objectives
         public MoveLimitObjective CreateMoveLimitObjective(int moveLimit)
         {
             return new MoveLimitObjective(moveLimit, _match3);
-
         }
     }
 }

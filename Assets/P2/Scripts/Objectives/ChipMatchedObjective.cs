@@ -6,13 +6,13 @@ namespace P2.Objectives
     public class ChipMatchedObjective : Objective
     {
         public override IObservableProperty<int> Value => _matchesLeft;
-        private readonly ObservableProperty<int> _matchesLeft; 
+        private readonly ObservableProperty<int> _matchesLeft;
         private bool _isCompleted;
-        
+
         public override DisposableSubscription<int> OnComplete { get; }
 
         private readonly Match3 _match3;
-        
+
         public ChipMatchedObjective(int matchesNeeded, Match3 match3)
         {
             _match3 = match3;

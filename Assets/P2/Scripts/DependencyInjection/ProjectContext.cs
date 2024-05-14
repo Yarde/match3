@@ -8,6 +8,7 @@ using P2.Rankings;
 using P2.Scoring;
 using P2.Stats;
 using P2.UI;
+using P2.Windows;
 using VContainer;
 using VContainer.Unity;
 

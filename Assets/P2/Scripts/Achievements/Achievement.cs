@@ -1,6 +1,7 @@
 using System;
 using P2.Observable;
 using P2.UI;
+using P2.Windows;
 
 namespace P2.Achievements
 {
@@ -9,7 +10,7 @@ namespace P2.Achievements
         public string Name { get; private set; }
         public string Description { get; private set; }
         public IObservableProperty<bool> IsAchieved => isAchieved;
-        
+
         protected ObservableProperty<bool> isAchieved = new();
         protected readonly CompositeDisposable disposables = new();
 
@@ -18,7 +19,7 @@ namespace P2.Achievements
             Name = name;
             Description = description;
         }
-        
+
         public void Dispose()
         {
             disposables?.Dispose();

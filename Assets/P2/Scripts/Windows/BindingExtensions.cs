@@ -4,7 +4,7 @@ using P2.Observable;
 using TMPro;
 using UnityEngine;
 
-namespace P2.UI
+namespace P2.Windows
 {
     public static class BindingExtensions
     {
@@ -12,23 +12,20 @@ namespace P2.UI
         {
             return observableProperty.InvokeAndSubscribe(text.SetActive);
         }
-        
-        public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<int> observableProperty, string format = "{0}")
+
+        public static IDisposable Bind<T>(this TextMeshProUGUI text, IObservableProperty<T> observableProperty,
+            string format = "{0}")
         {
             return observableProperty.InvokeAndSubscribe(value => text.text = string.Format(format, value));
         }
-        
-        public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<float> observableProperty, string format = "{0}")
-        {
-            return observableProperty.InvokeAndSubscribe(value => text.text = string.Format(format, value));
-        }
-        
-        public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<Level> observableProperty, string format = "{0}")
+
+        public static IDisposable Bind(this TextMeshProUGUI text, IObservableProperty<Level> observableProperty,
+            string format = "{0}")
         {
             return observableProperty
                 .InvokeAndSubscribe(level => text.text = string.Format(format, level.BoardSettings.name));
         }
-        
+
         public static void AddTo(this IDisposable disposable, CompositeDisposable disposables)
         {
             disposables.Add(disposable);

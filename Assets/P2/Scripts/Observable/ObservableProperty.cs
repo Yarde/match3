@@ -27,7 +27,7 @@ namespace P2.Observable
                 }
             }
         }
-        
+
         public T PreviousValue { get; private set; }
 
         public IDisposable InvokeAndSubscribe(Action<T> action)
@@ -35,7 +35,7 @@ namespace P2.Observable
             action.Invoke(Value);
             return Subscribe(action);
         }
-        
+
         public IDisposable Subscribe(Action<T> action)
         {
             return OnValueChanged.Subscribe(action);

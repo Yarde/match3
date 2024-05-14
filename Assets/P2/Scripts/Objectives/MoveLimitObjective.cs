@@ -6,8 +6,8 @@ namespace P2.Objectives
     public class MoveLimitObjective : Objective
     {
         public override IObservableProperty<int> Value => _movesLeft;
-        private readonly ObservableProperty<int> _movesLeft; 
-        
+        private readonly ObservableProperty<int> _movesLeft;
+
         private bool _isCompleted;
         public override DisposableSubscription<int> OnComplete { get; }
 

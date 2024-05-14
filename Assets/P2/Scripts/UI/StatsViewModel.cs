@@ -1,4 +1,5 @@
 using P2.Stats;
+using P2.Windows;
 using VContainer;
 
 namespace P2.UI
@@ -17,7 +18,7 @@ namespace P2.UI
             view.WinCount.Bind(_statsSystem.Wins, "Wins: {0}").AddTo(disposables);
             view.LoseCount.Bind(_statsSystem.Losses, "Losses: {0}").AddTo(disposables);
             view.WinRate.Bind(_statsSystem.WinLossRatio, "Win rate: {0:P}").AddTo(disposables);
-            
+
             view.CloseButton.onClick.AddListener(() => _windowSystem.Pop());
         }
     }

@@ -22,26 +22,20 @@ namespace P2.Rankings
             _match3 = match3;
             _networkManager = networkManager;
             _scoringSystem = scoringSystem;
-            
+
             _match3.OnGameEnded += OnGameEnded;
         }
-        
+
         private void OnGameEnded(bool successful)
         {
-            if (successful)
-            {
-                AddRankingEntry("Player", _scoringSystem.Score.Value).Forget();
-            }
+            if (successful) AddRankingEntry("Player", _scoringSystem.Score.Value).Forget();
         }
 
         public async UniTask<IReadOnlyList<RankingEntry>> GetRanking()
         {
-            if (_ranking != null && _lastFetchTime + 60 > Time.time)
-            {
-                return _ranking;
-            }
-            _lastFetchTime = Time.time; 
-            
+            if (_ranking != null && _lastFetchTime + 60 > Time.time) return _ranking;
+            _lastFetchTime = Time.time;
+
             await FetchRankingData();
             return _ranking;
         }
@@ -50,7 +44,7 @@ namespace P2.Rankings
         {
             await _networkManager.SendRequest<AddRankingEntryReply>(new AddRankingEntryRequest(playerName, score));
         }
-        
+
         private async UniTask FetchRankingData()
         {
             var request = new GetRankingRequest();

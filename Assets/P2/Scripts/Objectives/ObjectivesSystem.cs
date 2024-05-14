@@ -3,6 +3,7 @@ using Common.Common.Code;
 using Cysharp.Threading.Tasks;
 using P2.Observable;
 using P2.UI;
+using P2.Windows;
 
 namespace P2.Objectives
 {
@@ -18,10 +19,10 @@ namespace P2.Objectives
         {
             _match3 = match3;
             _factory = factory;
-            
+
             WinCondition = new ObservableProperty<Objective>();
             LoseCondition = new ObservableProperty<Objective>();
-            
+
             _match3.OnGameStarted += OnGameStarted;
             _match3.OnGameEnded += OnGameEnded;
         }
@@ -29,7 +30,7 @@ namespace P2.Objectives
         private void OnGameStarted()
         {
             _disposables = new CompositeDisposable();
-            
+
             WinCondition.Value = _factory.CreateChipMatchedObjective(_match3.BoardSettings.matchesNeeded);
             LoseCondition.Value = _factory.CreateMoveLimitObjective(_match3.BoardSettings.movesLimit);
 

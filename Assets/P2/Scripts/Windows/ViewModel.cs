@@ -1,7 +1,7 @@
 using P2.Observable;
 using UnityEngine;
 
-namespace P2.UI
+namespace P2.Windows
 {
     public abstract class ViewModel
     {
@@ -27,7 +27,7 @@ namespace P2.UI
         {
             view.gameObject.SetActive(true);
         }
-        
+
         public override void Hide()
         {
             view.gameObject.SetActive(false);

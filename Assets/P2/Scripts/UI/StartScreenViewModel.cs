@@ -1,5 +1,6 @@
 using P2.Gameplay;
 using P2.Levels;
+using P2.Windows;
 using VContainer;
 using VContainer.Unity;
 
@@ -22,7 +23,8 @@ namespace P2.UI
 
             foreach (var level in _levelProgressionSystem.AllLevels)
             {
-                var levelSelectionElement = _container.Instantiate(view.LevelSelectionPrefab, view.LevelSelectionParent);
+                var levelSelectionElement =
+                    _container.Instantiate(view.LevelSelectionPrefab, view.LevelSelectionParent);
                 levelSelectionElement.Setup(level);
             }
         }

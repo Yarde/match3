@@ -19,16 +19,13 @@ namespace P2.Network
             var rankingMock = new List<RankingEntry>();
             var places = 10;
             for (var i = 0; i < places; i++)
-            {
-                rankingMock.Add(new RankingEntry
-                {
-                    position = i + 1,
-                    playerName = $"Player{i}",
-                    score = (places - i) * 100
-                });
-            }
-            
-            _mockData[typeof(GetRankingRequest)] = new GetRankingReply {ranking = rankingMock};
+                rankingMock.Add(new RankingEntry(
+                    i + 1,
+                    $"Player{i}",
+                    (places - i) * 100
+                ));
+
+            _mockData[typeof(GetRankingRequest)] = new GetRankingReply { ranking = rankingMock };
             _mockData[typeof(AddRankingEntryRequest)] = new AddRankingEntryReply();
         }
 

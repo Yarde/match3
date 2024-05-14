@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace P2.UI
+namespace P2.Windows
 {
     public abstract class View : MonoBehaviour, IDisposable
     {

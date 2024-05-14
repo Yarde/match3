@@ -1,4 +1,5 @@
 using P2.Achievements;
+using P2.Windows;
 using VContainer;
 using VContainer.Unity;
 
@@ -18,7 +19,7 @@ namespace P2.UI
                 achievementView.Setup(achievement);
                 achievementView.AddTo(disposables);
             }
-            
+
             view.CloseButton.onClick.AddListener(() => _windowSystem.Pop());
         }
     }

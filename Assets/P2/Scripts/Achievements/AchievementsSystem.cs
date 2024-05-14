@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using P2.Observable;
 using P2.Stats;
 using P2.UI;
+using P2.Windows;
 
 namespace P2.Achievements
 {
@@ -10,8 +11,9 @@ namespace P2.Achievements
     {
         public IReadOnlyList<Achievement> Achievements => _achievements;
         private readonly List<Achievement> _achievements;
-        
+
         private readonly CompositeDisposable _disposables = new();
+
         public AchievementsSystem(StatsSystem statsSystem)
         {
             _achievements = new List<Achievement>

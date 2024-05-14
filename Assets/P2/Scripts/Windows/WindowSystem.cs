@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using VContainer;
 
-namespace P2.UI
+namespace P2.Windows
 {
     public class WindowSystem
     {
@@ -20,27 +20,21 @@ namespace P2.UI
             var window = Activator.CreateInstance<T>();
             _container.Inject(window);
             window.Setup();
-            
-            foreach (var w in _windowsStack)
-            {
-                w.Hide();
-            }
-            
+
+            foreach (var w in _windowsStack) w.Hide();
+
             _windowsStack.Add(window);
-            
+
             return window;
         }
-        
+
         public void Pop()
         {
             var window = _windowsStack.Last();
             _windowsStack.Remove(window);
             window.Close();
-            
-            if (_windowsStack.Count > 0)
-            {
-                _windowsStack.Last().Show();
-            }
+
+            if (_windowsStack.Count > 0) _windowsStack.Last().Show();
         }
     }
 }

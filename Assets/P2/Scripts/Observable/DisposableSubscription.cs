@@ -8,17 +8,17 @@ namespace P2.Observable
         private event Action<T> SubscribeAction;
 
         private readonly CompositeDisposable _disposables = new();
-        
+
         public DisposableSubscription(IObservableProperty<T> property)
         {
             _property = property;
         }
-        
+
         public void Invoke(T value)
         {
             SubscribeAction?.Invoke(value);
         }
-        
+
         public IDisposable Subscribe(Action<T> action)
         {
             SubscribeAction += action;

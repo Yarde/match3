@@ -6,7 +6,7 @@ namespace P2.Observable
     public class CompositeDisposable : IDisposable
     {
         private readonly List<IDisposable> _disposables = new();
-        
+
         public IDisposable Add(IDisposable disposable)
         {
             _disposables.Add(disposable);
@@ -15,10 +15,7 @@ namespace P2.Observable
 
         public void Dispose()
         {
-            foreach (var disposable in _disposables)
-            {
-                disposable.Dispose();
-            }
+            foreach (var disposable in _disposables) disposable.Dispose();
         }
     }
 }
